@@ -117,3 +117,8 @@ footer a{text-decoration:underline}
 .rate-line{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:10px;border-top:1.5px solid var(--line);font-size:12.5px;color:var(--xam);flex-wrap:wrap}
 .rate-line input{width:84px;padding:7px 10px;font-size:14px}
 .src-note{font-size:10.5px;color:var(--xam);margin-top:8px}
+
+/* messenger contact */
+.msgbtn{display:flex;align-items:center;justify-content:center;gap:10px;background:#0084FF;color:#fff;font-weight:800;font-size:15px;padding:14px 18px;border-radius:12px;margin:14px 0 10px;box-shadow:3px 3px 0 rgba(0,0,0,.15)}
+.msgbtn:active{transform:translateY(1px)}
+.fb-foot{color:var(--xanh);font-weight:700}
