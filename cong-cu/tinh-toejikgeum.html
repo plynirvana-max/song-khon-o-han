@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tính trợ cấp thôi việc (퇴직금 계산기) — Sống Khôn ở Hàn</title>
+<meta name="description" content="Máy tính 퇴직금 tiếng Việt: nhập ngày làm việc và lương, nhận kết quả song ngữ Hàn–Việt để đưa cho chủ xem.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="topbar"><div class="inner">
+  <div>
+    <a href="../index.html" class="brand">Sống Khôn ở Hàn</a>
+    <div class="sub">Thông tin đã kiểm chứng cho người Việt tại Hàn Quốc</div>
+  </div>
+  <a class="langbtn" href="../ko/cong-cu/tinh-toejikgeum.html">🇰🇷 한국어</a>
+</div></div>
+<nav class="nav"><div class="inner">
+  <a href="../index.html">Trang chủ</a>
+  <a href="#">Mới đến<span class="soon">sắp ra mắt</span></a>
+  <a href="../bai-viet/cong-ty-no-luong.html" class="on">Đi làm</a>
+  <a href="#">Du học<span class="soon">sắp ra mắt</span></a>
+  <a href="#">Kết hôn<span class="soon">sắp ra mắt</span></a>
+  <a href="../gioi-thieu.html">Về chúng mình</a>
+</div></nav>
+
+<div class="wrap">
+  <section class="hero" style="padding-bottom:22px">
+    <h1>Tính <em>trợ cấp thôi việc</em> của bạn
+      <span class="ko">퇴직금 (đọc: "thuê-chík-cưm") — kết quả song ngữ Hàn–Việt để đưa cho chủ xem</span>
+    </h1>
+  </section>
+
+  <div class="mw-box">
+    <div class="t">Lương tối thiểu 2026 <span>최저임금 (đọc: "chuê-chơ-im-cưm")</span></div>
+    <div class="mw-row"><div class="lb">Theo giờ<small>시급</small></div><div class="v"><b>10.320 KRW</b><i>≈ <span class="mwv" data-krw="10320">—</span> VND</i></div></div>
+    <div class="mw-row"><div class="lb">Theo ngày (8 giờ)<small>일급</small></div><div class="v"><b>82.560 KRW</b><i>≈ <span class="mwv" data-krw="82560">—</span> VND</i></div></div>
+    <div class="mw-row"><div class="lb">Theo tháng (209 giờ, đã gồm 주휴수당)<small>월급</small></div><div class="v"><b>2.156.880 KRW</b><i>≈ <span class="mwv" data-krw="2156880">—</span> VND</i></div></div>
+    <div class="rate-line">Tỷ giá: 1 KRW = <input type="number" step="0.1" id="rate" value="17.5"> VND <span>(sửa được — <b>kiểm tra tỷ giá hôm nay</b> trước khi tin con số VND)</span></div>
+    <div class="src-note">Nguồn: 고용노동부, áp dụng từ 01/01/2026. Nhận thấp hơn mức này là vi phạm pháp luật.</div>
+  </div>
+
+  <div class="calc-card">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div>
+        <label class="f">Ngày vào làm<span class="ko">입사일</span></label>
+        <input type="date" id="start">
+      </div>
+      <div>
+        <label class="f">Ngày nghỉ việc<span class="ko">퇴사일</span></label>
+        <input type="date" id="end">
+      </div>
+    </div>
+
+    <div class="mode">
+      <button type="button" id="mSimple" class="on">Lương giống nhau mỗi tháng</button>
+      <button type="button" id="mDetail">Nhập chi tiết 3 tháng cuối</button>
+    </div>
+
+    <div id="simpleBox">
+      <label class="f">Lương 1 tháng, trước thuế (KRW)<span class="ko">월급 (세전)</span></label>
+      <input type="number" inputmode="numeric" id="monthly" placeholder="Ví dụ: 2200000">
+    </div>
+
+    <div id="detailBox" style="display:none">
+      <label class="f">Tháng cuối (KRW)<span class="ko">세전</span></label>
+      <input type="number" inputmode="numeric" id="m3">
+      <label class="f">Tháng trước đó (KRW)<span class="ko">세전</span></label>
+      <input type="number" inputmode="numeric" id="m2">
+      <label class="f">Tháng trước nữa (KRW)<span class="ko">세전</span></label>
+      <input type="number" inputmode="numeric" id="m1">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div><label class="f">Thưởng cả năm<span class="ko">연간 상여금</span></label><input type="number" inputmode="numeric" id="bonus" placeholder="0"></div>
+        <div><label class="f">Tiền phép chưa dùng<span class="ko">연차수당</span></label><input type="number" inputmode="numeric" id="leave" placeholder="0"></div>
+      </div>
+    </div>
+
+    <label class="chk">
+      <input type="checkbox" id="over15" checked>
+      <span>Tôi làm trung bình <strong>từ 15 giờ/tuần trở lên</strong> (điều kiện bắt buộc để nhận 퇴직금)</span>
+    </label>
+  </div>
+
+  <div class="receipt" id="receipt">
+    <div class="paper">
+      <div class="stamp">근로자<br>권리</div>
+      <div class="r-title">퇴직금 계산서</div>
+      <div class="r-sub">BẢNG TÍNH TRỢ CẤP THÔI VIỆC</div>
+      <div class="r-row"><div><div class="ko">재직일수</div><div class="vi">Tổng ngày làm việc</div></div><div class="val" id="rDays">—</div></div>
+      <div class="r-row"><div><div class="ko">평균임금 산정일수</div><div class="vi">Số ngày tính lương bình quân</div></div><div class="val" id="rWin">—</div></div>
+      <div class="r-row"><div><div class="ko">1일 평균임금</div><div class="vi">Lương bình quân 1 ngày</div></div><div class="val" id="rAvg">—</div></div>
+      <div class="r-total">
+        <div class="lb">예상 퇴직금 · Trợ cấp thôi việc ước tính</div>
+        <div class="num" id="rTotal">0 <span style="font-size:17px">KRW</span></div>
+        <div class="vnd" id="rVnd"></div>
+      </div>
+      <div class="notice red" id="nShort">Bạn làm chưa đủ <strong>1 năm (365 ngày)</strong> nên chưa đủ điều kiện nhận 퇴직금. Số tiền trên chỉ là tham khảo.</div>
+      <div class="notice red" id="nHours">Nếu làm dưới 15 giờ/tuần, theo luật bạn không thuộc diện nhận 퇴직금. Số tiền trên chỉ là tham khảo.</div>
+      <div class="notice green" id="nRights"><strong>Quyền của bạn:</strong> chủ phải trả trong vòng <strong>14 ngày</strong> sau khi nghỉ việc. Trả chậm chịu lãi <strong>20%/năm</strong>. Không trả là vi phạm hình sự.<br><span style="font-family:'Noto Sans KR';font-size:12.5px;color:var(--xam)">근로자퇴직급여 보장법: 퇴직 후 14일 이내 지급, 지연 시 연 20% 이자</span></div>
+      <button type="button" class="copybtn" id="copyBtn">Sao chép bản song ngữ để gửi chủ</button>
+    </div>
+  </div>
+
+  <section class="section">
+    <a class="article-card" href="../bai-viet/cong-ty-no-luong.html">
+      <span class="tag">Đọc tiếp</span>
+      <h4>Chủ không chịu trả 퇴직금? 5 bước khiếu nại với Bộ Lao động →</h4>
+    </a>
+  </section>
+
+  <footer>
+    Công cụ tham khảo theo công thức của 고용노동부. Không phải tư vấn pháp lý —<br>
+    số tiền chính xác cần xác nhận với ☎ 1350. Cập nhật: 07/2026.
+  </footer>
+</div>
+
+<div class="emgbar">
+  <div><b>Bị nợ 퇴직금?</b><br><span>Bộ Lao động · tiếng Việt · miễn phí</span></div>
+  <a class="call" href="tel:1350">☎ 1350</a>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+let mode='simple';
+const fmt=n=>isFinite(n)?Math.round(n).toLocaleString('ko-KR'):'0';
+const fmtV=n=>isFinite(n)?Math.round(n).toLocaleString('vi-VN'):'0';
+const daysBetween=(a,b)=>Math.floor((b-a)/86400000)+1;
+const rate=()=>(+$('rate').value||17.5);
+function paintMw(){document.querySelectorAll('.mwv').forEach(el=>{el.textContent=fmtV((+el.dataset.krw)*rate());});}
+paintMw();
+$('rate').addEventListener('input',()=>{paintMw();calc();});
+
+$('mSimple').onclick=()=>{mode='simple';$('mSimple').classList.add('on');$('mDetail').classList.remove('on');$('simpleBox').style.display='block';$('detailBox').style.display='none';calc();};
+$('mDetail').onclick=()=>{mode='detail';$('mDetail').classList.add('on');$('mSimple').classList.remove('on');$('simpleBox').style.display='none';$('detailBox').style.display='block';calc();};
+
+let last=null;
+function calc(){
+  const s=new Date($('start').value), e=new Date($('end').value);
+  const r=$('receipt');
+  if(isNaN(s)||isNaN(e)||e<=s){r.classList.remove('show');last=null;return;}
+  const totalDays=daysBetween(s,e);
+  const t=new Date(e); t.setMonth(t.getMonth()-3); t.setDate(t.getDate()+1);
+  const win=daysBetween(t,e);
+  let wages=0;
+  if(mode==='simple'){wages=(+$('monthly').value||0)*3;}
+  else{wages=(+$('m1').value||0)+(+$('m2').value||0)+(+$('m3').value||0);}
+  const base=wages+((+($('bonus')?.value)||0)*3/12)+((+($('leave')?.value)||0)*3/12);
+  if(base<=0){r.classList.remove('show');last=null;return;}
+  const avg=base/win, sev=avg*30*(totalDays/365);
+  const over15=$('over15').checked, tooShort=totalDays<365, eligible=!tooShort&&over15;
+  $('rDays').textContent=totalDays+'일 · '+(totalDays/365).toFixed(2)+' năm';
+  $('rWin').textContent=win+'일';
+  $('rAvg').textContent=fmt(avg)+' KRW';
+  $('rTotal').innerHTML=fmt(sev)+' <span style="font-size:17px">KRW</span>';
+  $('rVnd').textContent='≈ '+fmtV(sev*rate())+' VND (tỷ giá '+rate()+')';
+  $('rTotal').classList.toggle('off',!eligible);
+  $('nShort').classList.toggle('show',tooShort);
+  $('nHours').classList.toggle('show',!tooShort&&!over15);
+  $('nRights').classList.toggle('show',eligible);
+  r.classList.add('show');
+  last={start:$('start').value,end:$('end').value,totalDays,years:(totalDays/365).toFixed(2),avg,sev};
+}
+['start','end','monthly','m1','m2','m3','bonus','leave','over15'].forEach(id=>{const el=$(id);if(el){el.addEventListener('input',calc);el.addEventListener('change',calc);}});
+
+$('copyBtn').onclick=()=>{
+  if(!last)return;
+  const txt=['── 퇴직금 계산서 / BẢNG TÍNH TRỢ CẤP THÔI VIỆC ──',
+  '입사일 / Ngày vào làm: '+last.start,
+  '퇴사일 / Ngày nghỉ việc: '+last.end,
+  '재직일수 / Tổng ngày làm việc: '+last.totalDays+'일 ('+last.years+'년)',
+  '1일 평균임금 / Lương bình quân ngày: '+fmt(last.avg)+'원 (KRW)',
+  '예상 퇴직금 / Trợ cấp thôi việc ước tính: '+fmt(last.sev)+'원 (KRW)',
+  '≈ '+fmtV(last.sev*rate())+' VND (tỷ giá tham khảo '+rate()+')','',
+  '근거 / Căn cứ: 근로자퇴직급여 보장법 (퇴사 후 14일 이내 지급, 지연 시 연 20% 이자)',
+  '* 참고용 계산입니다. 정확한 금액은 고용노동부 1350에서 확인하세요.',
+  '* Đây là số ước tính. Gọi 1350 (có tiếng Việt) để xác nhận chính xác.'].join('\n');
+  navigator.clipboard.writeText(txt).then(()=>{
+    const b=$('copyBtn');b.textContent='Đã sao chép ✓';b.classList.add('ok');
+    setTimeout(()=>{b.textContent='Sao chép bản song ngữ để gửi chủ';b.classList.remove('ok');},2000);
+  });
+};
+</script>
+</body>
+</html>

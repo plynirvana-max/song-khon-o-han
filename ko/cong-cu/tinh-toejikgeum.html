@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>퇴직금 계산기 — Sống Khôn ở Hàn</title>
+<meta name="description" content="입사일·퇴사일과 임금을 입력하면 예상 퇴직금을 한국어·베트남어 병기로 계산해 드립니다.">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<div class="topbar"><div class="inner">
+  <div>
+    <a href="../index.html" class="brand">Sống Khôn ở Hàn</a>
+    <div class="sub">알뜰한국살이 — 재한 베트남인을 위한 검증된 정보</div>
+  </div>
+  <a class="langbtn" href="../../cong-cu/tinh-toejikgeum.html">🇻🇳 Tiếng Việt</a>
+</div></div>
+<nav class="nav"><div class="inner">
+  <a href="../index.html">홈</a>
+  <a href="#">첫 도착<span class="soon">준비 중</span></a>
+  <a href="../bai-viet/cong-ty-no-luong.html" class="on">일하기</a>
+  <a href="#">유학<span class="soon">준비 중</span></a>
+  <a href="#">결혼·가족<span class="soon">준비 중</span></a>
+  <a href="../gioi-thieu.html">소개</a>
+</div></nav>
+
+<div class="wrap">
+  <section class="hero" style="padding-bottom:22px">
+    <h1><em>퇴직금</em> 계산기
+      <span class="ko">결과는 한·베 병기 — 그대로 보여주거나 보내세요</span>
+    </h1>
+  </section>
+
+  <div class="mw-box">
+    <div class="t">2026 최저임금 <span>Lương tối thiểu</span></div>
+    <div class="mw-row"><div class="lb">시급</div><div class="v"><b>10,320 KRW</b><i>≈ <span class="mwv" data-krw="10320">—</span> VND</i></div></div>
+    <div class="mw-row"><div class="lb">일급 (8시간)</div><div class="v"><b>82,560 KRW</b><i>≈ <span class="mwv" data-krw="82560">—</span> VND</i></div></div>
+    <div class="mw-row"><div class="lb">월급 (209시간, 주휴수당 포함)</div><div class="v"><b>2,156,880 KRW</b><i>≈ <span class="mwv" data-krw="2156880">—</span> VND</i></div></div>
+    <div class="rate-line">환율: 1 KRW = <input type="number" step="0.1" id="rate" value="17.5"> VND <span>(수정 가능 — VND 금액은 오늘 환율을 확인하세요)</span></div>
+    <div class="src-note">출처: 고용노동부, 2026-01-01 시행. 이 금액 미만 지급은 법 위반입니다.</div>
+  </div>
+
+  <div class="calc-card">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div>
+        <label class="f">입사일<span class="ko">Ngày vào làm</span></label>
+        <input type="date" id="start">
+      </div>
+      <div>
+        <label class="f">퇴사일<span class="ko">Ngày nghỉ việc</span></label>
+        <input type="date" id="end">
+      </div>
+    </div>
+
+    <div class="mode">
+      <button type="button" id="mSimple" class="on">매달 월급이 같아요</button>
+      <button type="button" id="mDetail">마지막 3개월 상세 입력</button>
+    </div>
+
+    <div id="simpleBox">
+      <label class="f">월급, 세전 (KRW)<span class="ko">Lương 1 tháng, trước thuế</span></label>
+      <input type="number" inputmode="numeric" id="monthly" placeholder="예: 2200000">
+    </div>
+
+    <div id="detailBox" style="display:none">
+      <label class="f">마지막 달 (KRW)<span class="ko">세전</span></label>
+      <input type="number" inputmode="numeric" id="m3">
+      <label class="f">그 전 달 (KRW)<span class="ko">세전</span></label>
+      <input type="number" inputmode="numeric" id="m2">
+      <label class="f">그 전전 달 (KRW)<span class="ko">세전</span></label>
+      <input type="number" inputmode="numeric" id="m1">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div><label class="f">연간 상여금<span class="ko">Thưởng cả năm</span></label><input type="number" inputmode="numeric" id="bonus" placeholder="0"></div>
+        <div><label class="f">미사용 연차수당<span class="ko">Tiền phép chưa dùng</span></label><input type="number" inputmode="numeric" id="leave" placeholder="0"></div>
+      </div>
+    </div>
+
+    <label class="chk">
+      <input type="checkbox" id="over15" checked>
+      <span>주 평균 <strong>15시간 이상</strong> 근무했습니다 (퇴직금 수급의 필수 요건)</span>
+    </label>
+  </div>
+
+  <div class="receipt" id="receipt">
+    <div class="paper">
+      <div class="stamp">근로자<br>권리</div>
+      <div class="r-title">퇴직금 계산서</div>
+      <div class="r-sub">BẢNG TÍNH TRỢ CẤP THÔI VIỆC</div>
+      <div class="r-row"><div><div class="ko">재직일수</div><div class="vi">Tổng ngày làm việc</div></div><div class="val" id="rDays">—</div></div>
+      <div class="r-row"><div><div class="ko">평균임금 산정일수</div><div class="vi">Số ngày tính lương bình quân</div></div><div class="val" id="rWin">—</div></div>
+      <div class="r-row"><div><div class="ko">1일 평균임금</div><div class="vi">Lương bình quân 1 ngày</div></div><div class="val" id="rAvg">—</div></div>
+      <div class="r-total">
+        <div class="lb">예상 퇴직금 · Trợ cấp thôi việc ước tính</div>
+        <div class="num" id="rTotal">0 <span style="font-size:17px">KRW</span></div>
+        <div class="vnd" id="rVnd"></div>
+      </div>
+      <div class="notice red" id="nShort">재직 기간이 <strong>1년(365일) 미만</strong>이라 퇴직금 지급 대상이 아닙니다. 위 금액은 참고용입니다.</div>
+      <div class="notice red" id="nHours">주 15시간 미만 근무는 법상 퇴직금 지급 대상이 아닙니다. 위 금액은 참고용입니다.</div>
+      <div class="notice green" id="nRights"><strong>근로자의 권리:</strong> 사용자는 퇴직 후 <strong>14일 이내</strong>에 지급해야 하며, 지연 시 <strong>연 20%</strong> 이자가 붙습니다. 미지급은 형사처벌 대상입니다.<br><span style="font-family:'Noto Sans KR';font-size:12.5px;color:var(--xam)">Chủ phải trả trong 14 ngày, trả chậm chịu lãi 20%/năm</span></div>
+      <button type="button" class="copybtn" id="copyBtn">한·베 병기 결과 복사하기</button>
+    </div>
+  </div>
+
+  <section class="section">
+    <a class="article-card" href="../bai-viet/cong-ty-no-luong.html">
+      <span class="tag">이어서 읽기</span>
+      <h4>퇴직금을 안 주려고 한다면? 고용노동부 진정 5단계 →</h4>
+    </a>
+  </section>
+
+  <footer>
+    고용노동부 산정 방식을 따른 참고용 도구입니다. 법률 자문이 아니며,<br>
+    정확한 금액은 ☎ 1350에서 확인하세요. 업데이트: 2026-07.
+  </footer>
+</div>
+
+<div class="emgbar">
+  <div><b>퇴직금을 못 받았나요?</b><br><span>고용노동부 · 베트남어 지원 · 무료</span></div>
+  <a class="call" href="tel:1350">☎ 1350</a>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+let mode='simple';
+const fmt=n=>isFinite(n)?Math.round(n).toLocaleString('ko-KR'):'0';
+const fmtV=n=>isFinite(n)?Math.round(n).toLocaleString('vi-VN'):'0';
+const daysBetween=(a,b)=>Math.floor((b-a)/86400000)+1;
+const rate=()=>(+$('rate').value||17.5);
+function paintMw(){document.querySelectorAll('.mwv').forEach(el=>{el.textContent=fmtV((+el.dataset.krw)*rate());});}
+paintMw();
+$('rate').addEventListener('input',()=>{paintMw();calc();});
+
+$('mSimple').onclick=()=>{mode='simple';$('mSimple').classList.add('on');$('mDetail').classList.remove('on');$('simpleBox').style.display='block';$('detailBox').style.display='none';calc();};
+$('mDetail').onclick=()=>{mode='detail';$('mDetail').classList.add('on');$('mSimple').classList.remove('on');$('simpleBox').style.display='none';$('detailBox').style.display='block';calc();};
+
+let last=null;
+function calc(){
+  const s=new Date($('start').value), e=new Date($('end').value);
+  const r=$('receipt');
+  if(isNaN(s)||isNaN(e)||e<=s){r.classList.remove('show');last=null;return;}
+  const totalDays=daysBetween(s,e);
+  const t=new Date(e); t.setMonth(t.getMonth()-3); t.setDate(t.getDate()+1);
+  const win=daysBetween(t,e);
+  let wages=0;
+  if(mode==='simple'){wages=(+$('monthly').value||0)*3;}
+  else{wages=(+$('m1').value||0)+(+$('m2').value||0)+(+$('m3').value||0);}
+  const base=wages+((+($('bonus')?.value)||0)*3/12)+((+($('leave')?.value)||0)*3/12);
+  if(base<=0){r.classList.remove('show');last=null;return;}
+  const avg=base/win, sev=avg*30*(totalDays/365);
+  const over15=$('over15').checked, tooShort=totalDays<365, eligible=!tooShort&&over15;
+  $('rDays').textContent=totalDays+'일 · '+(totalDays/365).toFixed(2)+' năm';
+  $('rWin').textContent=win+'일';
+  $('rAvg').textContent=fmt(avg)+' KRW';
+  $('rTotal').innerHTML=fmt(sev)+' <span style="font-size:17px">KRW</span>';
+  $('rVnd').textContent='≈ '+fmtV(sev*rate())+' VND (환율 '+rate()+')';
+  $('rTotal').classList.toggle('off',!eligible);
+  $('nShort').classList.toggle('show',tooShort);
+  $('nHours').classList.toggle('show',!tooShort&&!over15);
+  $('nRights').classList.toggle('show',eligible);
+  r.classList.add('show');
+  last={start:$('start').value,end:$('end').value,totalDays,years:(totalDays/365).toFixed(2),avg,sev};
+}
+['start','end','monthly','m1','m2','m3','bonus','leave','over15'].forEach(id=>{const el=$(id);if(el){el.addEventListener('input',calc);el.addEventListener('change',calc);}});
+
+$('copyBtn').onclick=()=>{
+  if(!last)return;
+  const txt=['── 퇴직금 계산서 / BẢNG TÍNH TRỢ CẤP THÔI VIỆC ──',
+  '입사일 / Ngày vào làm: '+last.start,
+  '퇴사일 / Ngày nghỉ việc: '+last.end,
+  '재직일수 / Tổng ngày làm việc: '+last.totalDays+'일 ('+last.years+'년)',
+  '1일 평균임금 / Lương bình quân ngày: '+fmt(last.avg)+'원 (KRW)',
+  '예상 퇴직금 / Trợ cấp thôi việc ước tính: '+fmt(last.sev)+'원 (KRW)',
+  '≈ '+fmtV(last.sev*rate())+' VND (환율 참고 '+rate()+')','',
+  '근거 / Căn cứ: 근로자퇴직급여 보장법 (퇴사 후 14일 이내 지급, 지연 시 연 20% 이자)',
+  '* 참고용 계산입니다. 정확한 금액은 고용노동부 1350에서 확인하세요.',
+  '* Đây là số ước tính. Gọi 1350 (có tiếng Việt) để xác nhận chính xác.'].join('\n');
+  navigator.clipboard.writeText(txt).then(()=>{
+    const b=$('copyBtn');b.textContent='복사 완료 ✓';b.classList.add('ok');
+    setTimeout(()=>{b.textContent='한·베 병기 결과 복사하기';b.classList.remove('ok');},2000);
+  });
+};
+</script>
+</body>
+</html>
