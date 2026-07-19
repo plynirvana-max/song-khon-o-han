@@ -20,7 +20,7 @@
     <a href="../index.html" class="brand">Sống Khôn ở Hàn</a>
     <div class="sub">Thông tin đã kiểm chứng cho người Việt tại Hàn Quốc</div>
   </div>
-  <a class="langbtn" href="../ko/cong-cu/tinh-toejikgeum.html">🇰🇷 한국어</a>
+  <a class="langbtn" href="../ko/cong-cu/tinh-toejikgeum.html">🇰🇷 한국어로 보기</a>
 </div></div>
 <nav class="nav"><div class="inner">
   <a href="../index.html">Trang chủ</a>
@@ -44,7 +44,7 @@
     <div class="mw-row"><div class="lb">Theo giờ<small>시급</small></div><div class="v"><b>10.320 KRW</b><i>≈ <span class="mwv" data-krw="10320">—</span> VND</i></div></div>
     <div class="mw-row"><div class="lb">Theo ngày (8 giờ)<small>일급</small></div><div class="v"><b>82.560 KRW</b><i>≈ <span class="mwv" data-krw="82560">—</span> VND</i></div></div>
     <div class="mw-row"><div class="lb">Theo tháng (209 giờ, đã gồm 주휴수당)<small>월급</small></div><div class="v"><b>2.156.880 KRW</b><i>≈ <span class="mwv" data-krw="2156880">—</span> VND</i></div></div>
-    <div class="rate-line">Tỷ giá: 1 KRW = <input type="number" step="0.1" id="rate" value="17.5"> VND <span>(sửa được — <b>kiểm tra tỷ giá hôm nay</b> trước khi tin con số VND)</span></div>
+    <div class="rate-line">Tỷ giá: 1 KRW = <input type="number" step="0.1" id="rate" value="17.5"> VND <span id="rateAuto">(đang lấy tỷ giá hôm nay...)</span></div>
     <div class="src-note">Nguồn: 고용노동부, áp dụng từ 01/01/2026. Nhận thấp hơn mức này là vi phạm pháp luật.</div>
   </div>
 
@@ -137,6 +137,7 @@ const rate=()=>(+$('rate').value||17.5);
 function paintMw(){document.querySelectorAll('.mwv').forEach(el=>{el.textContent=fmtV((+el.dataset.krw)*rate());});}
 paintMw();
 $('rate').addEventListener('input',()=>{paintMw();calc();});
+fetch('https://open.er-api.com/v6/latest/KRW').then(r=>r.json()).then(d=>{const v=d&&d.rates&&d.rates.VND;if(v){$('rate').value=Math.round(v*100)/100;const n=document.getElementById('rateAuto');if(n)n.textContent='✓ tỷ giá hôm nay (tự động)';paintMw();calc();}}).catch(()=>{const n=document.getElementById('rateAuto');if(n)n.textContent='(không lấy được tỷ giá — sửa tay)';});
 
 $('mSimple').onclick=()=>{mode='simple';$('mSimple').classList.add('on');$('mDetail').classList.remove('on');$('simpleBox').style.display='block';$('detailBox').style.display='none';calc();};
 $('mDetail').onclick=()=>{mode='detail';$('mDetail').classList.add('on');$('mSimple').classList.remove('on');$('simpleBox').style.display='none';$('detailBox').style.display='block';calc();};

@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>몇 년 뒤 얼마를 모아갈 수 있을까? 저축 계산기 — Sống Khôn ở Hàn</title>
-<meta name="description" content="월 실수령액과 생활비를 입력하면 1~10년 뒤 모을 수 있는 금액을 원화와 베트남 동으로 보여드립니다.">
-<link rel="stylesheet" href="../../style.css">
+<title>저축 목표 계산기: X원 모으려면 어떻게 살아야 할까? — Sống Khôn ở Hàn</title>
+<meta name="description" content="목표 금액과 기간, 월급을 넣으면 생활 설계서가 나옵니다: 월세 상한, 하루 식비, 통신·교통 예산까지. KRW–VND 환율은 당일 자동 적용.">
 <link rel="canonical" href="https://songkhonohan.com/ko/cong-cu/tinh-tiet-kiem.html">
 <link rel="alternate" hreflang="vi" href="https://songkhonohan.com/cong-cu/tinh-tiet-kiem.html">
 <link rel="alternate" hreflang="ko" href="https://songkhonohan.com/ko/cong-cu/tinh-tiet-kiem.html">
@@ -13,6 +12,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../../style.css">
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -20,7 +20,7 @@
     <a href="../index.html" class="brand">Sống Khôn ở Hàn</a>
     <div class="sub">알뜰한국살이 — 재한 베트남인을 위한 검증된 정보</div>
   </div>
-  <a class="langbtn" href="../../cong-cu/tinh-tiet-kiem.html">🇻🇳 Tiếng Việt</a>
+  <a class="langbtn" href="../../cong-cu/tinh-tiet-kiem.html">🇻🇳 Xem bằng tiếng Việt</a>
 </div></div>
 <nav class="nav"><div class="inner">
   <a href="../index.html">홈</a>
@@ -34,51 +34,91 @@
 
 <div class="wrap">
   <section class="hero" style="padding-bottom:22px">
-    <h1>몇 년 뒤,<br><em>얼마를 모아갈 수 있을까?</em>
-      <span class="ko">저축 계산기 — Kế hoạch tiết kiệm của bạn</span>
+    <h1><em>X원</em> 모으고 싶다면?<br>계산기가 사는 법을 알려드립니다
+      <span class="ko">Máy tính mục tiêu tiết kiệm — 목표를 넣으면 상세 예산이 나옵니다</span>
     </h1>
   </section>
 
   <div class="calc-card">
+    <div class="mode">
+      <button type="button" id="mGoal" class="on">🎯 목표로 계산</button>
+      <button type="button" id="mNow">📊 현재 지출로 계산</button>
+    </div>
+
     <label class="f">월 실수령액, 세후 (KRW)<span class="ko">Thu nhập thực nhận mỗi tháng</span></label>
     <input type="number" inputmode="numeric" id="income" placeholder="예: 2400000">
 
-    <label class="f">월 생활비 — 주거, 식비, 교통, 통신 등 (KRW)<span class="ko">Chi phí sinh hoạt</span></label>
-    <input type="number" inputmode="numeric" id="cost" placeholder="예: 900000">
+    <div id="goalBox">
+      <label class="f">모아서 가져갈 목표 금액 (KRW)<span class="ko">Số tiền muốn mang về</span></label>
+      <input type="number" inputmode="numeric" id="target" placeholder="예: 50000000">
+      <div class="vnd" id="targetVnd" style="margin-top:4px"></div>
+    </div>
+    <div id="nowBox" style="display:none">
+      <label class="f">월 생활비 (KRW)<span class="ko">Chi phí sinh hoạt mỗi tháng</span></label>
+      <input type="number" inputmode="numeric" id="cost" placeholder="예: 900000">
+    </div>
 
-    <label class="f">한국 체류 예정 기간 (년)<span class="ko">Số năm ở Hàn</span></label>
+    <label class="f">한국 체류 예정 기간 (년)<span class="ko">Số năm dự định ở Hàn</span></label>
     <input type="number" inputmode="numeric" id="years" value="3" min="1" max="10">
 
-    <div class="rate-line">환율: 1 KRW = <input type="number" step="0.1" id="rate" value="17.5"> VND <span>(수정 가능)</span></div>
+    <div class="rate-line">환율: 1 KRW = <input type="number" step="0.01" id="rate" value="17.5"> VND <span id="rateAuto">(오늘 환율 불러오는 중...)</span></div>
   </div>
 
-  <div class="receipt" id="receipt">
+  <!-- GOAL RESULT -->
+  <div class="receipt" id="rGoal">
+    <div class="paper">
+      <div class="stamp">알뜰<br>살이</div>
+      <div class="r-title">생활 설계서</div>
+      <div class="r-sub">KẾ HOẠCH SỐNG ĐỂ ĐẠT MỤC TIÊU</div>
+      <div class="r-row"><div><div class="ko">월 필요 저축액</div><div class="vi">Phải để dành mỗi tháng</div></div><div class="val" id="gSave">—</div></div>
+      <div class="r-row"><div><div class="ko">월 생활 예산</div><div class="vi">Được tiêu mỗi tháng</div></div><div class="val" id="gSpend">—</div></div>
+      <div style="font-weight:800;font-size:13px;color:var(--xanh);margin:14px 0 4px;text-transform:uppercase">권장 예산 · Ngân sách gợi ý</div>
+      <div class="r-row"><div><div class="ko">🏠 주거 (40%)</div><div class="vi">월세+관리비 상한</div></div><div class="val" id="bHouse">—</div></div>
+      <div class="r-row"><div><div class="ko">🍚 식비 (30%)</div><div class="vi">하루 기준</div></div><div class="val" id="bFood">—</div></div>
+      <div class="r-row"><div><div class="ko">🚇 교통 (8%)</div><div class="vi">월 기준</div></div><div class="val" id="bTrans">—</div></div>
+      <div class="r-row"><div><div class="ko">📱 통신 (4%)</div><div class="vi">월 기준</div></div><div class="val" id="bTel">—</div></div>
+      <div class="r-row"><div><div class="ko">☂️ 기타 (18%)</div><div class="vi">비상금·의류·여가</div></div><div class="val" id="bEtc">—</div></div>
+      <div class="r-total">
+        <div class="lb" id="gLbl">? 년 뒤 가져가는 돈</div>
+        <div class="num" id="gTotal">0 <span style="font-size:17px">KRW</span></div>
+        <div class="vnd" id="gVnd"></div>
+      </div>
+      <div class="notice red" id="gBad"></div>
+      <div class="notice green" id="gTips" style="font-size:13px;line-height:1.7">
+        <strong>항목별 달성 팁:</strong><br>
+        🏠 주거 예산이 빠듯하면: <a href="../bai-viet/thue-phong-o-han.html" style="text-decoration:underline;font-weight:700">고시원·회사 기숙사</a> — E-9 노동자 상당수는 주거비가 거의 들지 않습니다.<br>
+        🍚 자취 요리가 제1의 무기 — 직접 해 먹으면 외식의 2~3분의 1.<br>
+        🚇 교통: 공공자전거 <b>따릉이</b>(서울, 연간권이 매우 저렴) + 정기권 — <a href="../bai-viet/the-giao-thong-tmoney.html" style="text-decoration:underline;font-weight:700">T-money 글의 정기권 섹션</a> 참고.<br>
+        📱 통신: <b>알뜰폰</b>으로 갈아타기 — 대형 통신사와 같은 망, 월 2~3만 원대면 충분합니다.
+      </div>
+    </div>
+  </div>
+
+  <!-- CURRENT RESULT -->
+  <div class="receipt" id="rNow">
     <div class="paper">
       <div class="stamp">알뜰<br>살이</div>
       <div class="r-title">저축 계산서</div>
       <div class="r-sub">BẢNG TÍNH TIẾT KIỆM</div>
-      <div class="r-row"><div><div class="ko">월 저축액</div><div class="vi">Để dành mỗi tháng</div></div><div class="val" id="rMon">—</div></div>
-      <div class="r-row"><div><div class="ko">연 저축액</div><div class="vi">Để dành mỗi năm</div></div><div class="val" id="rYear">—</div></div>
+      <div class="r-row"><div><div class="ko">월 저축액</div><div class="vi">Để dành mỗi tháng</div></div><div class="val" id="nMon">—</div></div>
       <div class="r-total">
-        <div class="lb" id="rLbl">? 년 뒤 모아갈 수 있는 금액</div>
-        <div class="num" id="rTotal">0 <span style="font-size:17px">KRW</span></div>
-        <div class="vnd" id="rVnd"></div>
+        <div class="lb" id="nLbl">? 년 뒤 가져갈 수 있는 돈</div>
+        <div class="num" id="nTotal">0 <span style="font-size:17px">KRW</span></div>
+        <div class="vnd" id="nVnd"></div>
       </div>
-      <div class="notice red" id="nNeg">생활비가 수입보다 많습니다 — 매달 <strong>적자</strong>예요. 가장 큰 지출(대개 주거비)을 점검하거나, 임금이 최저임금에 미달하는지 확인해보세요.</div>
-      <div class="notice green" id="nTip"><strong>참고:</strong> 은행 이자, 임금 인상, 환율 변동은 반영되지 않았습니다. 집에 보내는 송금도 결국 "모아가는 돈" — 합법 채널로 좋은 환율에 보내는 게 중요합니다. <a href="../bai-viet/gui-tien-ve-viet-nam.html" style="text-decoration:underline;font-weight:700">베트남 송금 가이드 →</a></div>
+      <div class="notice red" id="nNeg">지출이 수입보다 많습니다 — 매달 <strong>적자</strong>예요. 🎯 목표 모드로 바꾸면 계산기가 예산을 제안합니다.</div>
     </div>
   </div>
 
   <section class="section">
-    <a class="article-card" href="tinh-toejikgeum.html">
-      <span class="tag">잊지 마세요</span>
-      <h4>귀국할 때 퇴직금도 받을 수 있습니다 — 지금 계산해보기 →</h4>
+    <a class="article-card" href="../bai-viet/gui-tien-ve-viet-nam.html">
+      <span class="tag">다음 단계</span>
+      <h4>돈을 모았다면 — 어느 송금 채널이 가족에게 VND를 가장 많이 남길까? →</h4>
     </a>
   </section>
 
   <footer>
-    참고용 도구입니다. 생활비는 사람마다 다르니<br>
-    본인의 실제 숫자를 입력하세요. 업데이트: 2026-07.<br><a href="https://m.me/songkhonohan" class="fb-foot">💬 Messenger</a> · <a href="https://www.facebook.com/songkhonohan" class="fb-foot">Facebook</a><br><a href="../chinh-sach-bao-mat.html">개인정보처리방침</a>
+    참고용 도구 — 권장 예산은 일반 비율 기준이며, 각자 상황에 맞게 조정하세요.<br>은행 이자·환율 변동 미반영. 업데이트: 2026-07.<br><a href="https://m.me/songkhonohan" class="fb-foot">💬 Messenger</a> · <a href="https://www.facebook.com/songkhonohan" class="fb-foot">Facebook</a><br><a href="../chinh-sach-bao-mat.html">개인정보처리방침</a>
   </footer>
 </div>
 
@@ -92,24 +132,56 @@ const $=id=>document.getElementById(id);
 const fmt=n=>isFinite(n)?Math.round(n).toLocaleString('ko-KR'):'0';
 const fmtV=n=>isFinite(n)?Math.round(n).toLocaleString('vi-VN'):'0';
 const rate=()=>(+$('rate').value||17.5);
+let mode='goal';
+const MIN_LIVING=600000;
+
+$('mGoal').onclick=()=>{mode='goal';$('mGoal').classList.add('on');$('mNow').classList.remove('on');$('goalBox').style.display='block';$('nowBox').style.display='none';calc();};
+$('mNow').onclick=()=>{mode='now';$('mNow').classList.add('on');$('mGoal').classList.remove('on');$('goalBox').style.display='none';$('nowBox').style.display='block';calc();};
+
 function calc(){
-  const inc=+$('income').value||0, cost=+$('cost').value||0;
+  const inc=+$('income').value||0;
   const yrs=Math.min(Math.max(+$('years').value||1,1),50);
-  const r=$('receipt');
-  if(inc<=0){r.classList.remove('show');return;}
-  const mon=inc-cost, total=mon*12*yrs;
-  $('rMon').textContent=fmt(mon)+' KRW';
-  $('rYear').textContent=fmt(mon*12)+' KRW';
-  $('rLbl').textContent=yrs+'년 뒤 모아갈 수 있는 금액';
-  $('rTotal').innerHTML=fmt(total)+' <span style="font-size:17px">KRW</span>';
-  $('rVnd').textContent='≈ '+fmtV(total*rate())+' VND (환율 '+rate()+')';
-  $('rTotal').classList.toggle('off',mon<0);
-  $('nNeg').classList.toggle('show',mon<0);
-  $('nTip').classList.toggle('show',mon>=0);
-  r.classList.add('show');
+  $('targetVnd').textContent=(+$('target').value>0)?('≈ '+fmtV((+$('target').value)*rate())+' VND'):'';
+  $('rGoal').classList.remove('show');$('rNow').classList.remove('show');
+  if(inc<=0)return;
+  if(mode==='goal'){
+    const T=+$('target').value||0; if(T<=0)return;
+    const S=T/(12*yrs), spend=inc-S;
+    $('gSave').textContent=fmt(S)+' KRW';
+    $('gSpend').textContent=fmt(Math.max(spend,0))+' KRW';
+    $('gLbl').textContent=yrs+'년 뒤 가져가는 돈';
+    $('gTotal').innerHTML=fmt(T)+' <span style="font-size:17px">KRW</span>';
+    $('gVnd').textContent='≈ '+fmtV(T*rate())+' VND (환율 '+rate()+')';
+    const ok=spend>=MIN_LIVING;
+    ['bHouse','bFood','bTrans','bTel','bEtc'].forEach(id=>$(id).textContent='—');
+    if(ok){
+      $('bHouse').textContent='≤ '+fmt(spend*0.40)+' KRW/월';
+      $('bFood').textContent='≈ '+fmt(spend*0.30/30)+' KRW/일';
+      $('bTrans').textContent='≤ '+fmt(spend*0.08)+' KRW/월';
+      $('bTel').textContent='≤ '+fmt(spend*0.04)+' KRW/월';
+      $('bEtc').textContent='≤ '+fmt(spend*0.18)+' KRW/월';
+      $('gBad').classList.remove('show');$('gTips').classList.add('show');
+      $('gTotal').classList.remove('off');
+    }else{
+      const feasible=Math.max((inc-MIN_LIVING)*12*yrs,0);
+      $('gBad').innerHTML='이 목표는 최저 생활선('+fmt(MIN_LIVING)+' KRW/월) 아래로 살아야 가능합니다. '+(feasible>0?('현재 수입으로 <strong>달성 가능한 최대치는 약 '+fmt(feasible)+' KRW ('+fmtV(feasible*rate())+' VND)</strong> / '+yrs+'년 — 기간을 늘리거나 수입을 높이는 방법도 있습니다.'):'현재 수입으로는 저축이 어렵습니다 — 급여가 최저임금에 미달하지 않는지 확인해보세요.');
+      $('gBad').classList.add('show');$('gTips').classList.remove('show');
+      $('gTotal').classList.add('off');
+    }
+    $('rGoal').classList.add('show');
+  }else{
+    const cost=+$('cost').value||0, mon=inc-cost, total=mon*12*yrs;
+    $('nMon').textContent=fmt(mon)+' KRW';
+    $('nLbl').textContent=yrs+'년 뒤 가져갈 수 있는 돈';
+    $('nTotal').innerHTML=fmt(total)+' <span style="font-size:17px">KRW</span>';
+    $('nVnd').textContent='≈ '+fmtV(total*rate())+' VND (환율 '+rate()+')';
+    $('nTotal').classList.toggle('off',mon<0);
+    $('nNeg').classList.toggle('show',mon<0);
+    $('rNow').classList.add('show');
+  }
 }
-['income','cost','years','rate'].forEach(id=>{$(id).addEventListener('input',calc);});
+['income','target','cost','years','rate'].forEach(id=>{$(id).addEventListener('input',calc);});
+fetch('https://open.er-api.com/v6/latest/KRW').then(r=>r.json()).then(d=>{const v=d&&d.rates&&d.rates.VND;if(v){$('rate').value=Math.round(v*100)/100;$('rateAuto').textContent='✓ 오늘 환율 자동 적용';calc();}}).catch(()=>{$('rateAuto').textContent='(환율 자동 조회 실패 — 직접 수정)';});
 </script>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
