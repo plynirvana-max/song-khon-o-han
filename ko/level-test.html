@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국살이 레벨테스트 — 나는 몇 레벨? — Sống Khôn ở Hàn</title>
+<meta name="description" content="12문항 3분 — 임금·비자·생활 상식을 점검하고 내 약점에 맞는 자료를 받아보세요.">
+<link rel="canonical" href="https://songkhonohan.com/ko/level-test.html">
+<link rel="alternate" hreflang="vi" href="https://songkhonohan.com/level-test.html">
+<link rel="alternate" hreflang="ko" href="https://songkhonohan.com/ko/level-test.html">
+<link rel="alternate" hreflang="x-default" href="https://songkhonohan.com/level-test.html">
+<meta property="og:site_name" content="Sống Khôn ở Hàn">
+<meta property="og:type" content="website">
+<meta property="og:title" content="한국살이 레벨테스트 — 나는 몇 레벨?">
+<meta property="og:description" content="12문항 3분 — 임금·비자·생활 상식을 점검하고 내 약점에 맞는 자료를 받아보세요.">
+<meta property="og:url" content="https://songkhonohan.com/ko/level-test.html">
+<meta property="og:image" content="https://songkhonohan.com/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<style>
+.qcard{background:#fff;border-radius:12px;padding:16px;margin-top:14px;box-shadow:0 1px 4px rgba(30,42,34,.08)}
+.qcard .qn{font-size:11px;font-weight:800;color:var(--do);text-transform:uppercase;letter-spacing:.08em}
+.qcard h3{font-size:15.5px;font-weight:800;margin:6px 0 10px;line-height:1.45}
+.opt{display:block;border:2px solid var(--line);border-radius:10px;padding:11px 13px;margin-top:8px;font-size:14px;cursor:pointer;background:#FFFDF7}
+.opt input{margin-right:9px;accent-color:var(--xanh)}
+.opt.sel{border-color:var(--xanh);background:#EFF7F1;font-weight:700}
+.opt.right{border-color:#0E8A6D;background:#E8F6F0;font-weight:800}
+.opt.wrong{border-color:var(--do);background:#FDF0EE}
+.why{display:none;font-size:13px;background:#FFF9EC;border-left:4px solid var(--vang);border-radius:8px;padding:10px 12px;margin-top:10px;line-height:1.6}
+.bigbtn{display:block;width:100%;background:var(--do);color:#fff;font-family:inherit;font-weight:800;font-size:17px;border:none;border-radius:14px;padding:16px;margin-top:18px;box-shadow:4px 4px 0 rgba(0,0,0,.18);cursor:pointer}
+.bigbtn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 rgba(0,0,0,.18)}
+.result{display:none;background:var(--xanh-d);color:#FFF9EC;border-radius:16px;padding:22px 18px;margin-top:20px}
+.result .lv{font-size:24px;font-weight:900;color:var(--vang);line-height:1.3}
+.result .sc{font-size:15px;margin-top:4px;opacity:.9}
+.bar{margin-top:12px}
+.bar .lb{font-size:12.5px;font-weight:700;display:flex;justify-content:space-between}
+.bar .tr{height:10px;background:rgba(255,255,255,.18);border-radius:99px;margin-top:4px;overflow:hidden}
+.bar .fl{height:100%;background:var(--vang);border-radius:99px}
+.share{width:100%;background:#0084FF;color:#fff;border:none;border-radius:12px;font-family:inherit;font-weight:800;font-size:15px;padding:13px;margin-top:16px;cursor:pointer}
+.retry{width:100%;background:transparent;color:#FFF9EC;border:2px solid rgba(255,255,255,.4);border-radius:12px;font-family:inherit;font-weight:700;font-size:14px;padding:11px;margin-top:8px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="inner">
+  <div>
+    <a href="../index.html" class="brand">Sống Khôn ở Hàn</a>
+    <div class="sub">알뜰한국살이 — 재한 베트남인을 위한 검증된 정보</div>
+  </div>
+  <a class="langbtn" href="../level-test.html">🇻🇳 Xem bằng tiếng Việt</a>
+</div></div>
+<nav class="nav"><div class="inner">
+  <a href="../index.html">홈</a>
+  <a href="chu-de/moi-den.html">첫 도착</a>
+  <a href="chu-de/di-lam.html">일하기</a>
+  <a href="chu-de/du-hoc.html">유학</a>
+  <a href="chu-de/ket-hon.html">결혼·가족</a>
+  <a href="su-kien.html">행사 🎉</a>
+  <a href="gioi-thieu.html">소개</a>
+</div></nav>
+
+<div class="wrap">
+  <section class="hero" style="padding-bottom:22px">
+    <h1>한국살이 레벨테스트<span class="ko">12문항 · 3분 · 정답 해설 포함</span></h1>
+  </section>
+
+  <div id="quiz"></div>
+  <button class="bigbtn" id="go">결과 보기 →</button>
+
+  <div class="result" id="res">
+    <div class="lv" id="rLv"></div>
+    <div class="sc" id="rSc"></div>
+    <div id="rBars"></div>
+    <div style="font-weight:800;font-size:14px;color:var(--vang);margin-top:16px">지금 채워야 할 약점</div>
+    <div id="rRec" style="margin-top:6px"></div>
+    <button class="share" id="shareBtn">📋 결과 복사해서 공유</button>
+    <button class="retry" onclick="location.reload()">↺ 다시 풀기</button>
+  </div>
+
+  <footer>
+    <a href="https://m.me/songkhonohan" class="fb-foot">💬 Messenger</a> · <a href="https://www.facebook.com/songkhonohan" class="fb-foot">Facebook</a><br><a href="chinh-sach-bao-mat.html">개인정보처리방침</a><br>© 2026 Sống Khôn ở Hàn
+  </footer>
+</div>
+
+<script>
+const Q=[{"c": "song", "q": "버스에서 내릴 때 올바른 행동은?", "o": ["그냥 내린다, 탈 때만 찍으면 됨", "뒷문 단말기에 한 번 더 태그", "하차벨만 누르면 끝", "기사에게 현금을 더 낸다"], "a": 1, "w": "안 찍고 내리면 환승 혜택 상실 + 추가 요금이 붙을 수 있습니다."}, {"c": "song", "q": "급행 열차란?", "o": ["더 새 열차", "작은 역을 건너뛰는 열차", "요금이 2배인 열차", "야간 전용 열차"], "a": 1, "w": "내릴 역이 작은 역인데 급행을 타면 그대로 지나칩니다."}, {"c": "song", "q": "입국 첫 주, 기본 생활용품을 가장 싸게 사는 곳은?", "o": ["편의점", "다이소", "백화점", "베트남에서 전부 싸 온다"], "a": 1, "w": "다이소: 500~5,000원 균일가, 어느 동네에나 — 수하물 초과 요금이 더 비쌉니다."}, {"c": "tien", "q": "퇴직금을 받을 조건은?", "o": ["6개월 근무", "1년 이상 + 주 평균 15시간 이상", "정규직 한국인만", "사장 마음"], "a": 1, "w": "1년+주15시간이면 법적 권리 — 알바도, 서면 계약이 없어도 해당됩니다."}, {"c": "tien", "q": "임금체불 — 어디에 전화? (무료·베트남어 지원)", "o": ["112", "119", "1350", "114"], "a": 2, "w": "1350 = 고용노동부. 미등록 체류자도 임금체불 신고가 가능합니다."}, {"c": "tien", "q": "출국만기보험금이 법정 퇴직금보다 적으면?", "o": ["어쩔 수 없다", "사장이 차액을 추가 지급해야 한다", "나라가 보전해준다", "그 돈은 사라진다"], "a": 1, "w": "차액은 당신의 권리 — 14일 내 지급 의무. 모르는 사람이 정말 많습니다!"}, {"c": "visa", "q": "유학생 아르바이트의 올바른 순서는?", "o": ["일단 일하고 나중에 신고", "허가를 먼저 받고 일 시작", "주 10시간 미만은 허가 불요", "주말은 자유"], "a": 1, "w": "무허가 \"수습 며칠\"도 위반 — 비자를 잃는 건 사장이 아니라 학생입니다."}, {"c": "visa", "q": "E-9 퇴사 후 사업장 변경 신청 기한은?", "o": ["1주일", "1개월", "3개월", "아무 때나"], "a": 1, "w": "신청 1개월 + 구직 3개월 — 비자 운명을 가르는 두 숫자."}, {"c": "visa", "q": "이사를 하면 외국인은?", "o": ["아무것도 안 해도 됨", "기한 내 체류지 변경 신고", "옛 집주인에게만 알림", "회사에 알리면 끝"], "a": 1, "w": "신고를 잊어 과태료를 무는 게 가장 흔한 실수. 주민센터 또는 온라인."}, {"c": "quyen", "q": "전월세 계약 후 받는 확정일자의 용도는?", "o": ["월세 할인", "보증금을 지키는 우선변제권", "인터넷 가입", "세금 면제"], "a": 1, "w": "주민센터에서 무료 10분 — 집에 법적 문제가 생겨도 보증금을 우선 돌려받을 권리가 생깁니다."}, {"c": "quyen", "q": "\"출입국에 신고하면 넌 추방이야\"라는 협박은…", "o": ["사실이니 침묵한다", "대부분 사실이 아님 — 1577-1366/1350에 확인", "E-9에겐 사실", "F-6에겐 사실"], "a": 1, "w": "체류 자격은 어느 개인의 손에 있지 않습니다. 비자로 입을 막게 두지 마세요."}, {"c": "quyen", "q": "119에 전화하면?", "o": ["구급차 비용 발생", "무료 + 통역 지원", "한국어만 가능", "한국인 전용"], "a": 1, "w": "119는 무료, 구급차 무료, 통역 지원 — 산재는 미등록 체류자에게도 적용됩니다."}];
+const CATS={"song": "🧳 생활·교통", "tien": "💰 임금·돈", "visa": "🛂 비자·행정", "quyen": "🛡 안전·권리"};
+const REC={"song": ["chu-de/moi-den.html", "첫 도착 가이드 전체 (T-money, 지하철, 다이소...)"], "tien": ["chu-de/di-lam.html", "일하기 전체: 임금체불, 퇴직금, 출국만기보험 + 계산기 2종"], "visa": ["chu-de/du-hoc.html", "비자·합법 알바 규칙 — 늦기 전에 읽기"], "quyen": ["chu-de/ket-hon.html", "늘 당신 편인 번호들과 권리"]};
+const LV=[[0, 4, "Lv.1 🐣 새내기", "괜찮아요 — 누구나 여기서 시작합니다. 아래 글 몇 개면 바로 레벨업."], [5, 7, "Lv.2 🌱 적응 중", "기본기는 있지만, 남은 빈틈이 진짜 돈을 잃게 할 수 있어요."], [8, 9, "Lv.3 💪 안정권", "훌륭해요! 아래 약점만 메우면 든든합니다."], [10, 11, "Lv.4 🔥 준고수", "대부분의 사람보다 많이 압니다 — 친구들에게 테스트를 공유해보세요 😄"], [12, 12, "Lv.5 👑 알뜰살이 고수", "만점! 커뮤니티에 필요한 바로 그 사람이네요 — 지식을 나눠주세요."]];
+const quiz=document.getElementById('quiz');
+Q.forEach((q,i)=>{
+  const d=document.createElement('div');d.className='qcard';d.id='qc'+i;
+  d.innerHTML='<div class="qn">Q'+(i+1)+' · '+CATS[q.c]+'</div><h3>'+q.q+'</h3>'+
+    q.o.map((o,j)=>'<label class="opt" data-q="'+i+'" data-j="'+j+'"><input type="radio" name="q'+i+'" value="'+j+'">'+o+'</label>').join('')+
+    '<div class="why" id="why'+i+'">💡 '+q.w+'</div>';
+  quiz.appendChild(d);
+});
+quiz.addEventListener('change',e=>{
+  const lb=e.target.closest('.opt');if(!lb)return;
+  document.querySelectorAll('.opt[data-q="'+lb.dataset.q+'"]').forEach(x=>x.classList.remove('sel'));
+  lb.classList.add('sel');
+});
+document.getElementById('go').onclick=()=>{
+  const miss=[];
+  Q.forEach((q,i)=>{if(!document.querySelector('input[name="q'+i+'"]:checked'))miss.push(i+1);});
+  if(miss.length){alert('아직 답하지 않은 문항이 있어요! (번호: '+miss.join(', ')+')');return;}
+  let n=0;const cat={song:0,tien:0,visa:0,quyen:0};
+  Q.forEach((q,i)=>{
+    const v=+document.querySelector('input[name="q'+i+'"]:checked').value;
+    const ok=v===q.a; if(ok){n++;cat[q.c]++;}
+    document.querySelectorAll('.opt[data-q="'+i+'"]').forEach(x=>{
+      const j=+x.dataset.j;
+      if(j===q.a)x.classList.add('right');
+      else if(j===v&&!ok)x.classList.add('wrong');
+      x.querySelector('input').disabled=true;
+    });
+    document.getElementById('why'+i).style.display='block';
+  });
+  let lv=LV[0];for(const L of LV)if(n>=L[0]&&n<=L[1])lv=L;
+  document.getElementById('rLv').textContent=lv[2];
+  document.getElementById('rSc').textContent='점수: '+n+' / 12 — '+lv[3];
+  document.getElementById('rBars').innerHTML=Object.keys(cat).map(k=>
+    '<div class="bar"><div class="lb"><span>'+CATS[k]+'</span><span>'+cat[k]+'/3</span></div><div class="tr"><div class="fl" style="width:'+(cat[k]/3*100)+'%"></div></div></div>').join('');
+  const weak=Object.keys(cat).filter(k=>cat[k]<3);
+  document.getElementById('rRec').innerHTML=weak.length?weak.map(k=>
+    '<a class="article-card" style="margin-top:8px" href="'+REC[k][0]+'"><span class="tag">'+CATS[k]+'</span><h4>'+REC[k][1]+' →</h4></a>').join(''):'<div style="font-size:14px;margin-top:4px">모든 영역 만점 — 약점이 없습니다 👏</div>';
+  const res=document.getElementById('res');res.style.display='block';
+  document.getElementById('go').style.display='none';
+  document.getElementById('shareBtn').onclick=()=>{
+    const t='한국살이 레벨테스트에서 {lv} ({n}/12) 달성! 🇰🇷 당신은 몇 레벨? 👉 songkhonohan.com/ko/level-test.html'.replace('{lv}',lv[2]).replace('{n}',n);
+    navigator.clipboard.writeText(t).then(()=>{document.getElementById('shareBtn').textContent='✓ 복사됨! 페이스북에 붙여넣기 하세요';});
+  };
+  res.scrollIntoView({behavior:'smooth'});
+};
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

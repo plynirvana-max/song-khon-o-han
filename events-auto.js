@@ -1,0 +1,1 @@
+window.SKEVENTS_AUTO = [];

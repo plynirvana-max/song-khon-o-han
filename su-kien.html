@@ -26,6 +26,15 @@
 .ev-meta a{color:var(--xanh);font-weight:700;text-decoration:underline}
 .empty{background:#fff;border-radius:12px;padding:24px;margin-top:14px;text-align:center;color:var(--xam);font-size:14px}
 </style>
+<meta property="og:site_name" content="Sống Khôn ở Hàn">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sự kiện miễn phí ở Hàn Quốc tháng này — Sống Khôn ở Hàn">
+<meta property="og:description" content="Lễ hội, bảo tàng, chương trình văn hóa miễn phí tại Hàn Quốc — lọc theo tháng và khu vực, nguồn từ chính quyền địa phương, có ngày kiểm chứng.">
+<meta property="og:url" content="https://songkhonohan.com/su-kien.html">
+<meta property="og:image" content="https://songkhonohan.com/og-cover.png">
+<meta property="og:image:width" content="1640">
+<meta property="og:image:height" content="624">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -37,10 +46,10 @@
 </div></div>
 <nav class="nav"><div class="inner">
   <a href="index.html">Trang chủ</a>
-  <a href="bai-viet/the-giao-thong-tmoney.html">Mới đến</a>
-  <a href="bai-viet/cong-ty-no-luong.html">Đi làm</a>
-  <a href="bai-viet/lam-them-du-hoc-sinh.html">Du học</a>
-  <a href="bai-viet/khi-hon-nhan-kho-khan.html">Kết hôn</a>
+  <a href="chu-de/moi-den.html">Mới đến</a>
+  <a href="chu-de/di-lam.html">Đi làm</a>
+  <a href="chu-de/du-hoc.html">Du học</a>
+  <a href="chu-de/ket-hon.html">Kết hôn</a>
   <a href="su-kien.html" class="on">Sự kiện 🎉</a>
   <a href="gioi-thieu.html">Về chúng mình</a>
 </div></nav>
@@ -67,6 +76,26 @@
   <div id="list"></div>
 
   <section class="section">
+    <h2>Khám phá thêm theo lứa tuổi &amp; sở thích <span>연령·취향별</span></h2>
+    <a class="article-card" href="https://culture.seoul.go.kr" target="_blank" rel="noopener">
+      <span class="tag">Mọi lứa tuổi · Seoul</span>
+      <h4>서울문화포털 — lịch mọi sự kiện văn hóa Seoul, lọc được "miễn phí" ↗</h4>
+    </a>
+    <a class="article-card alt" href="https://www.culture.go.kr" target="_blank" rel="noopener">
+      <span class="tag">Toàn quốc</span>
+      <h4>문화포털 — sự kiện văn hóa cả nước, ngoài Seoul cũng tìm được ↗</h4>
+    </a>
+    <a class="article-card" href="https://youth.seoul.go.kr" target="_blank" rel="noopener">
+      <span class="tag">20–30 tuổi</span>
+      <h4>청년공간 (không gian thanh niên Seoul) — chỗ học nhóm, lớp học, sự kiện miễn phí/giá rẻ cho người trẻ ↗</h4>
+    </a>
+    <a class="article-card alt" href="https://www.nl.go.kr" target="_blank" rel="noopener">
+      <span class="tag">Gia đình có con nhỏ</span>
+      <h4>Thư viện công cộng gần nhà — miễn phí, mát/ấm quanh năm, có góc sách thiếu nhi (tìm "도서관" trên app bản đồ) ↗</h4>
+    </a>
+  </section>
+
+  <section class="section">
     <div class="article-card alt" style="border-left-color:var(--vang)">
       <span class="tag" style="color:var(--xanh)">Bạn biết một sự kiện miễn phí hay?</span>
       <h4>Nhắn cho chúng mình qua <a href="https://m.me/songkhonohan" style="text-decoration:underline">Messenger</a> — chúng mình kiểm chứng và thêm vào danh sách (ghi tên bạn nếu bạn muốn) 💛</h4>
@@ -86,6 +115,7 @@
 </div>
 
 <script src="events-data.js"></script>
+<script src="events-auto.js"></script>
 <script>
 const REGION_VI={seoul:"Seoul",gyeonggi:"Gyeonggi",incheon:"Incheon",busan:"Busan",daegu:"Daegu",other:"Khác"};
 const MONTHS_VI=["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"];
@@ -108,7 +138,7 @@ function overlapsMonth(ev,ym){
 }
 function render(){
   const ym=selM.value, rg=selR.value, list=document.getElementById("list");
-  const evs=(window.SKEVENTS||[])
+  const evs=(window.SKEVENTS||[]).concat(window.SKEVENTS_AUTO||[])
     .filter(e=>new Date(e.e)>=today)                 // auto-hide past
     .filter(e=>overlapsMonth(e,ym))
     .filter(e=>rg==="all"||e.region===rg)

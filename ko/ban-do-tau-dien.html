@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>서울 지하철 노선 한눈에 + 실시간 도착 조회 — Sống Khôn ở Hàn</title>
+<meta name="description" content="노선 색·이름 읽는 법, 주요 역 안내, 그리고 역 이름을 입력하면 지금 오는 열차를 보여주는 실시간 조회.">
+<link rel="canonical" href="https://songkhonohan.com/ko/ban-do-tau-dien.html">
+<link rel="alternate" hreflang="vi" href="https://songkhonohan.com/ban-do-tau-dien.html">
+<link rel="alternate" hreflang="ko" href="https://songkhonohan.com/ko/ban-do-tau-dien.html">
+<link rel="alternate" hreflang="x-default" href="https://songkhonohan.com/ban-do-tau-dien.html">
+<meta property="og:site_name" content="Sống Khôn ở Hàn">
+<meta property="og:type" content="website">
+<meta property="og:title" content="서울 지하철 노선 한눈에 + 실시간 도착 조회">
+<meta property="og:description" content="노선 색·이름 읽는 법, 주요 역 안내, 그리고 역 이름을 입력하면 지금 오는 열차를 보여주는 실시간 조회.">
+<meta property="og:url" content="https://songkhonohan.com/ko/ban-do-tau-dien.html">
+<meta property="og:image" content="https://songkhonohan.com/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<style>
+.lchip{display:inline-block;min-width:30px;text-align:center;color:#fff;font-weight:900;border-radius:99px;padding:4px 8px;font-size:13px}
+table.ln{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;margin-top:12px;font-size:13.5px}
+table.ln td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.pr{color:var(--do);font-weight:700}
+.qbtn{border:2px solid var(--xanh);background:#fff;border-radius:8px;font-size:14px;padding:4px 8px;cursor:pointer}
+.livebox{background:#fff;border-radius:14px;padding:16px;margin-top:12px;box-shadow:0 1px 4px rgba(30,42,34,.08)}
+.liverow{display:flex;gap:10px}
+.liverow input{flex:1;padding:12px 14px;font-size:15px;font-family:inherit;border:2px solid var(--xanh);border-radius:10px}
+.liverow button{background:var(--do);color:#fff;border:none;border-radius:10px;font-family:inherit;font-weight:800;font-size:15px;padding:0 18px;cursor:pointer}
+.arr{display:flex;align-items:center;gap:10px;border-bottom:1px dashed var(--line);padding:10px 2px;font-size:14px}
+.arr .msg{margin-left:auto;font-weight:800;color:var(--xanh-d);text-align:right}
+.livenote{font-size:12.5px;color:var(--xam);margin-top:8px}
+.offline{background:#FFF9EC;border-left:4px solid var(--vang);border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="inner">
+  <div>
+    <a href="index.html" class="brand">Sống Khôn ở Hàn</a>
+    <div class="sub">알뜰한국살이 — 재한 베트남인을 위한 검증된 정보</div>
+  </div>
+  <a class="langbtn" href="../ban-do-tau-dien.html">🇻🇳 Xem bằng tiếng Việt</a>
+</div></div>
+<nav class="nav"><div class="inner">
+  <a href="index.html">홈</a>
+  <a href="chu-de/moi-den.html" class="on">첫 도착</a>
+  <a href="chu-de/di-lam.html">일하기</a>
+  <a href="chu-de/du-hoc.html">유학</a>
+  <a href="chu-de/ket-hon.html">결혼·가족</a>
+  <a href="su-kien.html">행사 🎉</a>
+  <a href="gioi-thieu.html">소개</a>
+</div></nav>
+
+<div class="wrap">
+  <section class="hero" style="padding-bottom:22px">
+    <h1>지하철 노선, 이제 안 무섭다<span class="ko">12개 주요 노선 + 주요 역 + 실시간 도착</span></h1>
+  </section>
+
+  <section class="section">
+    <h2>🚇 지금 열차 언제 와? (실시간)</h2>
+    <div class="livebox">
+      <div class="liverow">
+        <input id="stName" placeholder="역 이름을 한글로 입력 (예: 강남)">
+        <button id="stGo">조회</button>
+      </div>
+      <div id="stOut"></div>
+      <div class="livenote">역 이름은 한글로 입력해야 합니다 — 아래 주요 역 표의 🔍 버튼을 누르면 자동 입력됩니다.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>노선 색깔표 — 색만 알면 절반은 끝</h2>
+    <table class="ln">
+<tr><td><span class="lchip" style="background:#0052A4">1</span></td><td><b>1호선</b></td><td>소요산/인천/신창 — 가장 오래된 노선, 수도권 외곽까지</td></tr>
+<tr><td><span class="lchip" style="background:#00A84D">2</span></td><td><b>2호선</b></td><td>도심을 도는 순환선 — 홍대·강남·잠실</td></tr>
+<tr><td><span class="lchip" style="background:#EF7C1C">3</span></td><td><b>3호선</b></td><td>대화 ↔ 오금 — 경복궁, 고속터미널</td></tr>
+<tr><td><span class="lchip" style="background:#00A5DE">4</span></td><td><b>4호선</b></td><td>진접 ↔ 오이도 — 명동, 사당, 안산(베트남인 밀집)</td></tr>
+<tr><td><span class="lchip" style="background:#996CAC">5</span></td><td><b>5호선</b></td><td>방화 ↔ 마천 — 광화문, 여의도</td></tr>
+<tr><td><span class="lchip" style="background:#CD7C2F">6</span></td><td><b>6호선</b></td><td>이태원, 망원시장</td></tr>
+<tr><td><span class="lchip" style="background:#747F00">7</span></td><td><b>7호선</b></td><td>부평구청 ↔ 장암 — 도심 안 거치고 인천–강남 연결</td></tr>
+<tr><td><span class="lchip" style="background:#E6186C">8</span></td><td><b>8호선</b></td><td>잠실, 모란(성남 시장)</td></tr>
+<tr><td><span class="lchip" style="background:#BDB092">9</span></td><td><b>9호선</b></td><td>급행 있음 — 김포공항 ↔ 강남</td></tr>
+<tr><td><span class="lchip" style="background:#0090D2">A</span></td><td><b>공항철도</b></td><td>인천공항 ↔ 서울역</td></tr>
+<tr><td><span class="lchip" style="background:#D4003B">S</span></td><td><b>신분당선</b></td><td>강남 ↔ 수원 방면 — 빠르지만 요금 약간 높음</td></tr>
+<tr><td><span class="lchip" style="background:#F5A200">K</span></td><td><b>수인분당선</b></td><td>인천 ↔ 수원 ↔ 성남 — 공단 지역 다수 경유</td></tr>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2>주요 역 이름 읽기</h2>
+    <table class="ln">
+<tr><td><b>서울역</b></td><td class="pr">Sơ-ul-yơc</td><td><button class="qbtn" data-st="서울역">🔍</button></td></tr>
+<tr><td><b>시청</b></td><td class="pr">Si-chơng</td><td><button class="qbtn" data-st="시청">🔍</button></td></tr>
+<tr><td><b>강남</b></td><td class="pr">Kang-nam</td><td><button class="qbtn" data-st="강남">🔍</button></td></tr>
+<tr><td><b>홍대입구</b></td><td class="pr">Hông-đe-íp-cu</td><td><button class="qbtn" data-st="홍대입구">🔍</button></td></tr>
+<tr><td><b>명동</b></td><td class="pr">Myơng-đông</td><td><button class="qbtn" data-st="명동">🔍</button></td></tr>
+<tr><td><b>동대문</b></td><td class="pr">Tông-đe-mun</td><td><button class="qbtn" data-st="동대문">🔍</button></td></tr>
+<tr><td><b>이태원</b></td><td class="pr">I-the-uôn</td><td><button class="qbtn" data-st="이태원">🔍</button></td></tr>
+<tr><td><b>잠실</b></td><td class="pr">Cham-sil</td><td><button class="qbtn" data-st="잠실">🔍</button></td></tr>
+<tr><td><b>사당</b></td><td class="pr">Sa-đang</td><td><button class="qbtn" data-st="사당">🔍</button></td></tr>
+<tr><td><b>신도림</b></td><td class="pr">Sin-đô-rim</td><td><button class="qbtn" data-st="신도림">🔍</button></td></tr>
+<tr><td><b>영등포</b></td><td class="pr">Yơng-đưng-phô</td><td><button class="qbtn" data-st="영등포">🔍</button></td></tr>
+<tr><td><b>김포공항</b></td><td class="pr">Kim-phô-công-hang</td><td><button class="qbtn" data-st="김포공항">🔍</button></td></tr>
+<tr><td><b>부평</b></td><td class="pr">Bu-phyơng</td><td><button class="qbtn" data-st="부평">🔍</button></td></tr>
+<tr><td><b>안산</b></td><td class="pr">An-san</td><td><button class="qbtn" data-st="안산">🔍</button></td></tr>
+<tr><td><b>수원</b></td><td class="pr">Su-uôn</td><td><button class="qbtn" data-st="수원">🔍</button></td></tr>
+<tr><td><b>인천</b></td><td class="pr">In-chơn</td><td><button class="qbtn" data-st="인천">🔍</button></td></tr>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2>노선도 전체는 어디서 보나요?</h2>
+    <p>수백 개 역의 전체 노선도는 앱이 가장 정확하고 항상 최신입니다: <strong>네이버 지도 / 카카오맵 / 카카오지하철</strong> 앱의 노선도 화면을 쓰세요 — 역을 누르면 시간표까지 나옵니다. 역 안 벽면의 대형 노선도는 위 색깔표와 같은 색 체계를 씁니다.</p>
+  </section>
+
+  <footer>
+    <a href="https://m.me/songkhonohan" class="fb-foot">💬 Messenger</a> · <a href="https://www.facebook.com/songkhonohan" class="fb-foot">Facebook</a><br><a href="chinh-sach-bao-mat.html">개인정보처리방침</a><br>© 2026 Sống Khôn ở Hàn
+  </footer>
+</div>
+
+<div class="emgbar">
+  <div><b>한국 생활이 궁금하세요?</b><br><span>외국인종합안내센터 · 베트남어 지원 · 무료</span></div>
+  <a class="call" href="tel:1345">☎ 1345</a>
+</div>
+
+<script>
+// ▼▼▼ Cloudflare Worker 주소를 여기 붙여넣으세요 (cloudflare-worker/README.md 참고) ▼▼▼
+const PROXY_URL = "";
+// ▲▲▲
+const SUBWAY_ID={"1001": "1", "1002": "2", "1003": "3", "1004": "4", "1005": "5", "1006": "6", "1007": "7", "1008": "8", "1009": "9", "1063": "경의중앙", "1065": "공항", "1067": "경춘", "1075": "수인분당", "1077": "신분당", "1092": "우이신설", "1032": "GTX-A", "1081": "경강", "1093": "서해", "1061": "중앙"};
+const LINE_COLOR={"1": "#0052A4", "2": "#00A84D", "3": "#EF7C1C", "4": "#00A5DE", "5": "#996CAC", "6": "#CD7C2F", "7": "#747F00", "8": "#E6186C", "9": "#BDB092", "공항": "#0090D2", "신분당": "#D4003B", "수인분당": "#F5A200", "경의중앙": "#77C4A3", "경춘": "#0C8E72", "우이신설": "#B0CE18", "GTX-A": "#9A6292", "경강": "#003DA5", "서해": "#8FC31F", "중앙": "#77C4A3"};
+const out=document.getElementById('stOut');
+async function look(name){
+  if(!name)return;
+  if(!PROXY_URL){out.innerHTML='<div class="offline">⏳ 실시간 조회는 준비 중입니다 — 곧 열립니다!</div>';return;}
+  out.innerHTML='<div class="livenote">불러오는 중...</div>';
+  try{
+    const r=await fetch(PROXY_URL+'/?station='+encodeURIComponent(name));
+    const d=await r.json();
+    const list=d.realtimeArrivalList||[];
+    if(!list.length){out.innerHTML='<div class="offline">🤔 이 이름의 역을 찾지 못했어요 — 철자를 확인하거나 표의 🔍를 눌러보세요.</div>';return;}
+    out.innerHTML=list.slice(0,10).map(t=>{
+      const ln=SUBWAY_ID[t.subwayId]||'?';
+      const c=LINE_COLOR[ln]||'#555';
+      return '<div class="arr"><span class="lchip" style="background:'+c+'">'+ln+'</span><span>'+ (t.bstatnNm||'') +' 행</span><span class="msg">'+(t.arvlMsg2||'')+'</span></div>';
+    }).join('');
+  }catch(e){out.innerHTML='<div class="offline">📡 Lỗi kết nối — thử lại sau.</div>';}
+}
+document.getElementById('stGo').onclick=()=>look(document.getElementById('stName').value.trim());
+document.getElementById('stName').addEventListener('keydown',e=>{if(e.key==='Enter')look(e.target.value.trim());});
+document.querySelectorAll('.qbtn').forEach(b=>b.onclick=()=>{document.getElementById('stName').value=b.dataset.st;look(b.dataset.st);window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

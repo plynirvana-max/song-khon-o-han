@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test trình độ sống ở Hàn — bạn đang ở level mấy? — Sống Khôn ở Hàn</title>
+<meta name="description" content="12 câu, 3 phút — kiểm tra kiến thức lương, visa, cuộc sống và nhận đúng tài liệu bạn còn thiếu.">
+<link rel="canonical" href="https://songkhonohan.com/level-test.html">
+<link rel="alternate" hreflang="vi" href="https://songkhonohan.com/level-test.html">
+<link rel="alternate" hreflang="ko" href="https://songkhonohan.com/ko/level-test.html">
+<link rel="alternate" hreflang="x-default" href="https://songkhonohan.com/level-test.html">
+<meta property="og:site_name" content="Sống Khôn ở Hàn">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Test trình độ sống ở Hàn — bạn đang ở level mấy?">
+<meta property="og:description" content="12 câu, 3 phút — kiểm tra kiến thức lương, visa, cuộc sống và nhận đúng tài liệu bạn còn thiếu.">
+<meta property="og:url" content="https://songkhonohan.com/level-test.html">
+<meta property="og:image" content="https://songkhonohan.com/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<style>
+.qcard{background:#fff;border-radius:12px;padding:16px;margin-top:14px;box-shadow:0 1px 4px rgba(30,42,34,.08)}
+.qcard .qn{font-size:11px;font-weight:800;color:var(--do);text-transform:uppercase;letter-spacing:.08em}
+.qcard h3{font-size:15.5px;font-weight:800;margin:6px 0 10px;line-height:1.45}
+.opt{display:block;border:2px solid var(--line);border-radius:10px;padding:11px 13px;margin-top:8px;font-size:14px;cursor:pointer;background:#FFFDF7}
+.opt input{margin-right:9px;accent-color:var(--xanh)}
+.opt.sel{border-color:var(--xanh);background:#EFF7F1;font-weight:700}
+.opt.right{border-color:#0E8A6D;background:#E8F6F0;font-weight:800}
+.opt.wrong{border-color:var(--do);background:#FDF0EE}
+.why{display:none;font-size:13px;background:#FFF9EC;border-left:4px solid var(--vang);border-radius:8px;padding:10px 12px;margin-top:10px;line-height:1.6}
+.bigbtn{display:block;width:100%;background:var(--do);color:#fff;font-family:inherit;font-weight:800;font-size:17px;border:none;border-radius:14px;padding:16px;margin-top:18px;box-shadow:4px 4px 0 rgba(0,0,0,.18);cursor:pointer}
+.bigbtn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 rgba(0,0,0,.18)}
+.result{display:none;background:var(--xanh-d);color:#FFF9EC;border-radius:16px;padding:22px 18px;margin-top:20px}
+.result .lv{font-size:24px;font-weight:900;color:var(--vang);line-height:1.3}
+.result .sc{font-size:15px;margin-top:4px;opacity:.9}
+.bar{margin-top:12px}
+.bar .lb{font-size:12.5px;font-weight:700;display:flex;justify-content:space-between}
+.bar .tr{height:10px;background:rgba(255,255,255,.18);border-radius:99px;margin-top:4px;overflow:hidden}
+.bar .fl{height:100%;background:var(--vang);border-radius:99px}
+.share{width:100%;background:#0084FF;color:#fff;border:none;border-radius:12px;font-family:inherit;font-weight:800;font-size:15px;padding:13px;margin-top:16px;cursor:pointer}
+.retry{width:100%;background:transparent;color:#FFF9EC;border:2px solid rgba(255,255,255,.4);border-radius:12px;font-family:inherit;font-weight:700;font-size:14px;padding:11px;margin-top:8px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="inner">
+  <div>
+    <a href="index.html" class="brand">Sống Khôn ở Hàn</a>
+    <div class="sub">Thông tin đã kiểm chứng cho người Việt tại Hàn Quốc</div>
+  </div>
+  <a class="langbtn" href="ko/level-test.html">🇰🇷 한국어로 보기</a>
+</div></div>
+<nav class="nav"><div class="inner">
+  <a href="index.html">Trang chủ</a>
+  <a href="chu-de/moi-den.html">Mới đến</a>
+  <a href="chu-de/di-lam.html">Đi làm</a>
+  <a href="chu-de/du-hoc.html">Du học</a>
+  <a href="chu-de/ket-hon.html">Kết hôn</a>
+  <a href="su-kien.html">Sự kiện 🎉</a>
+  <a href="gioi-thieu.html">Về chúng mình</a>
+</div></nav>
+
+<div class="wrap">
+  <section class="hero" style="padding-bottom:22px">
+    <h1>Bạn sống khôn đến đâu?<span class="ko">12 câu · 3 phút · có giải thích đáp án</span></h1>
+  </section>
+
+  <div id="quiz"></div>
+  <button class="bigbtn" id="go">Xem kết quả →</button>
+
+  <div class="result" id="res">
+    <div class="lv" id="rLv"></div>
+    <div class="sc" id="rSc"></div>
+    <div id="rBars"></div>
+    <div style="font-weight:800;font-size:14px;color:var(--vang);margin-top:16px">Lỗ hổng cần vá ngay</div>
+    <div id="rRec" style="margin-top:6px"></div>
+    <button class="share" id="shareBtn">📋 Sao chép kết quả để chia sẻ</button>
+    <button class="retry" onclick="location.reload()">↺ Làm lại</button>
+  </div>
+
+  <footer>
+    <a href="https://m.me/songkhonohan" class="fb-foot">💬 Messenger</a> · <a href="https://www.facebook.com/songkhonohan" class="fb-foot">Facebook</a><br><a href="chinh-sach-bao-mat.html">Chính sách bảo mật</a><br>© 2026 Sống Khôn ở Hàn
+  </footer>
+</div>
+
+<script>
+const Q=[{"c": "song", "q": "Xuống xe buýt, việc ĐÚNG là gì?", "o": ["Cứ xuống thôi, lên mới cần quẹt", "Quẹt thẻ lần nữa ở cửa sau", "Bấm chuông là đủ", "Trả thêm tiền mặt cho tài xế"], "a": 1, "w": "Quên quẹt khi xuống = mất quyền đổi tuyến (환승) + có thể bị tính thêm tiền."}, {"c": "song", "q": "Tàu 급행 (tàu nhanh) nghĩa là gì?", "o": ["Tàu đời mới hơn", "Tàu bỏ qua nhiều ga nhỏ", "Tàu đắt gấp đôi", "Tàu chỉ chạy ban đêm"], "a": 1, "w": "Ga của bạn là ga nhỏ mà lên nhầm 급행 → tàu chạy vụt qua."}, {"c": "song", "q": "Tuần đầu mới sang, mua đồ sinh hoạt cơ bản rẻ nhất ở đâu?", "o": ["Cửa hàng tiện lợi", "Daiso", "Trung tâm thương mại", "Vác hết từ Việt Nam sang"], "a": 1, "w": "Daiso: giá 500–5.000 won, có ở mọi khu phố — đừng tốn tiền quá cân hành lý."}, {"c": "tien", "q": "Điều kiện nhận trợ cấp thôi việc (퇴직금)?", "o": ["Làm đủ 6 tháng", "Làm đủ 1 năm + trung bình ≥15 giờ/tuần", "Chỉ nhân viên chính thức người Hàn", "Tùy lòng tốt của chủ"], "a": 1, "w": "Đủ 1 năm + 15h/tuần là QUYỀN theo luật — kể cả làm thêm, kể cả không có hợp đồng giấy."}, {"c": "tien", "q": "Công ty nợ lương — gọi số nào (miễn phí, có tiếng Việt)?", "o": ["112", "119", "1350", "114"], "a": 2, "w": "1350 = Bộ Lao động. Nợ lương báo được kể cả khi cư trú bất hợp pháp."}, {"c": "tien", "q": "Tiền bảo hiểm xuất cảnh ÍT HƠN 퇴직금 theo luật thì sao?", "o": ["Đành chịu", "Chủ phải trả thêm phần chênh lệch", "Nhà nước bù", "Mất luôn phần đó"], "a": 1, "w": "Chênh lệch là quyền của bạn — chủ phải trả trong 14 ngày. Rất nhiều người không biết điều này!"}, {"c": "visa", "q": "Du học sinh muốn làm thêm, thứ tự đúng là?", "o": ["Làm trước, khai báo sau", "Xin phép TRƯỚC rồi mới đi làm", "Dưới 10 giờ/tuần thì khỏi cần phép", "Cuối tuần được làm tự do"], "a": 1, "w": "\"Vài buổi thử việc\" chưa có phép cũng là vi phạm — người mất visa là bạn, không phải chủ."}, {"c": "visa", "q": "E-9 nghỉ việc, phải nộp đơn đổi chỗ làm trong vòng…", "o": ["1 tuần", "1 tháng", "3 tháng", "Lúc nào cũng được"], "a": 1, "w": "1 tháng nộp đơn, rồi 3 tháng tìm chỗ mới — hai con số quyết định số phận visa."}, {"c": "visa", "q": "Chuyển nhà xong, người nước ngoài phải làm gì?", "o": ["Không cần gì", "Khai báo thay đổi nơi cư trú trong thời hạn", "Chỉ cần báo chủ nhà cũ", "Báo công ty là đủ"], "a": 1, "w": "Quên khai báo là lỗi bị phạt tiền phổ biến nhất. Khai ở 주민센터 hoặc online."}, {"c": "quyen", "q": "Dấu 확정일자 khi thuê nhà để làm gì?", "o": ["Được giảm tiền thuê", "Bảo vệ quyền đòi lại tiền cọc", "Đăng ký internet", "Miễn thuế"], "a": 1, "w": "Miễn phí, 10 phút ở 주민센터 — nhà có vấn đề pháp lý thì bạn được ưu tiên lấy lại cọc."}, {"c": "quyen", "q": "\"Tao báo xuất nhập cảnh thì mày bị trục xuất\" — câu dọa này…", "o": ["Đúng, nên im lặng", "Thường KHÔNG đúng — gọi 1577-1366/1350 xác nhận quyền của mình", "Đúng với người E-9", "Đúng với người F-6"], "a": 1, "w": "Tư cách cư trú của bạn không nằm trong tay cá nhân nào. Đừng để bị bịt miệng bằng visa."}, {"c": "quyen", "q": "Gọi cấp cứu 119 thì…", "o": ["Mất phí xe cấp cứu", "Miễn phí + có hỗ trợ thông dịch", "Chỉ nói được tiếng Hàn", "Chỉ dành cho người Hàn"], "a": 1, "w": "119 miễn phí, xe miễn phí, có thông dịch — tai nạn lao động thì 산재 áp dụng cả với người cư trú bất hợp pháp."}];
+const CATS={"song": "🧳 Cuộc sống & đi lại", "tien": "💰 Lương & tiền", "visa": "🛂 Visa & thủ tục", "quyen": "🛡 An toàn & quyền"};
+const REC={"song": ["chu-de/moi-den.html", "Đọc trọn bộ hướng dẫn Mới đến (T-money, tàu điện, Daiso...)"], "tien": ["chu-de/di-lam.html", "Trọn bộ Đi làm: đòi lương, 퇴직금, bảo hiểm xuất cảnh + 2 máy tính"], "visa": ["chu-de/du-hoc.html", "Quy tắc visa & làm thêm hợp pháp — đọc trước khi quá muộn"], "quyen": ["chu-de/ket-hon.html", "Các số điện thoại và quyền luôn đứng về phía bạn"]};
+const LV=[[0, 4, "Lv.1 🐣 Tân binh chân ướt", "Đừng lo — ai cũng bắt đầu từ đây. Đọc vài bài dưới là lên level ngay."], [5, 7, "Lv.2 🌱 Đang thích nghi", "Nền tảng có rồi, nhưng vài lỗ hổng có thể làm bạn mất tiền thật."], [8, 9, "Lv.3 💪 Sống ổn áp", "Khá lắm! Vá nốt mấy điểm yếu dưới đây là yên tâm."], [10, 11, "Lv.4 🔥 Gần thành cao thủ", "Bạn biết nhiều hơn đa số — chia sẻ bài test cho bạn bè kém may mắn hơn đi 😄"], [12, 12, "Lv.5 👑 Cao thủ Sống Khôn", "Hoàn hảo! Bạn chính là người mà cộng đồng cần — chia sẻ kiến thức này nhé."]];
+const quiz=document.getElementById('quiz');
+Q.forEach((q,i)=>{
+  const d=document.createElement('div');d.className='qcard';d.id='qc'+i;
+  d.innerHTML='<div class="qn">Q'+(i+1)+' · '+CATS[q.c]+'</div><h3>'+q.q+'</h3>'+
+    q.o.map((o,j)=>'<label class="opt" data-q="'+i+'" data-j="'+j+'"><input type="radio" name="q'+i+'" value="'+j+'">'+o+'</label>').join('')+
+    '<div class="why" id="why'+i+'">💡 '+q.w+'</div>';
+  quiz.appendChild(d);
+});
+quiz.addEventListener('change',e=>{
+  const lb=e.target.closest('.opt');if(!lb)return;
+  document.querySelectorAll('.opt[data-q="'+lb.dataset.q+'"]').forEach(x=>x.classList.remove('sel'));
+  lb.classList.add('sel');
+});
+document.getElementById('go').onclick=()=>{
+  const miss=[];
+  Q.forEach((q,i)=>{if(!document.querySelector('input[name="q'+i+'"]:checked'))miss.push(i+1);});
+  if(miss.length){alert('Còn câu chưa trả lời! (số: '+miss.join(', ')+')');return;}
+  let n=0;const cat={song:0,tien:0,visa:0,quyen:0};
+  Q.forEach((q,i)=>{
+    const v=+document.querySelector('input[name="q'+i+'"]:checked').value;
+    const ok=v===q.a; if(ok){n++;cat[q.c]++;}
+    document.querySelectorAll('.opt[data-q="'+i+'"]').forEach(x=>{
+      const j=+x.dataset.j;
+      if(j===q.a)x.classList.add('right');
+      else if(j===v&&!ok)x.classList.add('wrong');
+      x.querySelector('input').disabled=true;
+    });
+    document.getElementById('why'+i).style.display='block';
+  });
+  let lv=LV[0];for(const L of LV)if(n>=L[0]&&n<=L[1])lv=L;
+  document.getElementById('rLv').textContent=lv[2];
+  document.getElementById('rSc').textContent='Điểm của bạn: '+n+' / 12 — '+lv[3];
+  document.getElementById('rBars').innerHTML=Object.keys(cat).map(k=>
+    '<div class="bar"><div class="lb"><span>'+CATS[k]+'</span><span>'+cat[k]+'/3</span></div><div class="tr"><div class="fl" style="width:'+(cat[k]/3*100)+'%"></div></div></div>').join('');
+  const weak=Object.keys(cat).filter(k=>cat[k]<3);
+  document.getElementById('rRec').innerHTML=weak.length?weak.map(k=>
+    '<a class="article-card" style="margin-top:8px" href="'+REC[k][0]+'"><span class="tag">'+CATS[k]+'</span><h4>'+REC[k][1]+' →</h4></a>').join(''):'<div style="font-size:14px;margin-top:4px">Không có điểm yếu nào — quá đỉnh 👏</div>';
+  const res=document.getElementById('res');res.style.display='block';
+  document.getElementById('go').style.display='none';
+  document.getElementById('shareBtn').onclick=()=>{
+    const t='Mình đạt {lv} ({n}/12) trong Test Sống Khôn ở Hàn 🇰🇷 Bạn được mấy điểm? 👉 songkhonohan.com/level-test.html'.replace('{lv}',lv[2]).replace('{n}',n);
+    navigator.clipboard.writeText(t).then(()=>{document.getElementById('shareBtn').textContent='✓ Đã sao chép! Dán vào Facebook nhé';});
+  };
+  res.scrollIntoView({behavior:'smooth'});
+};
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
