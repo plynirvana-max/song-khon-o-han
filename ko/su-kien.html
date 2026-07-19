@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이번 달 무료 행사 — Sống Khôn ở Hàn</title>
+<meta name="description" content="한국의 무료 축제·박물관·문화 프로그램 — 월별·지역별 필터, 지자체 공식 출처, 검증일 표기.">
+<link rel="canonical" href="https://songkhonohan.com/ko/su-kien.html">
+<link rel="alternate" hreflang="vi" href="https://songkhonohan.com/su-kien.html">
+<link rel="alternate" hreflang="ko" href="https://songkhonohan.com/ko/su-kien.html">
+<link rel="alternate" hreflang="x-default" href="https://songkhonohan.com/su-kien.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+<style>
+.filters{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.filters select{width:100%;padding:12px 14px;font-size:15px;font-family:inherit;border:2px solid var(--xanh);border-radius:10px;background:#fff;font-weight:700;color:var(--xanh-d)}
+.ev-card{background:#fff;border-radius:12px;padding:16px;margin-top:12px;border-left:6px solid var(--vang);box-shadow:0 1px 4px rgba(30,42,34,.08)}
+.ev-date{display:inline-block;background:var(--xanh);color:#fff;font-weight:800;font-size:12px;padding:4px 10px;border-radius:6px}
+.ev-region{display:inline-block;background:#FDF0EE;color:var(--do);font-weight:800;font-size:11px;padding:4px 10px;border-radius:6px;margin-left:6px;text-transform:uppercase}
+.ev-card h3{font-size:16px;font-weight:800;margin-top:9px;line-height:1.3}
+.ev-place{font-size:13px;color:var(--xam);margin-top:3px}
+.ev-desc{font-size:14px;margin-top:8px;line-height:1.6}
+.ev-meta{font-size:11px;color:var(--xam);border-top:1px dashed var(--line);margin-top:10px;padding-top:8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.ev-meta a{color:var(--xanh);font-weight:700;text-decoration:underline}
+.empty{background:#fff;border-radius:12px;padding:24px;margin-top:14px;text-align:center;color:var(--xam);font-size:14px}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="inner">
+  <div>
+    <a href="index.html" class="brand">Sống Khôn ở Hàn</a>
+    <div class="sub">알뜰한국살이 — 재한 베트남인을 위한 검증된 정보</div>
+  </div>
+  <a class="langbtn" href="../su-kien.html">🇻🇳 Tiếng Việt</a>
+</div></div>
+<nav class="nav"><div class="inner">
+  <a href="index.html">홈</a>
+  <a href="bai-viet/the-giao-thong-tmoney.html">첫 도착</a>
+  <a href="bai-viet/cong-ty-no-luong.html">일하기</a>
+  <a href="bai-viet/lam-them-du-hoc-sinh.html">유학</a>
+  <a href="bai-viet/khi-hon-nhan-kho-khan.html">결혼·가족</a>
+  <a href="su-kien.html" class="on">행사 🎉</a>
+  <a href="gioi-thieu.html">소개</a>
+</div></nav>
+
+<div class="wrap">
+  <section class="hero" style="padding-bottom:22px">
+    <h1>이번 달 <em>무료로</em> 뭐 하지?
+      <span class="ko">무료 축제·박물관·문화 프로그램 · 지자체 공식 출처</span>
+    </h1>
+    <div class="filters">
+      <select id="fMonth"></select>
+      <select id="fRegion">
+        <option value="all">📍 전체 지역</option>
+        <option value="seoul">서울</option>
+        <option value="gyeonggi">경기</option>
+        <option value="incheon">인천</option>
+        <option value="busan">부산</option>
+        <option value="daegu">대구</option>
+        <option value="other">기타</option>
+      </select>
+    </div>
+  </section>
+
+  <div id="list"></div>
+
+  <section class="section">
+    <div class="article-card alt" style="border-left-color:var(--vang)">
+      <span class="tag" style="color:var(--xanh)">좋은 무료 행사를 알고 계신가요?</span>
+      <h4><a href="https://m.me/songkhonohan" style="text-decoration:underline">Messenger</a>로 알려주세요 — 검증 후 목록에 추가합니다 (원하시면 제보자 표기) 💛</h4>
+    </div>
+  </section>
+
+  <footer>
+    행사는 변경·취소될 수 있습니다 — 방문 전 공식 링크를 꼭 확인하세요.<br>
+    종료된 행사는 목록에서 자동으로 사라집니다.<br>
+    <a href="https://m.me/songkhonohan" class="fb-foot">💬 Messenger</a> · <a href="https://www.facebook.com/songkhonohan" class="fb-foot">Facebook</a><br>© 2026 Sống Khôn ở Hàn
+  </footer>
+</div>
+
+<div class="emgbar">
+  <div><b>한국 생활이 궁금하세요?</b><br><span>외국인종합안내센터 · 베트남어 지원 · 무료</span></div>
+  <a class="call" href="tel:1345">☎ 1345</a>
+</div>
+
+<script src="../events-data.js"></script>
+<script>
+const REGION_KO={seoul:"서울",gyeonggi:"경기",incheon:"인천",busan:"부산",daegu:"대구",other:"기타"};
+const today=new Date(); today.setHours(0,0,0,0);
+const fmtD=s=>{const[y,m,d]=s.split("-");return m+"/"+d;};
+const selM=document.getElementById("fMonth"), selR=document.getElementById("fRegion");
+for(let i=0;i<6;i++){
+  const dt=new Date(today.getFullYear(),today.getMonth()+i,1);
+  const val=dt.getFullYear()+"-"+String(dt.getMonth()+1).padStart(2,"0");
+  const o=document.createElement("option"); o.value=val;
+  o.textContent="📅 "+dt.getFullYear()+"년 "+(dt.getMonth()+1)+"월";
+  selM.appendChild(o);
+}
+function overlapsMonth(ev,ym){
+  const[y,m]=ym.split("-").map(Number);
+  const mStart=new Date(y,m-1,1), mEnd=new Date(y,m,0);
+  return new Date(ev.s)<=mEnd && new Date(ev.e)>=mStart;
+}
+function render(){
+  const ym=selM.value, rg=selR.value, list=document.getElementById("list");
+  const evs=(window.SKEVENTS||[])
+    .filter(e=>new Date(e.e)>=today)
+    .filter(e=>overlapsMonth(e,ym))
+    .filter(e=>rg==="all"||e.region===rg)
+    .sort((a,b)=>new Date(a.s)-new Date(b.s));
+  if(!evs.length){list.innerHTML='<div class="empty">이 조건에 맞는 행사가 아직 없어요 🥲<br>다른 달을 보거나, 좋은 행사를 제보해주세요!</div>';return;}
+  list.innerHTML=evs.map(e=>`
+    <div class="ev-card">
+      <span class="ev-date">${fmtD(e.s)} → ${fmtD(e.e)}${e.days?(" · "+(e.days.split(" / ")[1]||e.days)):""}</span><span class="ev-region">${REGION_KO[e.region]||e.region}</span>
+      <h3>${e.ko.t}</h3>
+      <div class="ev-place">📍 ${e.ko.place}</div>
+      <div class="ev-desc">${e.ko.d}</div>
+      <div class="ev-meta"><span>✔ 검증일 ${e.verified}</span><a href="${e.url}" target="_blank" rel="noopener">공식 페이지 ↗</a></div>
+    </div>`).join("");
+}
+selM.onchange=render; selR.onchange=render; render();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

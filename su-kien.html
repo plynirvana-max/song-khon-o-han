@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sự kiện miễn phí ở Hàn Quốc tháng này — Sống Khôn ở Hàn</title>
+<meta name="description" content="Lễ hội, bảo tàng, chương trình văn hóa miễn phí tại Hàn Quốc — lọc theo tháng và khu vực, nguồn từ chính quyền địa phương, có ngày kiểm chứng.">
+<link rel="canonical" href="https://songkhonohan.com/su-kien.html">
+<link rel="alternate" hreflang="vi" href="https://songkhonohan.com/su-kien.html">
+<link rel="alternate" hreflang="ko" href="https://songkhonohan.com/ko/su-kien.html">
+<link rel="alternate" hreflang="x-default" href="https://songkhonohan.com/su-kien.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<style>
+.filters{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.filters select{width:100%;padding:12px 14px;font-size:15px;font-family:inherit;border:2px solid var(--xanh);border-radius:10px;background:#fff;font-weight:700;color:var(--xanh-d)}
+.ev-card{background:#fff;border-radius:12px;padding:16px;margin-top:12px;border-left:6px solid var(--vang);box-shadow:0 1px 4px rgba(30,42,34,.08)}
+.ev-date{display:inline-block;background:var(--xanh);color:#fff;font-weight:800;font-size:12px;padding:4px 10px;border-radius:6px}
+.ev-region{display:inline-block;background:#FDF0EE;color:var(--do);font-weight:800;font-size:11px;padding:4px 10px;border-radius:6px;margin-left:6px;text-transform:uppercase}
+.ev-card h3{font-size:16px;font-weight:800;margin-top:9px;line-height:1.3}
+.ev-place{font-size:13px;color:var(--xam);margin-top:3px}
+.ev-desc{font-size:14px;margin-top:8px;line-height:1.6}
+.ev-meta{font-size:11px;color:var(--xam);border-top:1px dashed var(--line);margin-top:10px;padding-top:8px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.ev-meta a{color:var(--xanh);font-weight:700;text-decoration:underline}
+.empty{background:#fff;border-radius:12px;padding:24px;margin-top:14px;text-align:center;color:var(--xam);font-size:14px}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="inner">
+  <div>
+    <a href="index.html" class="brand">Sống Khôn ở Hàn</a>
+    <div class="sub">Thông tin đã kiểm chứng cho người Việt tại Hàn Quốc</div>
+  </div>
+  <a class="langbtn" href="ko/su-kien.html">🇰🇷 한국어</a>
+</div></div>
+<nav class="nav"><div class="inner">
+  <a href="index.html">Trang chủ</a>
+  <a href="bai-viet/the-giao-thong-tmoney.html">Mới đến</a>
+  <a href="bai-viet/cong-ty-no-luong.html">Đi làm</a>
+  <a href="bai-viet/lam-them-du-hoc-sinh.html">Du học</a>
+  <a href="bai-viet/khi-hon-nhan-kho-khan.html">Kết hôn</a>
+  <a href="su-kien.html" class="on">Sự kiện 🎉</a>
+  <a href="gioi-thieu.html">Về chúng mình</a>
+</div></nav>
+
+<div class="wrap">
+  <section class="hero" style="padding-bottom:22px">
+    <h1>Chơi gì <em>miễn phí</em> tháng này?
+      <span class="ko">무료 행사 — lễ hội, bảo tàng, văn hóa · nguồn chính quyền địa phương</span>
+    </h1>
+    <div class="filters">
+      <select id="fMonth"></select>
+      <select id="fRegion">
+        <option value="all">📍 Tất cả khu vực</option>
+        <option value="seoul">Seoul</option>
+        <option value="gyeonggi">Gyeonggi</option>
+        <option value="incheon">Incheon</option>
+        <option value="busan">Busan</option>
+        <option value="daegu">Daegu</option>
+        <option value="other">Nơi khác</option>
+      </select>
+    </div>
+  </section>
+
+  <div id="list"></div>
+
+  <section class="section">
+    <div class="article-card alt" style="border-left-color:var(--vang)">
+      <span class="tag" style="color:var(--xanh)">Bạn biết một sự kiện miễn phí hay?</span>
+      <h4>Nhắn cho chúng mình qua <a href="https://m.me/songkhonohan" style="text-decoration:underline">Messenger</a> — chúng mình kiểm chứng và thêm vào danh sách (ghi tên bạn nếu bạn muốn) 💛</h4>
+    </div>
+  </section>
+
+  <footer>
+    Sự kiện có thể thay đổi hoặc hủy — luôn xem link chính thức trước khi đi.<br>
+    Sự kiện đã kết thúc sẽ tự động ẩn khỏi danh sách.<br>
+    <a href="https://m.me/songkhonohan" class="fb-foot">💬 Messenger</a> · <a href="https://www.facebook.com/songkhonohan" class="fb-foot">Facebook</a><br>© 2026 Sống Khôn ở Hàn
+  </footer>
+</div>
+
+<div class="emgbar">
+  <div><b>Cần hỏi về cuộc sống ở Hàn?</b><br><span>Tổng đài người nước ngoài · tiếng Việt · miễn phí</span></div>
+  <a class="call" href="tel:1345">☎ 1345</a>
+</div>
+
+<script src="events-data.js"></script>
+<script>
+const REGION_VI={seoul:"Seoul",gyeonggi:"Gyeonggi",incheon:"Incheon",busan:"Busan",daegu:"Daegu",other:"Khác"};
+const MONTHS_VI=["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"];
+const today=new Date(); today.setHours(0,0,0,0);
+const fmtD=s=>{const[y,m,d]=s.split("-");return d+"/"+m;};
+
+// month select: current month + next 5
+const selM=document.getElementById("fMonth"), selR=document.getElementById("fRegion");
+for(let i=0;i<6;i++){
+  const dt=new Date(today.getFullYear(),today.getMonth()+i,1);
+  const val=dt.getFullYear()+"-"+String(dt.getMonth()+1).padStart(2,"0");
+  const o=document.createElement("option"); o.value=val;
+  o.textContent="📅 "+MONTHS_VI[dt.getMonth()]+" "+dt.getFullYear();
+  selM.appendChild(o);
+}
+function overlapsMonth(ev,ym){
+  const[y,m]=ym.split("-").map(Number);
+  const mStart=new Date(y,m-1,1), mEnd=new Date(y,m,0);
+  return new Date(ev.s)<=mEnd && new Date(ev.e)>=mStart;
+}
+function render(){
+  const ym=selM.value, rg=selR.value, list=document.getElementById("list");
+  const evs=(window.SKEVENTS||[])
+    .filter(e=>new Date(e.e)>=today)                 // auto-hide past
+    .filter(e=>overlapsMonth(e,ym))
+    .filter(e=>rg==="all"||e.region===rg)
+    .sort((a,b)=>new Date(a.s)-new Date(b.s));
+  if(!evs.length){list.innerHTML='<div class="empty">Chưa có sự kiện nào cho bộ lọc này 🥲<br>Thử tháng khác, hoặc gửi gợi ý cho chúng mình!</div>';return;}
+  list.innerHTML=evs.map(e=>`
+    <div class="ev-card">
+      <span class="ev-date">${fmtD(e.s)} → ${fmtD(e.e)}${e.days?(" · "+e.days.split(" / ")[0]):""}</span><span class="ev-region">${REGION_VI[e.region]||e.region}</span>
+      <h3>${e.vi.t}</h3>
+      <div class="ev-place">📍 ${e.vi.place}</div>
+      <div class="ev-desc">${e.vi.d}</div>
+      <div class="ev-meta"><span>✔ Kiểm chứng ${e.verified.split("-").reverse().join("/")}</span><a href="${e.url}" target="_blank" rel="noopener">Trang chính thức ↗</a></div>
+    </div>`).join("");
+}
+selM.onchange=render; selR.onchange=render; render();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
