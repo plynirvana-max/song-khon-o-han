@@ -22,6 +22,17 @@
 <meta property="og:image:width" content="1640">
 <meta property="og:image:height" content="624">
 <meta name="twitter:card" content="summary_large_image">
+<style>.dsel{display:flex;gap:6px}.dsel select{flex:1;min-width:0;padding:12px 6px;font-family:inherit;font-size:15px;border:2px solid var(--line);border-radius:10px;background:#fff}</style>
+<style>
+.sharebar{display:flex;gap:8px;margin:22px 0 6px}
+.sharebar button,.sharebar a{flex:1;text-align:center;font-family:inherit;font-weight:800;font-size:13.5px;border-radius:11px;padding:12px 6px;cursor:pointer;text-decoration:none;border:2px solid var(--xanh);background:#fff;color:var(--xanh-d)}
+.sharebar .fbb{background:#0866FF;border-color:#0866FF;color:#fff}
+.followbox{background:linear-gradient(150deg,var(--xanh) 0%,var(--xanh-d) 100%);border-radius:14px;padding:16px;margin:10px 0 4px;color:#FFF9EC}
+.followbox b{color:var(--vang)}
+.followbox a{display:inline-block;margin-top:9px;background:#fff;color:#0866FF;font-weight:800;border-radius:10px;padding:9px 16px;text-decoration:none;font-size:14px}
+</style>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#14532D">
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -29,7 +40,7 @@
     <a href="../index.html" class="brand">Sống Khôn ở Hàn</a>
     <div class="sub">알뜰한국살이 — 재한 베트남인을 위한 검증된 정보</div>
   </div>
-  <a class="langbtn" href="../../cong-cu/tinh-toejikgeum.html">🇻🇳 Xem bằng tiếng Việt</a>
+  <a class="langbtn" href="../../cong-cu/tinh-toejikgeum.html"><svg style="width:20px;height:13px;vertical-align:-2px;border-radius:2px;margin-right:2px" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="20" fill="#DA251D"/><polygon fill="#FFDE00" points="15,4.5 16.29,8.22 20.23,8.3 17.09,10.68 18.23,14.45 15,12.2 11.77,14.45 12.91,10.68 9.77,8.3 13.71,8.22"/><rect width="30" height="20" fill="none" stroke="#00000026"/></svg> Xem bằng tiếng Việt</a>
 </div></div>
 <nav class="nav"><div class="inner">
   <a href="../index.html">홈</a>
@@ -61,11 +72,11 @@
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
       <div>
         <label class="f">입사일<span class="ko">Ngày vào làm</span></label>
-        <input type="date" id="start">
+        <div class="dsel"><select id="startY" data-ph="년"></select><select id="startM" data-ph="월"></select><select id="startD" data-ph="일"></select></div>
       </div>
       <div>
         <label class="f">퇴사일<span class="ko">Ngày nghỉ việc</span></label>
-        <input type="date" id="end">
+        <div class="dsel"><select id="endY" data-ph="년"></select><select id="endM" data-ph="월"></select><select id="endD" data-ph="일"></select></div>
       </div>
     </div>
 
@@ -129,6 +140,18 @@
     </a>
   </section>
 
+<div class="sharebar">
+  <button id="skShareBtn">📤 공유하기</button>
+  <a class="fbb" id="skFbShare" target="_blank" rel="noopener" href="#">ⓕ Facebook</a>
+  <button id="skCopyBtn">📋 링크 복사</button>
+</div>
+<div class="followbox"><b>도움이 됐나요?</b> 이런 글이 매주 하나씩 — 주변 베트남 동료에게도 알려주세요.<br><a href="https://www.facebook.com/songkhonohan" target="_blank" rel="noopener">ⓕ 페이스북 팔로우</a></div>
+<script>
+(function(){var c=document.querySelector('link[rel="canonical"]');var u=c?c.href:location.href;var t=document.title;
+var fb=document.getElementById('skFbShare');if(fb)fb.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(u);
+var sb=document.getElementById('skShareBtn');if(sb)sb.onclick=function(){if(navigator.share){navigator.share({title:t,url:u}).catch(function(){});}else{navigator.clipboard.writeText(u);sb.textContent='✓ 복사됨';}};
+var cb=document.getElementById('skCopyBtn');if(cb)cb.onclick=function(){navigator.clipboard.writeText(u).then(function(){cb.textContent='✓ 복사됨';});};})();
+</script>
   <footer>
     고용노동부 산정 방식을 따른 참고용 도구입니다. 법률 자문이 아니며,<br>
     정확한 금액은 ☎ 1350에서 확인하세요. 업데이트: 2026-07.<br><a href="https://m.me/songkhonohan" class="fb-foot">💬 Messenger</a> · <a href="https://www.facebook.com/songkhonohan" class="fb-foot">Facebook</a><br><a href="../chinh-sach-bao-mat.html">개인정보처리방침</a>
@@ -157,7 +180,8 @@ $('mDetail').onclick=()=>{mode='detail';$('mDetail').classList.add('on');$('mSim
 
 let last=null;
 function calc(){
-  const s=new Date($('start').value), e=new Date($('end').value);
+  const sv=dateVal('start'), ev=dateVal('end');
+  const s=new Date(sv), e=new Date(ev);
   const r=$('receipt');
   if(isNaN(s)||isNaN(e)||e<=s){r.classList.remove('show');last=null;return;}
   const totalDays=daysBetween(s,e);
@@ -180,9 +204,19 @@ function calc(){
   $('nHours').classList.toggle('show',!tooShort&&!over15);
   $('nRights').classList.toggle('show',eligible);
   r.classList.add('show');
-  last={start:$('start').value,end:$('end').value,totalDays,years:(totalDays/365).toFixed(2),avg,sev};
+  last={start:sv,end:ev,totalDays,years:(totalDays/365).toFixed(2),avg,sev};
 }
-['start','end','monthly','m1','m2','m3','bonus','leave','over15'].forEach(id=>{const el=$(id);if(el){el.addEventListener('input',calc);el.addEventListener('change',calc);}});
+function pad(n){return (n<10?'0':'')+n;}
+function dateVal(p){const y=$(p+'Y').value,m=$(p+'M').value,d=$(p+'D').value;return (y&&m&&d)?y+'-'+pad(+m)+'-'+pad(+d):'';}
+(function initDates(){
+ ['start','end'].forEach(p=>{
+  const Y=$(p+'Y'),M=$(p+'M'),D=$(p+'D');
+  let ys='<option value="">'+Y.dataset.ph+'</option>';for(let y=2026;y>=2010;y--)ys+='<option>'+y+'</option>';Y.innerHTML=ys;
+  let ms='<option value="">'+M.dataset.ph+'</option>';for(let m=1;m<=12;m++)ms+='<option>'+m+'</option>';M.innerHTML=ms;
+  let ds='<option value="">'+D.dataset.ph+'</option>';for(let d=1;d<=31;d++)ds+='<option>'+d+'</option>';D.innerHTML=ds;
+ });
+})();
+['startY','startM','startD','endY','endM','endD','monthly','m1','m2','m3','bonus','leave','over15'].forEach(id=>{const el=$(id);if(el){el.addEventListener('input',calc);el.addEventListener('change',calc);}});
 
 $('copyBtn').onclick=()=>{
   if(!last)return;

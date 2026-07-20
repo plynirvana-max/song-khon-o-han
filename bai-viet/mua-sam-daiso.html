@@ -20,6 +20,16 @@
 <meta property="og:image:width" content="1640">
 <meta property="og:image:height" content="624">
 <meta name="twitter:card" content="summary_large_image">
+<style>
+.sharebar{display:flex;gap:8px;margin:22px 0 6px}
+.sharebar button,.sharebar a{flex:1;text-align:center;font-family:inherit;font-weight:800;font-size:13.5px;border-radius:11px;padding:12px 6px;cursor:pointer;text-decoration:none;border:2px solid var(--xanh);background:#fff;color:var(--xanh-d)}
+.sharebar .fbb{background:#0866FF;border-color:#0866FF;color:#fff}
+.followbox{background:linear-gradient(150deg,var(--xanh) 0%,var(--xanh-d) 100%);border-radius:14px;padding:16px;margin:10px 0 4px;color:#FFF9EC}
+.followbox b{color:var(--vang)}
+.followbox a{display:inline-block;margin-top:9px;background:#fff;color:#0866FF;font-weight:800;border-radius:10px;padding:9px 16px;text-decoration:none;font-size:14px}
+</style>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#14532D">
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -27,7 +37,7 @@
     <a href="../index.html" class="brand">Sống Khôn ở Hàn</a>
     <div class="sub">Thông tin đã kiểm chứng cho người Việt tại Hàn Quốc</div>
   </div>
-  <a class="langbtn" href="../ko/bai-viet/mua-sam-daiso.html">🇰🇷 한국어로 보기</a>
+  <a class="langbtn" href="../ko/bai-viet/mua-sam-daiso.html"><svg style="width:20px;height:13px;vertical-align:-2px;border-radius:2px;margin-right:2px" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="20" fill="#fff"/><path d="M10 10a5 5 0 0 1 10 0" fill="#CD2E3A"/><path d="M10 10a5 5 0 0 0 10 0" fill="#0047A0"/><circle cx="12.5" cy="10" r="2.5" fill="#CD2E3A"/><circle cx="17.5" cy="10" r="2.5" fill="#0047A0"/><g fill="#111" transform="translate(5.6,4.6) rotate(-34)"><rect x="-2.6" y="-1.9" width="5.2" height="0.95"/><rect x="-2.6" y="-0.475" width="5.2" height="0.95"/><rect x="-2.6" y="0.95" width="5.2" height="0.95"/></g><g fill="#111" transform="translate(24.4,15.4) rotate(-34)"><rect x="-2.6" y="-1.9" width="5.2" height="0.95"/><rect x="-2.6" y="-0.475" width="5.2" height="0.95"/><rect x="-2.6" y="0.95" width="5.2" height="0.95"/></g><g fill="#111" transform="translate(24.4,4.6) rotate(34)"><rect x="-2.6" y="-1.9" width="5.2" height="0.95"/><rect x="-2.6" y="-0.475" width="5.2" height="0.95"/><rect x="-2.6" y="0.95" width="5.2" height="0.95"/></g><g fill="#111" transform="translate(5.6,15.4) rotate(34)"><rect x="-2.6" y="-1.9" width="5.2" height="0.95"/><rect x="-2.6" y="-0.475" width="5.2" height="0.95"/><rect x="-2.6" y="0.95" width="5.2" height="0.95"/></g><rect width="30" height="20" fill="none" stroke="#00000026"/></svg> 한국어로 보기</a>
 </div></div>
 <nav class="nav"><div class="inner">
   <a href="../index.html">Trang chủ</a>
@@ -81,6 +91,18 @@
     </div>
   </article>
 
+<div class="sharebar">
+  <button id="skShareBtn">📤 Chia sẻ</button>
+  <a class="fbb" id="skFbShare" target="_blank" rel="noopener" href="#">ⓕ Facebook</a>
+  <button id="skCopyBtn">📋 Chép link</button>
+</div>
+<div class="followbox"><b>Bài này có ích?</b> Mỗi tuần một mẹo như vậy — gửi cho đồng hương của bạn nhé.<br><a href="https://www.facebook.com/songkhonohan" target="_blank" rel="noopener">ⓕ Theo dõi Facebook</a></div>
+<script>
+(function(){var c=document.querySelector('link[rel="canonical"]');var u=c?c.href:location.href;var t=document.title;
+var fb=document.getElementById('skFbShare');if(fb)fb.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(u);
+var sb=document.getElementById('skShareBtn');if(sb)sb.onclick=function(){if(navigator.share){navigator.share({title:t,url:u}).catch(function(){});}else{navigator.clipboard.writeText(u);sb.textContent='✓ Đã chép';}};
+var cb=document.getElementById('skCopyBtn');if(cb)cb.onclick=function(){navigator.clipboard.writeText(u).then(function(){cb.textContent='✓ Đã chép';});};})();
+</script>
   <footer>
     Thông tin tham khảo.<br>
     <a href="https://m.me/songkhonohan" class="fb-foot">💬 Messenger</a> · <a href="https://www.facebook.com/songkhonohan" class="fb-foot">Facebook</a><br><a href="../chinh-sach-bao-mat.html">Chính sách bảo mật</a><br>© 2026 Sống Khôn ở Hàn

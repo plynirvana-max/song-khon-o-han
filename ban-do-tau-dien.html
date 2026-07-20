@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bản đồ tuyến tàu Seoul cho người Việt + tra tàu đến theo thời gian thực — Sống Khôn ở Hàn</title>
-<meta name="description" content="Màu và tên 12 tuyến chính, các ga quan trọng có phiên âm tiếng Việt, và công cụ tra tàu sắp đến theo thời gian thực.">
+<title>Tàu điện Seoul: sơ đồ tuyến + tàu đến realtime (gõ tên ga bằng tiếng Anh OK) — Sống Khôn ở Hàn</title>
+<meta name="description" content="Tra tàu realtime gõ tên ga bằng TIẾNG ANH cũng được, sơ đồ khái quát các tuyến quanh Seoul (hiện vị trí GPS của bạn), bảng tên ga 3 thứ tiếng.">
 <link rel="canonical" href="https://songkhonohan.com/ban-do-tau-dien.html">
 <link rel="alternate" hreflang="vi" href="https://songkhonohan.com/ban-do-tau-dien.html">
 <link rel="alternate" hreflang="ko" href="https://songkhonohan.com/ko/ban-do-tau-dien.html">
 <link rel="alternate" hreflang="x-default" href="https://songkhonohan.com/ban-do-tau-dien.html">
 <meta property="og:site_name" content="Sống Khôn ở Hàn">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Bản đồ tuyến tàu Seoul cho người Việt + tra tàu đến theo thời gian thực">
-<meta property="og:description" content="Màu và tên 12 tuyến chính, các ga quan trọng có phiên âm tiếng Việt, và công cụ tra tàu sắp đến theo thời gian thực.">
+<meta property="og:title" content="Tàu điện Seoul: sơ đồ tuyến + tàu đến realtime (gõ tên ga bằng tiếng Anh OK)">
+<meta property="og:description" content="Tra tàu realtime gõ tên ga bằng TIẾNG ANH cũng được, sơ đồ khái quát các tuyến quanh Seoul (hiện vị trí GPS của bạn), bảng tên ga 3 thứ tiếng.">
 <meta property="og:url" content="https://songkhonohan.com/ban-do-tau-dien.html">
 <meta property="og:image" content="https://songkhonohan.com/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -24,17 +24,33 @@
 .lchip{display:inline-block;min-width:30px;text-align:center;color:#fff;font-weight:900;border-radius:99px;padding:4px 8px;font-size:13px}
 table.ln{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;margin-top:12px;font-size:13.5px}
 table.ln td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-.pr{color:var(--do);font-weight:700}
+.pr{color:var(--do);font-weight:700}.mut{color:var(--xam);font-size:11.5px}
 .qbtn{border:2px solid var(--xanh);background:#fff;border-radius:8px;font-size:14px;padding:4px 8px;cursor:pointer}
 .livebox{background:#fff;border-radius:14px;padding:16px;margin-top:12px;box-shadow:0 1px 4px rgba(30,42,34,.08)}
 .liverow{display:flex;gap:10px}
-.liverow input{flex:1;padding:12px 14px;font-size:15px;font-family:inherit;border:2px solid var(--xanh);border-radius:10px}
+.liverow input{flex:1;min-width:0;padding:12px 14px;font-size:15px;font-family:inherit;border:2px solid var(--xanh);border-radius:10px}
 .liverow button{background:var(--do);color:#fff;border:none;border-radius:10px;font-family:inherit;font-weight:800;font-size:15px;padding:0 18px;cursor:pointer}
+.hint{font-size:13px;font-weight:800;color:var(--xanh-d);margin-top:8px}
 .arr{display:flex;align-items:center;gap:10px;border-bottom:1px dashed var(--line);padding:10px 2px;font-size:14px}
 .arr .msg{margin-left:auto;font-weight:800;color:var(--xanh-d);text-align:right}
-.livenote{font-size:12.5px;color:var(--xam);margin-top:8px}
 .offline{background:#FFF9EC;border-left:4px solid var(--vang);border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:10px}
+.illus{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:10px;margin-top:12px}
+.illus svg{width:100%;height:auto;display:block}
+.illus .cap{font-size:12px;color:var(--xam);text-align:center;margin-top:6px}
+.gpsbtn{display:block;width:100%;margin-top:10px;background:var(--xanh);color:#fff;border:none;border-radius:10px;font-family:inherit;font-weight:800;font-size:14px;padding:12px;cursor:pointer}
+@keyframes pulse{0%{r:7;opacity:.9}70%{r:16;opacity:0}100%{r:16;opacity:0}}
+.pulse{animation:pulse 1.6s ease-out infinite;transform-origin:center}
 </style>
+<style>
+.sharebar{display:flex;gap:8px;margin:22px 0 6px}
+.sharebar button,.sharebar a{flex:1;text-align:center;font-family:inherit;font-weight:800;font-size:13.5px;border-radius:11px;padding:12px 6px;cursor:pointer;text-decoration:none;border:2px solid var(--xanh);background:#fff;color:var(--xanh-d)}
+.sharebar .fbb{background:#0866FF;border-color:#0866FF;color:#fff}
+.followbox{background:linear-gradient(150deg,var(--xanh) 0%,var(--xanh-d) 100%);border-radius:14px;padding:16px;margin:10px 0 4px;color:#FFF9EC}
+.followbox b{color:var(--vang)}
+.followbox a{display:inline-block;margin-top:9px;background:#fff;color:#0866FF;font-weight:800;border-radius:10px;padding:9px 16px;text-decoration:none;font-size:14px}
+</style>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#14532D">
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -42,7 +58,7 @@ table.ln td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
     <a href="index.html" class="brand">Sống Khôn ở Hàn</a>
     <div class="sub">Thông tin đã kiểm chứng cho người Việt tại Hàn Quốc</div>
   </div>
-  <a class="langbtn" href="ko/ban-do-tau-dien.html">🇰🇷 한국어로 보기</a>
+  <a class="langbtn" href="ko/ban-do-tau-dien.html"><svg style="width:20px;height:13px;vertical-align:-2px;border-radius:2px;margin-right:2px" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="20" fill="#fff"/><path d="M10 10a5 5 0 0 1 10 0" fill="#CD2E3A"/><path d="M10 10a5 5 0 0 0 10 0" fill="#0047A0"/><circle cx="12.5" cy="10" r="2.5" fill="#CD2E3A"/><circle cx="17.5" cy="10" r="2.5" fill="#0047A0"/><g fill="#111" transform="translate(5.6,4.6) rotate(-34)"><rect x="-2.6" y="-1.9" width="5.2" height="0.95"/><rect x="-2.6" y="-0.475" width="5.2" height="0.95"/><rect x="-2.6" y="0.95" width="5.2" height="0.95"/></g><g fill="#111" transform="translate(24.4,15.4) rotate(-34)"><rect x="-2.6" y="-1.9" width="5.2" height="0.95"/><rect x="-2.6" y="-0.475" width="5.2" height="0.95"/><rect x="-2.6" y="0.95" width="5.2" height="0.95"/></g><g fill="#111" transform="translate(24.4,4.6) rotate(34)"><rect x="-2.6" y="-1.9" width="5.2" height="0.95"/><rect x="-2.6" y="-0.475" width="5.2" height="0.95"/><rect x="-2.6" y="0.95" width="5.2" height="0.95"/></g><g fill="#111" transform="translate(5.6,15.4) rotate(34)"><rect x="-2.6" y="-1.9" width="5.2" height="0.95"/><rect x="-2.6" y="-0.475" width="5.2" height="0.95"/><rect x="-2.6" y="0.95" width="5.2" height="0.95"/></g><rect width="30" height="20" fill="none" stroke="#00000026"/></svg> 한국어로 보기</a>
 </div></div>
 <nav class="nav"><div class="inner">
   <a href="index.html">Trang chủ</a>
@@ -56,66 +72,100 @@ table.ln td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
 
 <div class="wrap">
   <section class="hero" style="padding-bottom:22px">
-    <h1>Bản đồ tàu điện Seoul: hết hoa mắt<span class="ko">12 tuyến chính · ga quan trọng có phiên âm · tàu đến trong mấy phút?</span></h1>
+    <h1>Tàu điện Seoul: hết hoa mắt<span class="ko">sơ đồ khái quát · tàu đến realtime · gõ tiếng Anh OK</span></h1>
   </section>
 
   <section class="section">
-    <h2>🚇 Tàu đến trong mấy phút? (thời gian thực)</h2>
+    <h2>🚇 Tàu đến trong mấy phút? (realtime)</h2>
     <div class="livebox">
       <div class="liverow">
-        <input id="stName" placeholder="Gõ tên ga bằng CHỮ HÀN (ví dụ: 강남) — hoặc bấm 🔍 ở bảng dưới">
-        <button id="stGo">Tra ngay</button>
+        <input id="stName" placeholder="Tên ga (tiếng Anh OK: gangnam, ansan, hongdae...)">
+        <button id="stGo">Tra</button>
       </div>
+      <div class="hint" id="stHint"></div>
       <div id="stOut"></div>
-      <div class="livenote">Tên ga phải gõ bằng chữ Hàn — chưa quen thì bấm nút 🔍 ở bảng ga bên dưới, tên sẽ tự điền.</div>
     </div>
   </section>
 
   <section class="section">
-    <h2>Bảng màu 12 tuyến — nhớ MÀU là xong một nửa</h2>
+    <h2>Sơ đồ khái quát: tuyến nào chạy đi đâu</h2>
+    <div class="illus"><svg id="mapSvg" viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+<rect width="720" height="520" fill="#FBF7EC" rx="14"/>
+<polyline points="509.6,131.1 481.6,245.6 456.0,249.0 452.2,255.9 391.0,288.1 264.8,301.8 184.0,310.7" fill="none" stroke="#0052A4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="391.0,288.1 473.3,454.7" fill="none" stroke="#0052A4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="456.0,249.0 415.9,255.2 391.0,288.1 459.0,310.1 494.5,295.7 548.9,285.4 515.6,263.4 501.3,252.5 456.0,249.0" fill="none" stroke="#00A84D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><polyline points="411.4,201.0 452.9,242.9 477.1,290.9 499.0,305.3 549.6,303.2" fill="none" stroke="#EF7C1C" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="519.4,188.0 481.6,245.6 452.2,255.9 459.0,310.1 427.2,412.9 236.8,398.5" fill="none" stroke="#00A5DE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="323.0,251.8 415.9,279.9 455.2,245.6 567.0,268.2" fill="none" stroke="#996CAC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="261.8,288.8 384.2,307.3 477.1,290.9 514.1,281.3 519.4,188.0" fill="none" stroke="#747F00" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="323.0,251.8 415.9,279.9 477.1,290.9 528.5,286.7" fill="none" stroke="#BDB092" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="59.3,330.6 323.0,251.8 415.9,255.2 452.2,255.9" fill="none" stroke="#0090D2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="184.0,310.7 236.8,398.5 427.2,412.9 473.3,454.7 554.9,385.5 501.3,252.5" fill="none" stroke="#F5A200" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="494.5,295.7 558.0,366.3 507.3,430.7" fill="none" stroke="#D4003B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="59.3" cy="330.6" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="323.0" cy="251.8" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="184.0" cy="310.7" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="264.8" cy="301.8" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="391.0" cy="288.1" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="415.9" cy="255.2" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="452.2" cy="255.9" r="5" fill="#fff" stroke="#1E2A22" stroke-width="2.4"/><circle cx="456.0" cy="249.0" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="501.3" cy="252.5" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="515.6" cy="263.4" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="548.9" cy="285.4" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="567.0" cy="268.2" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="494.5" cy="295.7" r="5" fill="#fff" stroke="#1E2A22" stroke-width="2.4"/><circle cx="477.1" cy="290.9" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="459.0" cy="310.1" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="415.9" cy="279.9" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="519.4" cy="188.0" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="509.6" cy="131.1" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="411.4" cy="201.0" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="473.3" cy="454.7" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="427.2" cy="412.9" r="5" fill="#fff" stroke="#1E2A22" stroke-width="2.4"/><circle cx="236.8" cy="398.5" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="558.0" cy="366.3" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="507.3" cy="430.7" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><circle cx="554.9" cy="385.5" r="3.6" fill="#fff" stroke="#1E2A22" stroke-width="1.8"/><text x="63.3" y="344.6" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Sân bay Incheon ✈️</text><text x="327.0" y="243.8" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Gimpo ✈️</text><text x="180.0" y="324.7" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="end" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Incheon</text><text x="260.8" y="293.8" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="end" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Bupyeong</text><text x="385.0" y="302.1" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="end" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Sindorim</text><text x="409.9" y="247.2" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="end" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Hongdae</text><text x="458.2" y="247.9" font-size="11" font-weight="800" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">SEOUL ST.</text><text x="464.0" y="251.0" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Tòa thị chính</text><text x="509.3" y="246.5" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Wangsimni</text><text x="523.6" y="271.4" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Seongsu</text><text x="556.9" y="289.4" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Jamsil</text><text x="573.0" y="262.2" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Cheonho</text><text x="502.5" y="309.7" font-size="11" font-weight="800" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">GANGNAM</text><text x="469.1" y="282.9" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="end" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">BX Terminal</text><text x="453.0" y="326.1" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="end" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Sadang</text><text x="407.9" y="273.9" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="end" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Yeouido</text><text x="527.4" y="184.0" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Nowon</text><text x="517.6" y="127.1" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Uijeongbu</text><text x="403.4" y="197.0" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="end" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Gupabal</text><text x="479.3" y="468.7" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Suwon</text><text x="433.2" y="428.9" font-size="11" font-weight="800" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">ANSAN</text><text x="230.8" y="414.5" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="end" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Oido</text><text x="566.0" y="370.3" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Pangyo</text><text x="515.3" y="442.7" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Gwanggyo</text><text x="562.9" y="383.5" font-size="10" font-weight="600" fill="#1E2A22" text-anchor="start" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">Jeongja</text>
+<g id="gpsDot"></g>
+<g font-size="10" transform="translate(28,424)">
+ <rect x="-10" y="-16" width="252" height="88" rx="10" fill="#ffffff" opacity="0.92" stroke="#E8E2CF"/>
+ <g transform="translate(0,0)"><rect width="16" height="5" fill="#0052A4" rx="2"/><text x="22" y="6">1</text>
+ <rect x="40" width="16" height="5" fill="#00A84D" rx="2"/><text x="62" y="6">2</text>
+ <rect x="80" width="16" height="5" fill="#EF7C1C" rx="2"/><text x="102" y="6">3</text>
+ <rect x="120" width="16" height="5" fill="#00A5DE" rx="2"/><text x="142" y="6">4</text>
+ <rect x="160" width="16" height="5" fill="#996CAC" rx="2"/><text x="182" y="6">5</text>
+ <rect x="200" width="16" height="5" fill="#747F00" rx="2"/><text x="222" y="6">7</text></g>
+ <g transform="translate(0,16)"><rect width="16" height="5" fill="#BDB092" rx="2"/><text x="22" y="6">9</text>
+ <rect x="40" width="16" height="5" fill="#0090D2" rx="2"/><text x="62" y="6">AREX</text>
+ <rect x="110" width="16" height="5" fill="#F5A200" rx="2"/><text x="132" y="6">수인분당</text></g>
+ <g transform="translate(0,32)"><rect width="16" height="5" fill="#D4003B" rx="2"/><text x="22" y="6">신분당</text></g>
+ <text y="56" font-size="9.5" fill="#7A8276">Sơ đồ KHÁI QUÁT — không đúng tỉ lệ thật, lược bớt một số tuyến (6·8...).</text>
+</g>
+</svg><div class="cap" id="mapCap"></div></div>
+    <button class="gpsbtn" id="gpsBtn">📍 Hiện vị trí của tôi</button>
+  </section>
+
+  <section class="section">
+    <h2>Bảng màu tuyến</h2>
     <table class="ln">
-<tr><td><span class="lchip" style="background:#0052A4">1</span></td><td><b>Tuyến 1 (il-hô-sơn)</b><br><span style="color:var(--xam);font-size:12px">1호선</span></td><td>Soyosan/Incheon/Sinchang — tuyến già nhất, đi xa ngoại tỉnh</td></tr>
-<tr><td><span class="lchip" style="background:#00A84D">2</span></td><td><b>Tuyến 2 (i-hô-sơn)</b><br><span style="color:var(--xam);font-size:12px">2호선</span></td><td>VÒNG TRÒN quanh trung tâm — Hongdae, Gangnam, Jamsil</td></tr>
-<tr><td><span class="lchip" style="background:#EF7C1C">3</span></td><td><b>Tuyến 3 (sam-hô-sơn)</b><br><span style="color:var(--xam);font-size:12px">3호선</span></td><td>Daehwa ↔ Ogeum — Gyeongbokgung, Express Bus Terminal</td></tr>
-<tr><td><span class="lchip" style="background:#00A5DE">4</span></td><td><b>Tuyến 4 (sa-hô-sơn)</b><br><span style="color:var(--xam);font-size:12px">4호선</span></td><td>Jinjeop ↔ Oido — Myeongdong, Sadang, An San (nhiều người Việt)</td></tr>
-<tr><td><span class="lchip" style="background:#996CAC">5</span></td><td><b>Tuyến 5 (ô-hô-sơn)</b><br><span style="color:var(--xam);font-size:12px">5호선</span></td><td>Banghwa ↔ Macheon — Gwanghwamun, Yeouido</td></tr>
-<tr><td><span class="lchip" style="background:#CD7C2F">6</span></td><td><b>Tuyến 6 (yuc-hô-sơn)</b><br><span style="color:var(--xam);font-size:12px">6호선</span></td><td>Itaewon, chợ Mangwon</td></tr>
-<tr><td><span class="lchip" style="background:#747F00">7</span></td><td><b>Tuyến 7 (chil-hô-sơn)</b><br><span style="color:var(--xam);font-size:12px">7호선</span></td><td>Bupyeong-gu Office ↔ Jangam — nối Incheon–Gangnam không qua trung tâm</td></tr>
-<tr><td><span class="lchip" style="background:#E6186C">8</span></td><td><b>Tuyến 8 (phal-hô-sơn)</b><br><span style="color:var(--xam);font-size:12px">8호선</span></td><td>Jamsil, Moran (chợ Seongnam)</td></tr>
-<tr><td><span class="lchip" style="background:#BDB092">9</span></td><td><b>Tuyến 9 (cu-hô-sơn)</b><br><span style="color:var(--xam);font-size:12px">9호선</span></td><td>CÓ TÀU NHANH 급행 — sân bay Gimpo ↔ Gangnam</td></tr>
-<tr><td><span class="lchip" style="background:#0090D2">A</span></td><td><b>AREX (công-hang-chơl-tô)</b><br><span style="color:var(--xam);font-size:12px">공항철도</span></td><td>Sân bay Incheon ↔ Seoul Station</td></tr>
-<tr><td><span class="lchip" style="background:#D4003B">S</span></td><td><b>Sinbundang (sin-bun-đang)</b><br><span style="color:var(--xam);font-size:12px">신분당선</span></td><td>Gangnam ↔ Suwon hướng nam — nhanh, giá cao hơn chút</td></tr>
-<tr><td><span class="lchip" style="background:#F5A200">K</span></td><td><b>Suin-Bundang (su-in-bun-đang)</b><br><span style="color:var(--xam);font-size:12px">수인분당선</span></td><td>Incheon ↔ Suwon ↔ Seongnam — qua nhiều khu công nghiệp</td></tr>
+<tr><td><span class="lchip" style="background:#0052A4">1</span></td><td><b>Tuyến 1 (il-hô-sơn)</b></td><td>Uijeongbu ↔ Incheon/Suwon — tuyến già nhất, đi xa ngoại tỉnh</td></tr>
+<tr><td><span class="lchip" style="background:#00A84D">2</span></td><td><b>Tuyến 2 (i-hô-sơn)</b></td><td>VÒNG TRÒN quanh trung tâm — Hongdae, Gangnam, Jamsil</td></tr>
+<tr><td><span class="lchip" style="background:#EF7C1C">3</span></td><td><b>Tuyến 3 (sam-hô-sơn)</b></td><td>Tây Bắc ↔ Đông Nam — Gyeongbokgung, BX Terminal</td></tr>
+<tr><td><span class="lchip" style="background:#00A5DE">4</span></td><td><b>Tuyến 4 (sa-hô-sơn)</b></td><td>Nowon ↔ Ansan/Oido — Myeongdong, Sadang, An San</td></tr>
+<tr><td><span class="lchip" style="background:#996CAC">5</span></td><td><b>Tuyến 5 (ô-hô-sơn)</b></td><td>Gimpo ↔ Đông — Gwanghwamun, Yeouido</td></tr>
+<tr><td><span class="lchip" style="background:#747F00">7</span></td><td><b>Tuyến 7 (chil-hô-sơn)</b></td><td>Bupyeong ↔ Nowon — nối Incheon–Gangnam không qua trung tâm</td></tr>
+<tr><td><span class="lchip" style="background:#BDB092">9</span></td><td><b>Tuyến 9 (cu-hô-sơn)</b></td><td>CÓ TÀU NHANH 급행 — Gimpo ↔ Gangnam</td></tr>
+<tr><td><span class="lchip" style="background:#0090D2">A</span></td><td><b>AREX</b></td><td>Sân bay Incheon ↔ Seoul Station</td></tr>
+<tr><td><span class="lchip" style="background:#F5A200">K</span></td><td><b>Suin–Bundang</b></td><td>Incheon ↔ Ansan ↔ Suwon ↔ Wangsimni — qua nhiều khu công nghiệp</td></tr>
+<tr><td><span class="lchip" style="background:#D4003B">S</span></td><td><b>Sinbundang</b></td><td>Gangnam ↔ Gwanggyo — nhanh, giá cao hơn chút</td></tr>
     </table>
   </section>
 
   <section class="section">
-    <h2>Đọc tên các ga quan trọng</h2>
+    <h2>Tên ga quan trọng: chữ Hàn · phiên âm Việt · tiếng Anh</h2>
     <table class="ln">
-<tr><td><b>서울역</b></td><td class="pr">Sơ-ul-yơc</td><td>ga trung tâm, KTX + AREX</td><td><button class="qbtn" data-st="서울역">🔍</button></td></tr>
-<tr><td><b>시청</b></td><td class="pr">Si-chơng</td><td>tòa thị chính, quảng trường</td><td><button class="qbtn" data-st="시청">🔍</button></td></tr>
-<tr><td><b>강남</b></td><td class="pr">Kang-nam</td><td>khu văn phòng sầm uất</td><td><button class="qbtn" data-st="강남">🔍</button></td></tr>
-<tr><td><b>홍대입구</b></td><td class="pr">Hông-đe-íp-cu</td><td>phố trẻ, nhạc đường phố</td><td><button class="qbtn" data-st="홍대입구">🔍</button></td></tr>
-<tr><td><b>명동</b></td><td class="pr">Myơng-đông</td><td>mua sắm, du khách</td><td><button class="qbtn" data-st="명동">🔍</button></td></tr>
-<tr><td><b>동대문</b></td><td class="pr">Tông-đe-mun</td><td>chợ vải, mở đêm</td><td><button class="qbtn" data-st="동대문">🔍</button></td></tr>
-<tr><td><b>이태원</b></td><td class="pr">I-the-uôn</td><td>phố đa văn hóa</td><td><button class="qbtn" data-st="이태원">🔍</button></td></tr>
-<tr><td><b>잠실</b></td><td class="pr">Cham-sil</td><td>Lotte World</td><td><button class="qbtn" data-st="잠실">🔍</button></td></tr>
-<tr><td><b>사당</b></td><td class="pr">Sa-đang</td><td>điểm đổi tuyến 2↔4 lớn</td><td><button class="qbtn" data-st="사당">🔍</button></td></tr>
-<tr><td><b>신도림</b></td><td class="pr">Sin-đô-rim</td><td>điểm đổi tuyến 1↔2 đông nhất</td><td><button class="qbtn" data-st="신도림">🔍</button></td></tr>
-<tr><td><b>영등포</b></td><td class="pr">Yơng-đưng-phô</td><td>khu chợ + ga tàu hỏa</td><td><button class="qbtn" data-st="영등포">🔍</button></td></tr>
-<tr><td><b>김포공항</b></td><td class="pr">Kim-phô-công-hang</td><td>sân bay nội địa</td><td><button class="qbtn" data-st="김포공항">🔍</button></td></tr>
-<tr><td><b>부평</b></td><td class="pr">Bu-phyơng</td><td>Incheon, đông người Việt</td><td><button class="qbtn" data-st="부평">🔍</button></td></tr>
-<tr><td><b>안산</b></td><td class="pr">An-san</td><td>khu đa văn hóa lớn nhất, rất đông người Việt</td><td><button class="qbtn" data-st="안산">🔍</button></td></tr>
-<tr><td><b>수원</b></td><td class="pr">Su-uôn</td><td>thành cổ Hwaseong</td><td><button class="qbtn" data-st="수원">🔍</button></td></tr>
-<tr><td><b>인천</b></td><td class="pr">In-chơn</td><td>cuối tuyến 1 hướng biển</td><td><button class="qbtn" data-st="인천">🔍</button></td></tr>
+<tr><td><b>서울역</b><br><span class="mut">ga trung tâm · KTX + AREX</span></td><td class="pr">Sơ-ul-yơc</td><td>Seoul Station</td><td><button class="qbtn" data-st="서울">🔍</button></td></tr>
+<tr><td><b>시청</b><br><span class="mut">quảng trường trung tâm</span></td><td class="pr">Si-chơng</td><td>City Hall</td><td><button class="qbtn" data-st="시청">🔍</button></td></tr>
+<tr><td><b>강남</b><br><span class="mut">khu văn phòng sầm uất</span></td><td class="pr">Kang-nam</td><td>Gangnam</td><td><button class="qbtn" data-st="강남">🔍</button></td></tr>
+<tr><td><b>홍대입구</b><br><span class="mut">phố trẻ, nhạc đường phố</span></td><td class="pr">Hông-đe-íp-cu</td><td>Hongik Univ.</td><td><button class="qbtn" data-st="홍대입구">🔍</button></td></tr>
+<tr><td><b>명동</b><br><span class="mut">mua sắm, du khách</span></td><td class="pr">Myơng-đông</td><td>Myeongdong</td><td><button class="qbtn" data-st="명동">🔍</button></td></tr>
+<tr><td><b>동대문</b><br><span class="mut">chợ vải, mở đêm</span></td><td class="pr">Tông-đe-mun</td><td>Dongdaemun</td><td><button class="qbtn" data-st="동대문">🔍</button></td></tr>
+<tr><td><b>이태원</b><br><span class="mut">phố đa văn hóa</span></td><td class="pr">I-the-uôn</td><td>Itaewon</td><td><button class="qbtn" data-st="이태원">🔍</button></td></tr>
+<tr><td><b>잠실</b><br><span class="mut">Lotte World</span></td><td class="pr">Cham-sil</td><td>Jamsil</td><td><button class="qbtn" data-st="잠실">🔍</button></td></tr>
+<tr><td><b>사당</b><br><span class="mut">đổi tuyến 2↔4 lớn</span></td><td class="pr">Sa-đang</td><td>Sadang</td><td><button class="qbtn" data-st="사당">🔍</button></td></tr>
+<tr><td><b>신도림</b><br><span class="mut">đổi tuyến 1↔2 đông nhất</span></td><td class="pr">Sin-đô-rim</td><td>Sindorim</td><td><button class="qbtn" data-st="신도림">🔍</button></td></tr>
+<tr><td><b>영등포</b><br><span class="mut">chợ + ga tàu hỏa</span></td><td class="pr">Yơng-đưng-phô</td><td>Yeongdeungpo</td><td><button class="qbtn" data-st="영등포">🔍</button></td></tr>
+<tr><td><b>김포공항</b><br><span class="mut">sân bay nội địa</span></td><td class="pr">Kim-phô-công-hang</td><td>Gimpo Airport</td><td><button class="qbtn" data-st="김포공항">🔍</button></td></tr>
+<tr><td><b>부평</b><br><span class="mut">Incheon, đông người Việt</span></td><td class="pr">Bu-phyơng</td><td>Bupyeong</td><td><button class="qbtn" data-st="부평">🔍</button></td></tr>
+<tr><td><b>안산</b><br><span class="mut">đa văn hóa, RẤT đông người Việt</span></td><td class="pr">An-san</td><td>Ansan</td><td><button class="qbtn" data-st="안산">🔍</button></td></tr>
+<tr><td><b>수원</b><br><span class="mut">thành cổ Hwaseong</span></td><td class="pr">Su-uôn</td><td>Suwon</td><td><button class="qbtn" data-st="수원">🔍</button></td></tr>
+<tr><td><b>인천</b><br><span class="mut">cuối tuyến 1 hướng biển</span></td><td class="pr">In-chơn</td><td>Incheon</td><td><button class="qbtn" data-st="인천">🔍</button></td></tr>
     </table>
   </section>
 
   <section class="section">
-    <h2>Xem bản đồ đầy đủ ở đâu?</h2>
-    <p>Bản đồ đầy đủ hàng trăm ga thì <strong>app luôn chính xác và mới nhất</strong>: mở màn hình "노선도" trong app <strong>Naver Map / KakaoMap / Kakao Metro</strong> — bấm vào ga là ra cả giờ tàu. Bản đồ lớn dán trên tường trong ga dùng đúng hệ màu như bảng trên. Đừng cố học thuộc — chỉ cần nhớ <strong>màu tuyến + tên ga cuối (방면)</strong> như trong <a href="bai-viet/di-tau-dien-ngam.html" style="font-weight:700;text-decoration:underline">bài tàu điện A–Z</a>.</p>
+    <h2>Bản đồ đầy đủ?</h2>
+    <p>Bản đồ đầy đủ hàng trăm ga: app <strong>Naver Map / KakaoMap / Kakao Metro</strong> luôn mới nhất. Bản đồ trên tường trong ga dùng đúng hệ màu này. Cách đi tàu từng bước: <a href="bai-viet/di-tau-dien-ngam.html" style="font-weight:700;text-decoration:underline">bài Tàu điện & xe buýt A–Z</a>.</p>
   </section>
 
+<div class="sharebar">
+  <button id="skShareBtn">📤 Chia sẻ</button>
+  <a class="fbb" id="skFbShare" target="_blank" rel="noopener" href="#">ⓕ Facebook</a>
+  <button id="skCopyBtn">📋 Chép link</button>
+</div>
+<div class="followbox"><b>Bài này có ích?</b> Mỗi tuần một mẹo như vậy — gửi cho đồng hương của bạn nhé.<br><a href="https://www.facebook.com/songkhonohan" target="_blank" rel="noopener">ⓕ Theo dõi Facebook</a></div>
+<script>
+(function(){var c=document.querySelector('link[rel="canonical"]');var u=c?c.href:location.href;var t=document.title;
+var fb=document.getElementById('skFbShare');if(fb)fb.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(u);
+var sb=document.getElementById('skShareBtn');if(sb)sb.onclick=function(){if(navigator.share){navigator.share({title:t,url:u}).catch(function(){});}else{navigator.clipboard.writeText(u);sb.textContent='✓ Đã chép';}};
+var cb=document.getElementById('skCopyBtn');if(cb)cb.onclick=function(){navigator.clipboard.writeText(u).then(function(){cb.textContent='✓ Đã chép';});};})();
+</script>
   <footer>
     <a href="https://m.me/songkhonohan" class="fb-foot">💬 Messenger</a> · <a href="https://www.facebook.com/songkhonohan" class="fb-foot">Facebook</a><br><a href="chinh-sach-bao-mat.html">Chính sách bảo mật</a><br>© 2026 Sống Khôn ở Hàn
   </footer>
@@ -127,31 +177,61 @@ table.ln td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:
 </div>
 
 <script>
-// ▼▼▼ Cloudflare Worker 주소를 여기 붙여넣으세요 (cloudflare-worker/README.md 참고) ▼▼▼
 const PROXY_URL = "https://subway.plynirvana.workers.dev";
-// ▲▲▲
+const ROM={"seoul": "서울", "seoulstation": "서울", "gangnam": "강남", "hongdae": "홍대입구", "hongikuniv": "홍대입구", "hongikuniversity": "홍대입구", "sinchon": "신촌", "ewha": "이대", "ehwa": "이대", "itaewon": "이태원", "myeongdong": "명동", "myungdong": "명동", "dongdaemun": "동대문", "ddp": "동대문역사문화공원", "dongdaemunhistoryculturepark": "동대문역사문화공원", "jamsil": "잠실", "samseong": "삼성", "samsung": "삼성", "seolleung": "선릉", "yeoksam": "역삼", "sadang": "사당", "sindorim": "신도림", "yeongdeungpo": "영등포", "noryangjin": "노량진", "yongsan": "용산", "wangsimni": "왕십리", "seongsu": "성수", "konkukuniv": "건대입구", "kondae": "건대입구", "chungmuro": "충무로", "jongno3ga": "종로3가", "gwanghwamun": "광화문", "cityhall": "시청", "sichung": "시청", "anguk": "안국", "gyeongbokgung": "경복궁", "apgujeong": "압구정", "apgujeongrodeo": "압구정로데오", "cheongdam": "청담", "expressbusterminal": "고속터미널", "expressbus": "고속터미널", "gosokterminal": "고속터미널", "yangjae": "양재", "suseo": "수서", "bokjeong": "복정", "moran": "모란", "jeongja": "정자", "pangyo": "판교", "gwanggyo": "광교", "suwon": "수원", "byeongjeom": "병점", "pyeongtaek": "평택", "cheonan": "천안", "ansan": "안산", "jungang": "중앙", "choji": "초지", "oido": "오이도", "jeongwang": "정왕", "bucheon": "부천", "songnae": "송내", "bupyeong": "부평", "juan": "주안", "incheon": "인천", "dongincheon": "동인천", "gimpoairport": "김포공항", "gimpo": "김포공항", "incheonairport": "인천공항1터미널", "incheonairportterminal1": "인천공항1터미널", "incheonairportterminal2": "인천공항2터미널", "magongnaru": "마곡나루", "digitalmediacity": "디지털미디어시티", "dmc": "디지털미디어시티", "gongdeok": "공덕", "hapjeong": "합정", "mangwon": "망원", "yeouido": "여의도", "yoido": "여의도", "saetgang": "샛강", "noksapyeong": "녹사평", "hangangjin": "한강진", "oksu": "옥수", "gangbyeon": "강변", "jamsilnaru": "잠실나루", "cheonho": "천호", "olympicpark": "올림픽공원", "garakmarket": "가락시장", "nambuterminal": "남부터미널", "gyodae": "교대", "seoulnatlunivofeducation": "교대", "nakseongdae": "낙성대", "seoulnatluniv": "서울대입구", "snu": "서울대입구", "bongcheon": "봉천", "guro": "구로", "gasan": "가산디지털단지", "gasandigitalcomplex": "가산디지털단지", "doksan": "독산", "anyang": "안양", "gunpo": "군포", "uiwang": "의왕", "sungkyunkwanuniv": "성균관대", "hwaseo": "화서", "giheung": "기흥", "mangpo": "망포", "dongtan": "동탄", "yatap": "야탑", "seohyeon": "서현", "sunae": "수내", "migeum": "미금", "ori": "오리", "jukjeon": "죽전", "yeongtong": "영통", "uijeongbu": "의정부", "nowon": "노원", "changdong": "창동", "suyu": "수유", "mia": "미아", "hyehwa": "혜화", "dobongsan": "도봉산", "gupabal": "구파발", "yeonsinnae": "연신내", "bulgwang": "불광", "hongje": "홍제", "taereung": "태릉입구", "sanggye": "상계", "danggogae": "당고개", "guri": "구리", "gangdong": "강동", "macheon": "마천", "banghwa": "방화", "balsan": "발산", "kkachisan": "까치산", "omokgyo": "오목교", "mokdong": "목동", "dangsan": "당산", "chungjeongno": "충정로", "seodaemun": "서대문", "jonggak": "종각", "euljiro1ga": "을지로입구", "euljiro": "을지로입구", "euljiro3ga": "을지로3가", "sillim": "신림"};
 const SUBWAY_ID={"1001": "1", "1002": "2", "1003": "3", "1004": "4", "1005": "5", "1006": "6", "1007": "7", "1008": "8", "1009": "9", "1063": "경의중앙", "1065": "공항", "1067": "경춘", "1075": "수인분당", "1077": "신분당", "1092": "우이신설", "1032": "GTX-A", "1081": "경강", "1093": "서해", "1061": "중앙"};
 const LINE_COLOR={"1": "#0052A4", "2": "#00A84D", "3": "#EF7C1C", "4": "#00A5DE", "5": "#996CAC", "6": "#CD7C2F", "7": "#747F00", "8": "#E6186C", "9": "#BDB092", "공항": "#0090D2", "신분당": "#D4003B", "수인분당": "#F5A200", "경의중앙": "#77C4A3", "경춘": "#0C8E72", "우이신설": "#B0CE18", "GTX-A": "#9A6292", "경강": "#003DA5", "서해": "#8FC31F", "중앙": "#77C4A3"};
-const out=document.getElementById('stOut');
+const out=document.getElementById('stOut'), hint=document.getElementById('stHint');
+function resolve(name){
+  const raw=name.trim();
+  if(/[가-힣]/.test(raw)) return raw.replace(/역$/,'');
+  const q=raw.toLowerCase().replace(/[^a-z0-9]/g,'').replace(/station$/,'');
+  if(!q) return null;
+  if(ROM[q]) return ROM[q];
+  let best=null;
+  for(const k in ROM){
+    if(k.startsWith(q)||q.startsWith(k)||k.includes(q)){
+      if(!best||k.length<best.length) best=k;
+    }
+  }
+  return best?ROM[best]:null;
+}
 async function look(name){
   if(!name)return;
-  if(!PROXY_URL){out.innerHTML='<div class="offline">⏳ Tính năng thời gian thực đang được kích hoạt — sắp mở!</div>';return;}
-  out.innerHTML='<div class="livenote">Đang tải...</div>';
+  const st=resolve(name);
+  if(!st){hint.textContent='';out.innerHTML='<div class="offline">🤔 Không nhận ra ga này — thử viết khác đi, hoặc bấm 🔍 trong bảng bên dưới.</div>';return;}
+  hint.textContent='→ Ga nhận diện: '+st;
+  out.innerHTML='<div class="mut" style="margin-top:8px">Đang tải...</div>';
   try{
-    const r=await fetch(PROXY_URL+'/?station='+encodeURIComponent(name));
+    const r=await fetch(PROXY_URL+'/?station='+encodeURIComponent(st));
     const d=await r.json();
     const list=d.realtimeArrivalList||[];
-    if(!list.length){out.innerHTML='<div class="offline">🤔 Không tìm thấy ga tên này — kiểm tra chính tả hoặc bấm 🔍 trong bảng.</div>';return;}
+    if(!list.length){out.innerHTML='<div class="offline">🤔 Không nhận ra ga này — thử viết khác đi, hoặc bấm 🔍 trong bảng bên dưới.</div>';return;}
     out.innerHTML=list.slice(0,10).map(t=>{
       const ln=SUBWAY_ID[t.subwayId]||'?';
       const c=LINE_COLOR[ln]||'#555';
-      return '<div class="arr"><span class="lchip" style="background:'+c+'">'+ln+'</span><span>'+ (t.bstatnNm||'') +' hướng</span><span class="msg">'+(t.arvlMsg2||'')+'</span></div>';
+      return '<div class="arr"><span class="lchip" style="background:'+c+'">'+ln+'</span><span>'+(t.bstatnNm||'')+' hướng</span><span class="msg">'+(t.arvlMsg2||'')+'</span></div>';
     }).join('');
-  }catch(e){out.innerHTML='<div class="offline">📡 Lỗi kết nối — thử lại sau.</div>';}
+  }catch(e){out.innerHTML='<div class="offline">📡 Error — thử lại sau / 잠시 후 다시.</div>';}
 }
-document.getElementById('stGo').onclick=()=>look(document.getElementById('stName').value.trim());
-document.getElementById('stName').addEventListener('keydown',e=>{if(e.key==='Enter')look(e.target.value.trim());});
+document.getElementById('stGo').onclick=()=>look(document.getElementById('stName').value);
+document.getElementById('stName').addEventListener('keydown',e=>{if(e.key==='Enter')look(e.target.value);});
 document.querySelectorAll('.qbtn').forEach(b=>b.onclick=()=>{document.getElementById('stName').value=b.dataset.st;look(b.dataset.st);window.scrollTo({top:0,behavior:'smooth'});});
+// GPS on schematic
+const LONMIN=126.4,LONMAX=127.3,LATMIN=37.2,LATMAX=37.9,MW=720,MH=520;
+document.getElementById('gpsBtn').onclick=()=>{
+  const cap=document.getElementById('mapCap');
+  if(!navigator.geolocation){cap.textContent='Bạn đang ngoài phạm vi bản đồ hoặc không lấy được vị trí.';return;}
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const lon=pos.coords.longitude, lat=pos.coords.latitude;
+    const x=20+(lon-LONMIN)/(LONMAX-LONMIN)*(MW-40);
+    const y=20+(LATMAX-lat)/(LATMAX-LATMIN)*(MH-40);
+    const g=document.getElementById('gpsDot');
+    if(x<10||x>MW-10||y<10||y>MH-10){cap.textContent='Bạn đang ngoài phạm vi bản đồ hoặc không lấy được vị trí.';g.innerHTML='';return;}
+    g.innerHTML='<circle class="pulse" cx="'+x+'" cy="'+y+'" r="7" fill="#D6402B"/><circle cx="'+x+'" cy="'+y+'" r="6" fill="#D6402B" stroke="#fff" stroke-width="2.5"/><text x="'+(x+10)+'" y="'+(y+4)+'" font-size="11" font-weight="800" fill="#D6402B" paint-order="stroke" stroke="#FFF9EC" stroke-width="3">TÔI Ở ĐÂY</text>';
+    cap.textContent='';
+  },()=>{cap.textContent='Bạn đang ngoài phạm vi bản đồ hoặc không lấy được vị trí.';},{enableHighAccuracy:false,timeout:8000});
+};
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

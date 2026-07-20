@@ -22,6 +22,17 @@
 <meta property="og:image:width" content="1640">
 <meta property="og:image:height" content="624">
 <meta name="twitter:card" content="summary_large_image">
+<style>.dsel{display:flex;gap:6px}.dsel select{flex:1;min-width:0;padding:12px 6px;font-family:inherit;font-size:15px;border:2px solid var(--line);border-radius:10px;background:#fff}</style>
+<style>
+.sharebar{display:flex;gap:8px;margin:22px 0 6px}
+.sharebar button,.sharebar a{flex:1;text-align:center;font-family:inherit;font-weight:800;font-size:13.5px;border-radius:11px;padding:12px 6px;cursor:pointer;text-decoration:none;border:2px solid var(--xanh);background:#fff;color:var(--xanh-d)}
+.sharebar .fbb{background:#0866FF;border-color:#0866FF;color:#fff}
+.followbox{background:linear-gradient(150deg,var(--xanh) 0%,var(--xanh-d) 100%);border-radius:14px;padding:16px;margin:10px 0 4px;color:#FFF9EC}
+.followbox b{color:var(--vang)}
+.followbox a{display:inline-block;margin-top:9px;background:#fff;color:#0866FF;font-weight:800;border-radius:10px;padding:9px 16px;text-decoration:none;font-size:14px}
+</style>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#14532D">
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -29,7 +40,7 @@
     <a href="../index.html" class="brand">Sống Khôn ở Hàn</a>
     <div class="sub">Thông tin đã kiểm chứng cho người Việt tại Hàn Quốc</div>
   </div>
-  <a class="langbtn" href="../ko/cong-cu/tinh-toejikgeum.html">🇰🇷 한국어로 보기</a>
+  <a class="langbtn" href="../ko/cong-cu/tinh-toejikgeum.html"><svg style="width:20px;height:13px;vertical-align:-2px;border-radius:2px;margin-right:2px" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="20" fill="#fff"/><path d="M10 10a5 5 0 0 1 10 0" fill="#CD2E3A"/><path d="M10 10a5 5 0 0 0 10 0" fill="#0047A0"/><circle cx="12.5" cy="10" r="2.5" fill="#CD2E3A"/><circle cx="17.5" cy="10" r="2.5" fill="#0047A0"/><g fill="#111" transform="translate(5.6,4.6) rotate(-34)"><rect x="-2.6" y="-1.9" width="5.2" height="0.95"/><rect x="-2.6" y="-0.475" width="5.2" height="0.95"/><rect x="-2.6" y="0.95" width="5.2" height="0.95"/></g><g fill="#111" transform="translate(24.4,15.4) rotate(-34)"><rect x="-2.6" y="-1.9" width="5.2" height="0.95"/><rect x="-2.6" y="-0.475" width="5.2" height="0.95"/><rect x="-2.6" y="0.95" width="5.2" height="0.95"/></g><g fill="#111" transform="translate(24.4,4.6) rotate(34)"><rect x="-2.6" y="-1.9" width="5.2" height="0.95"/><rect x="-2.6" y="-0.475" width="5.2" height="0.95"/><rect x="-2.6" y="0.95" width="5.2" height="0.95"/></g><g fill="#111" transform="translate(5.6,15.4) rotate(34)"><rect x="-2.6" y="-1.9" width="5.2" height="0.95"/><rect x="-2.6" y="-0.475" width="5.2" height="0.95"/><rect x="-2.6" y="0.95" width="5.2" height="0.95"/></g><rect width="30" height="20" fill="none" stroke="#00000026"/></svg> 한국어로 보기</a>
 </div></div>
 <nav class="nav"><div class="inner">
   <a href="../index.html">Trang chủ</a>
@@ -61,11 +72,11 @@
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
       <div>
         <label class="f">Ngày vào làm<span class="ko">입사일</span></label>
-        <input type="date" id="start">
+        <div class="dsel"><select id="startY" data-ph="Năm"></select><select id="startM" data-ph="Tháng"></select><select id="startD" data-ph="Ngày"></select></div>
       </div>
       <div>
         <label class="f">Ngày nghỉ việc<span class="ko">퇴사일</span></label>
-        <input type="date" id="end">
+        <div class="dsel"><select id="endY" data-ph="Năm"></select><select id="endM" data-ph="Tháng"></select><select id="endD" data-ph="Ngày"></select></div>
       </div>
     </div>
 
@@ -129,6 +140,18 @@
     </a>
   </section>
 
+<div class="sharebar">
+  <button id="skShareBtn">📤 Chia sẻ</button>
+  <a class="fbb" id="skFbShare" target="_blank" rel="noopener" href="#">ⓕ Facebook</a>
+  <button id="skCopyBtn">📋 Chép link</button>
+</div>
+<div class="followbox"><b>Bài này có ích?</b> Mỗi tuần một mẹo như vậy — gửi cho đồng hương của bạn nhé.<br><a href="https://www.facebook.com/songkhonohan" target="_blank" rel="noopener">ⓕ Theo dõi Facebook</a></div>
+<script>
+(function(){var c=document.querySelector('link[rel="canonical"]');var u=c?c.href:location.href;var t=document.title;
+var fb=document.getElementById('skFbShare');if(fb)fb.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(u);
+var sb=document.getElementById('skShareBtn');if(sb)sb.onclick=function(){if(navigator.share){navigator.share({title:t,url:u}).catch(function(){});}else{navigator.clipboard.writeText(u);sb.textContent='✓ Đã chép';}};
+var cb=document.getElementById('skCopyBtn');if(cb)cb.onclick=function(){navigator.clipboard.writeText(u).then(function(){cb.textContent='✓ Đã chép';});};})();
+</script>
   <footer>
     Công cụ tham khảo theo công thức của 고용노동부. Không phải tư vấn pháp lý —<br>
     số tiền chính xác cần xác nhận với ☎ 1350. Cập nhật: 07/2026.<br><a href="https://m.me/songkhonohan" class="fb-foot">💬 Messenger</a> · <a href="https://www.facebook.com/songkhonohan" class="fb-foot">Facebook</a><br><a href="../chinh-sach-bao-mat.html">Chính sách bảo mật</a>
@@ -157,7 +180,8 @@ $('mDetail').onclick=()=>{mode='detail';$('mDetail').classList.add('on');$('mSim
 
 let last=null;
 function calc(){
-  const s=new Date($('start').value), e=new Date($('end').value);
+  const sv=dateVal('start'), ev=dateVal('end');
+  const s=new Date(sv), e=new Date(ev);
   const r=$('receipt');
   if(isNaN(s)||isNaN(e)||e<=s){r.classList.remove('show');last=null;return;}
   const totalDays=daysBetween(s,e);
@@ -180,9 +204,19 @@ function calc(){
   $('nHours').classList.toggle('show',!tooShort&&!over15);
   $('nRights').classList.toggle('show',eligible);
   r.classList.add('show');
-  last={start:$('start').value,end:$('end').value,totalDays,years:(totalDays/365).toFixed(2),avg,sev};
+  last={start:sv,end:ev,totalDays,years:(totalDays/365).toFixed(2),avg,sev};
 }
-['start','end','monthly','m1','m2','m3','bonus','leave','over15'].forEach(id=>{const el=$(id);if(el){el.addEventListener('input',calc);el.addEventListener('change',calc);}});
+function pad(n){return (n<10?'0':'')+n;}
+function dateVal(p){const y=$(p+'Y').value,m=$(p+'M').value,d=$(p+'D').value;return (y&&m&&d)?y+'-'+pad(+m)+'-'+pad(+d):'';}
+(function initDates(){
+ ['start','end'].forEach(p=>{
+  const Y=$(p+'Y'),M=$(p+'M'),D=$(p+'D');
+  let ys='<option value="">'+Y.dataset.ph+'</option>';for(let y=2026;y>=2010;y--)ys+='<option>'+y+'</option>';Y.innerHTML=ys;
+  let ms='<option value="">'+M.dataset.ph+'</option>';for(let m=1;m<=12;m++)ms+='<option>'+m+'</option>';M.innerHTML=ms;
+  let ds='<option value="">'+D.dataset.ph+'</option>';for(let d=1;d<=31;d++)ds+='<option>'+d+'</option>';D.innerHTML=ds;
+ });
+})();
+['startY','startM','startD','endY','endM','endD','monthly','m1','m2','m3','bonus','leave','over15'].forEach(id=>{const el=$(id);if(el){el.addEventListener('input',calc);el.addEventListener('change',calc);}});
 
 $('copyBtn').onclick=()=>{
   if(!last)return;

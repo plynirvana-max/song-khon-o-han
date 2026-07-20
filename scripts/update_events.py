@@ -67,14 +67,19 @@ def main():
         code = (r.get("CODENAME") or "행사").strip()
         trgt = (r.get("USE_TRGT") or "").strip()
         url = (r.get("ORG_LINK") or r.get("HMPG_ADDR") or "https://culture.seoul.go.kr").strip()
+        CODE_VI = {"전시/미술":"Triển lãm","교육/체험":"Trải nghiệm & lớp học","축제-문화/예술":"Lễ hội văn hóa",
+                   "축제-기타":"Lễ hội","축제-시민화합":"Lễ hội cộng đồng","축제-전통/역사":"Lễ hội truyền thống",
+                   "축제-자연/경관":"Lễ hội thiên nhiên","콘서트":"Hòa nhạc","클래식":"Nhạc cổ điển","국악":"Nhạc truyền thống Hàn",
+                   "뮤지컬/오페라":"Nhạc kịch","연극":"Kịch","무용":"Múa","영화":"Chiếu phim","독주/독창회":"Hòa nhạc","기타":"Sự kiện"}
+        code_vi = CODE_VI.get(code, "Sự kiện")
         events.append({
             "s": s.isoformat(), "e": e.isoformat(), "region": "seoul",
-            "vi": {"t": title,
+            "vi": {"t": f"[{code_vi}] " + title,
                    "place": (place + (" · " + gu if gu else "")) or "Seoul",
-                   "d": f"Sự kiện miễn phí · {code}" + (f" · Đối tượng: {trgt}" if trgt else "") + " · Chi tiết xem link chính thức."},
+                   "d": f"🤖 Miễn phí · {code_vi}" + (f" · Đối tượng: {trgt}" if trgt else "") + " · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."},
             "ko": {"t": title,
                    "place": (place + (" · " + gu if gu else "")) or "서울",
-                   "d": f"무료 · {code}" + (f" · 대상: {trgt}" if trgt else "") + " · 상세는 공식 링크 확인."},
+                   "d": f"🤖 무료 · {code}" + (f" · 대상: {trgt}" if trgt else "") + " · 상세는 공식 링크 확인."},
             "url": url, "verified": TODAY.isoformat(),
         })
 

@@ -21,6 +21,16 @@
 <meta property="og:image:width" content="1640">
 <meta property="og:image:height" content="624">
 <meta name="twitter:card" content="summary_large_image">
+<style>
+.sharebar{display:flex;gap:8px;margin:22px 0 6px}
+.sharebar button,.sharebar a{flex:1;text-align:center;font-family:inherit;font-weight:800;font-size:13.5px;border-radius:11px;padding:12px 6px;cursor:pointer;text-decoration:none;border:2px solid var(--xanh);background:#fff;color:var(--xanh-d)}
+.sharebar .fbb{background:#0866FF;border-color:#0866FF;color:#fff}
+.followbox{background:linear-gradient(150deg,var(--xanh) 0%,var(--xanh-d) 100%);border-radius:14px;padding:16px;margin:10px 0 4px;color:#FFF9EC}
+.followbox b{color:var(--vang)}
+.followbox a{display:inline-block;margin-top:9px;background:#fff;color:#0866FF;font-weight:800;border-radius:10px;padding:9px 16px;text-decoration:none;font-size:14px}
+</style>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#14532D">
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -28,7 +38,7 @@
     <a href="../index.html" class="brand">Sống Khôn ở Hàn</a>
     <div class="sub">알뜰한국살이 — 재한 베트남인을 위한 검증된 정보</div>
   </div>
-  <a class="langbtn" href="../../bai-viet/di-tau-dien-ngam.html">🇻🇳 Xem bằng tiếng Việt</a>
+  <a class="langbtn" href="../../bai-viet/di-tau-dien-ngam.html"><svg style="width:20px;height:13px;vertical-align:-2px;border-radius:2px;margin-right:2px" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg"><rect width="30" height="20" fill="#DA251D"/><polygon fill="#FFDE00" points="15,4.5 16.29,8.22 20.23,8.3 17.09,10.68 18.23,14.45 15,12.2 11.77,14.45 12.91,10.68 9.77,8.3 13.71,8.22"/><rect width="30" height="20" fill="none" stroke="#00000026"/></svg> Xem bằng tiếng Việt</a>
 </div></div>
 <nav class="nav"><div class="inner">
   <a href="../index.html">홈</a>
@@ -147,6 +157,12 @@
       <li><strong>🚌 마을버스:</strong> 동네 안을 도는 소형 버스, 가장 저렴, 큰 버스가 못 들어가는 언덕길까지 — 언덕 위 자취생의 구세주.</li>
     </ul>
     <p><strong>버스 타기 정석 순서:</strong> ① 앱에서 몇 번 버스가 몇 분 뒤 오는지 확인 ② 버스가 오면 <strong>가볍게 손 흔들기</strong> ③ <strong>앞문</strong> 승차, 카드 태그 ④ 내릴 때가 가까우면 기둥의 <strong>빨간 하차벨</strong> 누르기 ⑤ <strong>뒷문</strong> 하차, 카드 한 번 더 태그 (환승 혜택 유지!).</p>
+    <ul>
+      <li><strong>정류소 번호 5자리 활용:</strong> 정류장 표지판의 5자리 번호를 네이버/카카오 앱에 입력하면 <em>바로 이 정류장</em>의 실시간 도착이 뜹니다 — 정류장 이름을 몰라도 됩니다.</li>
+      <li><strong>방향 확인:</strong> 같은 번호 버스라도 길 양쪽이 서로 반대 방향 — 앱이 알려주는 쪽 정류장인지 길 건너기 전에 확인.</li>
+      <li><strong>막차를 놓쳤다면?</strong> 서울엔 심야버스 <strong>N버스(올빼미버스)</strong>가 주요 축을 달립니다 — 앱에서 N으로 시작하는 번호 검색.</li>
+      <li><strong>어제 하차 태그를 잊었다면?</strong> 다음 승차 때 추가 요금이 붙을 수 있습니다 — 뒷문에서 태그 후 내리는 습관을.</li>
+    </ul>
 
     <h2>6. 공공자전거: 거의 공짜 수준의 이동 수단</h2>
     <p><strong>따릉이는 서울 전용</strong> 공공자전거로, 대여소가 곳곳에 있습니다. 따릉이 앱으로 가입(한국 전화번호 필요)하고 시간권/일권 또는 <strong>연간권 — 건별 결제보다 몇 배 저렴</strong>(현행 가격은 앱에서 확인)을 선택하세요. 집↔역, 집↔시장 같은 1~3km 거리에서 버스를 자전거로 대체하면 매달 체감되는 절약이 됩니다. 참고: <a href="the-giao-thong-tmoney.html" style="font-weight:700;text-decoration:underline">T-money 글</a>의 기후동행카드에는 따릉이가 포함되어 있습니다.</p>
@@ -168,6 +184,18 @@
     </div>
   </article>
 
+<div class="sharebar">
+  <button id="skShareBtn">📤 공유하기</button>
+  <a class="fbb" id="skFbShare" target="_blank" rel="noopener" href="#">ⓕ Facebook</a>
+  <button id="skCopyBtn">📋 링크 복사</button>
+</div>
+<div class="followbox"><b>도움이 됐나요?</b> 이런 글이 매주 하나씩 — 주변 베트남 동료에게도 알려주세요.<br><a href="https://www.facebook.com/songkhonohan" target="_blank" rel="noopener">ⓕ 페이스북 팔로우</a></div>
+<script>
+(function(){var c=document.querySelector('link[rel="canonical"]');var u=c?c.href:location.href;var t=document.title;
+var fb=document.getElementById('skFbShare');if(fb)fb.href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(u);
+var sb=document.getElementById('skShareBtn');if(sb)sb.onclick=function(){if(navigator.share){navigator.share({title:t,url:u}).catch(function(){});}else{navigator.clipboard.writeText(u);sb.textContent='✓ 복사됨';}};
+var cb=document.getElementById('skCopyBtn');if(cb)cb.onclick=function(){navigator.clipboard.writeText(u).then(function(){cb.textContent='✓ 복사됨';});};})();
+</script>
   <footer>
     참고용 정보입니다.<br>
     <a href="https://m.me/songkhonohan" class="fb-foot">💬 Messenger</a> · <a href="https://www.facebook.com/songkhonohan" class="fb-foot">Facebook</a><br><a href="../chinh-sach-bao-mat.html">개인정보처리방침</a><br>© 2026 Sống Khôn ở Hàn
