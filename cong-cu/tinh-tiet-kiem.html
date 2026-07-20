@@ -33,6 +33,7 @@
 </style>
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#14532D">
+<style>.chkline{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13.5px;font-weight:600;color:#3a4038;cursor:pointer}.chkline input{width:18px;height:18px;accent-color:var(--xanh)}.mealchk{display:flex;gap:14px;margin-top:6px}.mealchk label{display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer}.mealchk input{width:17px;height:17px;accent-color:var(--xanh)}#workdays{width:100%;padding:11px;font-family:inherit;font-size:15px;border:2px solid var(--line);border-radius:10px;background:#fff}</style>
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -83,7 +84,16 @@
 
     <label class="f">Nơi bạn sống — gõ tên TIẾNG ANH (Ansan, Suwon, Seoul...)<span class="ko">거주 지역 (영문)</span></label>
     <input id="regionQ" list="regionList" placeholder="Ví dụ: Ansan" autocomplete="off">
+    <label class="chkline"><input type="checkbox" id="freeDorm"> Công ty cấp CHỖ Ở miễn phí (ký túc)</label>
     <datalist id="regionList"><option value="Seoul"><option value="Incheon"><option value="Suwon"><option value="Seongnam"><option value="Bucheon"><option value="Yongin"><option value="Ansan"><option value="Siheung"><option value="Hwaseong"><option value="Pyeongtaek"><option value="Gimpo"><option value="Uijeongbu"><option value="Paju"><option value="Cheonan"><option value="Asan"><option value="Daejeon"><option value="Daegu"><option value="Busan"><option value="Gwangju"><option value="Ulsan"><option value="Changwon"><option value="Gumi"><option value="Jeonju"><option value="Cheongju"></datalist>
+    <label class="f" style="margin-top:14px">Công ty bao BỮA ăn nào? (đánh dấu nếu có)<span class="ko">회사 식사 제공</span></label>
+    <div class="mealchk">
+      <label><input type="checkbox" class="meal" value="b"> 🌅 Sáng</label>
+      <label><input type="checkbox" class="meal" value="l"> ☀️ Trưa</label>
+      <label><input type="checkbox" class="meal" value="d"> 🌙 Tối</label>
+    </div>
+    <label class="f" style="margin-top:12px">Một tuần làm mấy ngày?<span class="ko">주 근무일</span></label>
+    <select id="workdays"><option value="5">5 ngày/tuần</option><option value="6" selected>6 ngày/tuần</option><option value="7">7 ngày/tuần</option></select>
 
     <div class="rate-line">Tỷ giá: 1 KRW = <input type="number" step="0.01" id="rate" value="17.5"> VND <span id="rateAuto">(đang lấy tỷ giá hôm nay...)</span></div>
   </div>
@@ -175,6 +185,11 @@ const rate=()=>(+$('rate').value||17.5);
 let mode='goal';
 const MIN_LIVING=600000;
 const REGIONS={"seoul": ["서울", "seoul"], "incheon": ["인천", "metro"], "suwon": ["수원", "metro"], "seongnam": ["성남", "metro"], "bucheon": ["부천", "metro"], "yongin": ["용인", "metro"], "ansan": ["안산", "ind"], "siheung": ["시흥", "ind"], "hwaseong": ["화성", "ind"], "pyeongtaek": ["평택", "ind"], "gimpo": ["김포", "ind"], "uijeongbu": ["의정부", "metro"], "paju": ["파주", "ind"], "cheonan": ["천안", "ind"], "asan": ["아산", "ind"], "daejeon": ["대전", "reg"], "daegu": ["대구", "reg"], "busan": ["부산", "metro"], "gwangju": ["광주", "reg"], "ulsan": ["울산", "metro"], "changwon": ["창원", "reg"], "gumi": ["구미", "ind"], "jeonju": ["전주", "reg"], "cheongju": ["청주", "reg"]};const RFACTOR={"seoul": 1.25, "metro": 1.0, "ind": 0.85, "reg": 0.8};const RT={"rl": "Nơi bạn sống — gõ tên TIẾNG ANH (Ansan, Suwon, Seoul...)", "rk": "거주 지역 (영문)", "ph": "Ví dụ: Ansan", "tier": {"seoul": "Seoul — giá nhà CAO nhất, cùng tiền được phòng nhỏ hơn", "metro": "đô thị lớn — giá trung bình", "ind": "khu công nghiệp — giá mềm, nhiều phòng cho công nhân", "reg": "tỉnh — giá dễ chịu nhất"}, "h0": "⚠️ Ngân sách này ở mức khó thuê riêng → <b>goshiwon (3–5평, ~10–16m², có sẵn đồ) hoặc ký túc công ty</b> là thực tế nhất.", "h1": "→ tầm này thuê được <b>one-room xa ga / cũ (5–8평, ~16–26m²)</b>, nhớ hỏi 관리비 gồm gì.", "h2": "→ đủ cho <b>one-room gần ga hoặc rộng (7–10평)</b> — vị trí tốt giúp tiết kiệm tiền đi lại.", "h3": "→ dư dả: <b>two-room / officetel (10평+, 2 phòng)</b> — hoặc thuê rẻ hơn và TĂNG tiền tiết kiệm 😉.", "hlink": "Xem phòng thực tế khu {KR} trên Naver ↗", "hnone": "Gõ nơi bạn sống (ô phía trên) để xem với ngân sách này thuê được kiểu phòng gì.", "food": "≈ tự nấu <b>{home} bữa</b> + ăn ngoài <b>{out} bữa</b>/tháng (tính 3 bữa/ngày; cơm nhà ~3.500₩, quán ~9.000₩/bữa)", "food0": "⚠️ Mức này phải tự nấu ~100% và đi chợ khéo — xem mẹo Daiso/chợ trong bài Mới đến.", "trans": "🚕 Taxi = KHÔNG BAO GIỜ (1 cuốc = 3–5 ngày tiền đi lại). Chỉ tàu/buýt + xe đạp công cộng 따릉이.", "tel": "📱 Dùng nhà mạng giá rẻ <b>알뜰폰 (MVNO — \"nhà mạng tiết kiệm\")</b>: cùng sóng SKT/KT/LG, gói 20.000–30.000₩ là dư — TUYỆT ĐỐI đừng trả quá 50.000₩/tháng.", "note_caveat": "Giá thuê thay đổi theo thời điểm & từng con phố — số liệu chỉ để định hướng."};
+RT.upto="≤"; RT.approx="≈"; RT.permonth="/tháng";
+RT.dorm="🏠 Bạn được công ty cấp chỗ ở → khỏi lo tiền nhà! Phần ngân sách này được dồn sang tiết kiệm & ăn uống.";
+RT.food_all="🎉 Công ty bao cả 3 bữa các ngày làm — gần như khỏi tốn tiền ăn ngày thường! Chỉ cần chi cho ngày nghỉ.";
+RT.food_company="🍱 Công ty bao ~{cov} bữa/tháng.";
+RT.food="≈ tự nấu <b>{home} bữa</b> + ăn ngoài <b>{out} bữa</b>/tháng (khoảng <b>{outweek} lần/tuần</b> ăn ngoài) — trên tổng {self} bữa bạn tự lo. Cơm nhà ~3.500₩, quán ~9.000₩.";
 function regionInfo(){
   const q=($('regionQ').value||'').trim().toLowerCase();
   if(!q) return null;
@@ -182,25 +197,40 @@ function regionInfo(){
   for(const k in REGIONS){ if(k.startsWith(q)||q.startsWith(k)) return REGIONS[k]; }
   return null;
 }
+function freeDorm(){ return $('freeDorm') && $('freeDorm').checked; }
 function houseNote(budget){
   const el=$('nHouse'); const ri=regionInfo();
+  if(freeDorm()){ el.innerHTML=RT.dorm; return; }
   if(!ri){ el.innerHTML=RT.hnone; return; }
   const [kr,tier]=ri; const adj=budget/RFACTOR[tier];
   let t; if(adj<350000)t=RT.h0; else if(adj<550000)t=RT.h1; else if(adj<800000)t=RT.h2; else t=RT.h3;
-  const link='https://m.land.naver.com/search/result/'+encodeURIComponent(kr+' 원룸');
+  // Naver Map place search reliably centers on the region query (fixes Jung-gu default bug)
+  const link='https://map.naver.com/p/search/'+encodeURIComponent(kr+' 원룸 월세');
   el.innerHTML='📍 '+kr+' · '+RT.tier[tier]+'<br>'+t+' <a target="_blank" rel="noopener" href="'+link+'">'+RT.hlink.replace('{KR}',kr)+'</a><br><span style="opacity:.75">'+RT.note_caveat+'</span>';
 }
-function foodNote(budget){
-  const el=$('nFood'); const HOME=3500,OUT=9000,MEALS=90;
-  if(budget<HOME*MEALS){ el.innerHTML=RT.food0; return; }
-  let out=Math.floor((budget-HOME*MEALS)/(OUT-HOME)); out=Math.min(out,MEALS);
-  el.innerHTML=RT.food.replace('{home}',MEALS-out).replace('{out}',out);
+function mealsInfo(){
+  const set=new Set([...document.querySelectorAll('.meal:checked')].map(x=>x.value));
+  const wd=+($('workdays')?$('workdays').value:6);
+  return {set,wd};
 }
- // sàn sinh hoạt tối thiểu rất tiết kiệm
-
-$('mGoal').onclick=()=>{mode='goal';$('mGoal').classList.add('on');$('mNow').classList.remove('on');$('goalBox').style.display='block';$('nowBox').style.display='none';calc();};
-$('mNow').onclick=()=>{mode='now';$('mNow').classList.add('on');$('mGoal').classList.remove('on');$('goalBox').style.display='none';$('nowBox').style.display='block';calc();};
-
+function foodNote(budget){
+  const el=$('nFood'); const HOME=3500,OUT=9000;
+  const {set,wd}=mealsInfo();
+  // company covers `set` meals on `wd` workdays/week → subtract from monthly meal count
+  const weeksPerMonth=4.345;
+  const coveredPerWeek = set.size*wd;                 // company meals per week
+  const coveredMonthly = Math.round(coveredPerWeek*weeksPerMonth);
+  const totalMonthly = 90;                            // 3 meals * 30 days
+  const selfMeals = Math.max(totalMonthly - coveredMonthly, 0);
+  if(selfMeals<=0){ el.innerHTML=RT.food_all; return; }
+  if(budget < HOME*selfMeals){ el.innerHTML=RT.food0; return; }
+  let out=Math.floor((budget-HOME*selfMeals)/(OUT-HOME)); out=Math.min(Math.max(out,0),selfMeals);
+  const home=selfMeals-out;
+  const perWeekOut=Math.max(Math.round(out/weeksPerMonth),0);
+  let msg=RT.food.replace('{home}',home).replace('{out}',out).replace('{outweek}',perWeekOut).replace('{self}',selfMeals);
+  if(coveredMonthly>0) msg = RT.food_company.replace('{cov}',coveredMonthly) + '<br>' + msg;
+  el.innerHTML=msg;
+}
 function calc(){
   const inc=+$('income').value||0;
   const yrs=Math.min(Math.max(+$('years').value||1,1),50);
@@ -218,12 +248,14 @@ function calc(){
     const ok=spend>=MIN_LIVING;
     ['bHouse','bFood','bTrans','bTel','bEtc'].forEach(id=>$(id).textContent='—');['nHouse','nFood','nTrans','nTel'].forEach(id=>$(id).innerHTML='');
     if(ok){
-      $('bHouse').textContent='≤ '+fmt(spend*0.40)+' KRW/tháng';
-      $('bFood').textContent='≈ '+fmt(spend*0.30/30)+' KRW/ngày';
-      $('bTrans').textContent='≤ '+fmt(spend*0.08)+' KRW/tháng';
-      $('bTel').textContent='≤ '+fmt(spend*0.04)+' KRW/tháng';
-      $('bEtc').textContent='≤ '+fmt(spend*0.18)+' KRW/tháng';
-      houseNote(spend*0.40);foodNote(spend*0.30);$('nTrans').innerHTML=RT.trans;$('nTel').innerHTML=RT.tel;
+      var houseP=freeDorm()?0:0.40, foodP=freeDorm()?0.45:0.30, etcP=freeDorm()?0.41:0.18;
+      var hrow=$('bHouse').closest('.r-row');
+      if(freeDorm()){ if(hrow)hrow.style.display='none'; } else { if(hrow)hrow.style.display=''; $('bHouse').textContent=''+RT.upto+' '+fmt(spend*houseP)+' KRW'; }
+      $('bFood').textContent=''+RT.approx+' '+fmt(spend*foodP)+' KRW '+RT.permonth;
+      $('bTrans').textContent=''+RT.upto+' '+fmt(spend*0.08)+' KRW';
+      $('bTel').textContent=''+RT.upto+' '+fmt(spend*0.04)+' KRW';
+      $('bEtc').textContent=''+RT.upto+' '+fmt(spend*etcP)+' KRW';
+      houseNote(spend*houseP);foodNote(spend*foodP);$('nTrans').innerHTML=RT.trans;$('nTel').innerHTML=RT.tel;
       $('gBad').classList.remove('show');$('gTips').classList.add('show');
       $('gTotal').classList.remove('off');
     }else{
@@ -244,7 +276,8 @@ function calc(){
     $('rNow').classList.add('show');
   }
 }
-['income','target','cost','years','rate','regionQ'].forEach(id=>{$(id).addEventListener('input',calc);});
+['income','target','cost','years','rate','regionQ','freeDorm','workdays'].forEach(id=>{var el=$(id);if(el){el.addEventListener('input',calc);el.addEventListener('change',calc);}});
+document.querySelectorAll('.meal').forEach(el=>el.addEventListener('change',calc));
 fetch('https://open.er-api.com/v6/latest/KRW').then(r=>r.json()).then(d=>{const v=d&&d.rates&&d.rates.VND;if(v){$('rate').value=Math.round(v*100)/100;$('rateAuto').textContent='✓ tỷ giá hôm nay (tự động)';calc();}}).catch(()=>{$('rateAuto').textContent='(không lấy được tỷ giá — sửa tay)';});
 </script>
 </body>
