@@ -34,6 +34,7 @@
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#14532D">
 <style>.chkline{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13.5px;font-weight:600;color:#3a4038;cursor:pointer}.chkline input{width:18px;height:18px;accent-color:var(--xanh)}.mealchk{display:flex;gap:14px;margin-top:6px}.mealchk label{display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer}.mealchk input{width:17px;height:17px;accent-color:var(--xanh)}#workdays{width:100%;padding:11px;font-family:inherit;font-size:15px;border:2px solid var(--line);border-radius:10px;background:#fff}</style>
+<style>.relinks{margin-top:6px;font-weight:700}.rebtns{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.rebtns a{background:#0d3b24;color:#FFF9EC;border:1.5px solid var(--xanh);border-radius:8px;padding:7px 11px;font-size:12.5px;font-weight:800;text-decoration:none}.rebtns a:hover{background:var(--xanh)}.searchhint{font-size:12.5px;font-weight:600;color:#3a4038;background:#FFF9EC;border:1px dashed var(--vang);border-radius:8px;padding:7px 10px;margin:6px 0}.searchhint b{color:var(--do)}</style>
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -184,7 +185,7 @@ const fmtV=n=>isFinite(n)?Math.round(n).toLocaleString('vi-VN'):'0';
 const rate=()=>(+$('rate').value||17.5);
 let mode='goal';
 const MIN_LIVING=600000;
-const REGIONS={"seoul": ["서울", "seoul"], "incheon": ["인천", "metro"], "suwon": ["수원", "metro"], "seongnam": ["성남", "metro"], "bucheon": ["부천", "metro"], "yongin": ["용인", "metro"], "ansan": ["안산", "ind"], "siheung": ["시흥", "ind"], "hwaseong": ["화성", "ind"], "pyeongtaek": ["평택", "ind"], "gimpo": ["김포", "ind"], "uijeongbu": ["의정부", "metro"], "paju": ["파주", "ind"], "cheonan": ["천안", "ind"], "asan": ["아산", "ind"], "daejeon": ["대전", "reg"], "daegu": ["대구", "reg"], "busan": ["부산", "metro"], "gwangju": ["광주", "reg"], "ulsan": ["울산", "metro"], "changwon": ["창원", "reg"], "gumi": ["구미", "ind"], "jeonju": ["전주", "reg"], "cheongju": ["청주", "reg"]};const RFACTOR={"seoul": 1.25, "metro": 1.0, "ind": 0.85, "reg": 0.8};const RT={"rl": "사는 지역 — 영문으로 입력 (Ansan, Suwon, Seoul...)", "rk": "Khu vực (tiếng Anh)", "ph": "예: Ansan", "tier": {"seoul": "서울 — 주거비 최고, 같은 돈이면 더 작은 방", "metro": "대도시권 — 평균 시세", "ind": "공단 지역 — 시세 저렴, 노동자용 방 많음", "reg": "지방 — 가장 부담 적음"}, "h0": "⚠️ 이 예산으로 단독 임차는 빠듯 → <b>고시원(3–5평, 가구 포함) 또는 회사 기숙사</b>가 현실적입니다.", "h1": "→ <b>역에서 먼/오래된 원룸(5–8평)</b> 가능 — 관리비 포함 항목을 꼭 확인하세요.", "h2": "→ <b>역세권 또는 넓은 원룸(7–10평)</b> 가능 — 좋은 위치가 교통비를 아껴줍니다.", "h3": "→ 여유: <b>투룸/오피스텔(10평+, 방 2)</b> — 또는 더 싸게 살고 저축을 늘리는 선택도 😉.", "hlink": "{KR} 실제 매물 네이버에서 보기 ↗", "hnone": "위 칸에 사는 지역을 입력하면 이 예산으로 어떤 방을 구할 수 있는지 보여드립니다.", "food": "≈ 집밥 <b>{home}끼</b> + 외식 <b>{out}끼</b>/월 (하루 3끼 기준; 집밥 ~3,500₩, 외식 ~9,000₩)", "food0": "⚠️ 이 수준이면 거의 100% 자취 요리 + 알뜰 장보기 필수 — 다이소·시장 팁 참고.", "trans": "🚕 택시 = 절대 금지 (1번 = 3~5일치 교통비). 대중교통 + 따릉이만.", "tel": "📱 <b>알뜰폰(MVNO·알뜰통신사)</b> 요금제로: SKT/KT/LG 같은 망, 월 2~3만 원이면 충분 — 월 5만 원 넘기지 마세요.", "note_caveat": "임대 시세는 시기·골목마다 다릅니다 — 방향 제시용 참고치입니다."};
+const REGIONS={"seoul": ["서울", "seoul"], "incheon": ["인천", "metro"], "suwon": ["수원", "metro"], "seongnam": ["성남", "metro"], "bucheon": ["부천", "metro"], "yongin": ["용인", "metro"], "ansan": ["안산", "ind"], "siheung": ["시흥", "ind"], "hwaseong": ["화성", "ind"], "pyeongtaek": ["평택", "ind"], "gimpo": ["김포", "ind"], "uijeongbu": ["의정부", "metro"], "paju": ["파주", "ind"], "cheonan": ["천안", "ind"], "asan": ["아산", "ind"], "daejeon": ["대전", "reg"], "daegu": ["대구", "reg"], "busan": ["부산", "metro"], "gwangju": ["광주", "reg"], "ulsan": ["울산", "metro"], "changwon": ["창원", "reg"], "gumi": ["구미", "ind"], "jeonju": ["전주", "reg"], "cheongju": ["청주", "reg"]};const RFACTOR={"seoul": 1.25, "metro": 1.0, "ind": 0.85, "reg": 0.8};const RT={"rl": "사는 지역 — 영문으로 입력 (Ansan, Suwon, Seoul...)", "rk": "Khu vực (tiếng Anh)", "ph": "예: Ansan", "tier": {"seoul": "서울 — 주거비 최고, 같은 돈이면 더 작은 방", "metro": "대도시권 — 평균 시세", "ind": "공단 지역 — 시세 저렴, 노동자용 방 많음", "reg": "지방 — 가장 부담 적음"}, "h0": "⚠️ 이 예산으로 단독 임차는 빠듯 → <b>고시원(3–5평, 가구 포함) 또는 회사 기숙사</b>가 현실적입니다.", "h1": "→ <b>역에서 먼/오래된 원룸(5–8평)</b> 가능 — 관리비 포함 항목을 꼭 확인하세요.", "h2": "→ <b>역세권 또는 넓은 원룸(7–10평)</b> 가능 — 좋은 위치가 교통비를 아껴줍니다.", "h3": "→ 여유: <b>투룸/오피스텔(10평+, 방 2)</b> — 또는 더 싸게 살고 저축을 늘리는 선택도 😉.", "hlink": "{KR} 실제 매물 네이버에서 보기 ↗", "hnone": "위 칸에 사는 지역을 입력하면 이 예산으로 어떤 방을 구할 수 있는지 보여드립니다.", "food": "≈ 집밥 <b>{home}끼</b> + 외식 <b>{out}끼</b>/월 (하루 3끼 기준; 집밥 ~3,500₩, 외식 ~9,000₩)", "food0": "⚠️ 이 수준이면 거의 100% 자취 요리 + 알뜰 장보기 필수 — 다이소·시장 팁 참고.", "trans": "🚕 택시 = 절대 금지 (1번 = 3~5일치 교통비). 대중교통 + 따릉이만.", "tel": "📱 <b>알뜰폰(MVNO·알뜰통신사)</b> 요금제로: SKT/KT/LG 같은 망, 월 2~3만 원이면 충분 — 월 5만 원 넘기지 마세요.", "note_caveat": "임대 시세는 시기·골목마다 다릅니다 — 방향 제시용 참고치입니다."};RT.zigbang="직방";RT.dabang="다방";RT.peterpan="피터팬 (직거래·중개비 절약)";RT.naver="네이버지도";RT.searchhint="👉 앱을 연 뒤 검색창에 <b>\"{KR} 원룸\"</b> 또는 <b>\"{KR} 투룸\"</b>을 입력하세요:";
 RT.upto="≤"; RT.approx="≈"; RT.permonth="/월";
 RT.dorm="🏠 회사가 숙소를 제공하니 주거비 걱정 끝! 이 예산은 저축과 식비로 돌립니다.";
 RT.food_all="🎉 근무일 3끼를 회사가 다 제공 — 평일 식비가 거의 안 듭니다! 쉬는 날 식비만 챙기면 돼요.";
@@ -205,8 +206,19 @@ function houseNote(budget){
   const [kr,tier]=ri; const adj=budget/RFACTOR[tier];
   let t; if(adj<350000)t=RT.h0; else if(adj<550000)t=RT.h1; else if(adj<800000)t=RT.h2; else t=RT.h3;
   // Naver Map place search reliably centers on the region query (fixes Jung-gu default bug)
-  const link='https://map.naver.com/p/search/'+encodeURIComponent(kr+' 원룸 월세');
-  el.innerHTML='📍 '+kr+' · '+RT.tier[tier]+'<br>'+t+' <a target="_blank" rel="noopener" href="'+link+'">'+RT.hlink.replace('{KR}',kr)+'</a><br><span style="opacity:.75">'+RT.note_caveat+'</span>';
+  // Real-estate apps are map-based SPAs; deep-links by region are unstable, so we open the app home
+  // and tell the user exactly what to type. Naver Map place-search DOES center correctly, kept as quick option.
+  const naver='https://map.naver.com/p/search/'+encodeURIComponent(kr+' 원룸 월세');
+  el.innerHTML='📍 '+kr+' · '+RT.tier[tier]+'<br>'+t+
+    '<div class="relinks">'+RT.hlink.replace('{KR}',kr)+
+    '<div class="searchhint">'+RT.searchhint.replace('{KR}',kr)+'</div>'+
+    '<div class="rebtns">'+
+    '<a target="_blank" rel="noopener" href="https://www.zigbang.com">🏢 '+RT.zigbang+'</a>'+
+    '<a target="_blank" rel="noopener" href="https://www.dabangapp.com">🏠 '+RT.dabang+'</a>'+
+    '<a target="_blank" rel="noopener" href="https://www.peterpanz.com">🤝 '+RT.peterpan+'</a>'+
+    '<a target="_blank" rel="noopener" href="'+naver+'">🗺 '+RT.naver+'</a>'+
+    '</div></div>'+
+    '<span style="opacity:.75;display:block;margin-top:6px">'+RT.note_caveat+'</span>';
 }
 function mealsInfo(){
   const set=new Set([...document.querySelectorAll('.meal:checked')].map(x=>x.value));
