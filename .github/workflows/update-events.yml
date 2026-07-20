@@ -1,0 +1,28 @@
+name: Update free events (Seoul Open Data)
+
+on:
+  schedule:
+    - cron: '0 21 * * 0'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Fetch free events
+        env:
+          SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
+        run: python3 scripts/update_events.py
+      - name: Commit if changed
+        run: |
+          git config user.name "events-bot"
+          git config user.email "actions@github.com"
+          git add events-auto.js
+          git diff --cached --quiet || git commit -m "🤖 auto update events $(date +%F)"
+          git push
