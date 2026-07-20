@@ -35,6 +35,7 @@
 <meta name="theme-color" content="#14532D">
 <style>.chkline{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13.5px;font-weight:600;color:#3a4038;cursor:pointer}.chkline input{width:18px;height:18px;accent-color:var(--xanh)}.mealchk{display:flex;gap:14px;margin-top:6px}.mealchk label{display:flex;align-items:center;gap:6px;font-size:14px;cursor:pointer}.mealchk input{width:17px;height:17px;accent-color:var(--xanh)}#workdays{width:100%;padding:11px;font-family:inherit;font-size:15px;border:2px solid var(--line);border-radius:10px;background:#fff}</style>
 <style>.relinks{margin-top:6px;font-weight:700}.rebtns{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.rebtns a{background:#0d3b24;color:#FFF9EC;border:1.5px solid var(--xanh);border-radius:8px;padding:7px 11px;font-size:12.5px;font-weight:800;text-decoration:none}.rebtns a:hover{background:var(--xanh)}.searchhint{font-size:12.5px;font-weight:600;color:#3a4038;background:#FFF9EC;border:1px dashed var(--vang);border-radius:8px;padding:7px 10px;margin:6px 0}.searchhint b{color:var(--do)}</style>
+<style>.val .vnd{color:#B8860B;font-weight:700;font-size:12.5px}.wkline{font-size:12.5px;font-weight:700;color:#5a6b5e;margin-top:3px}.wkline .vnd{color:#9a7a1a;font-weight:600}</style>
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -183,6 +184,14 @@ const $=id=>document.getElementById(id);
 const fmt=n=>isFinite(n)?Math.round(n).toLocaleString('ko-KR'):'0';
 const fmtV=n=>isFinite(n)?Math.round(n).toLocaleString('vi-VN'):'0';
 const rate=()=>(+$('rate').value||17.5);
+// 월/주 + VND 병기 렌더러
+function budgetLine(monthly, prefix){
+  var r=rate();
+  var wk=monthly/4.345; // 주간 환산
+  var mLine=prefix+' '+fmt(monthly)+' KRW <span class="vnd">(≈ '+fmtV(monthly*r)+' VND)</span> / tháng';
+  var wLine='<div class="wkline">→ tuần: '+prefix+' '+fmt(Math.round(wk))+' KRW <span class="vnd">(≈ '+fmtV(wk*r)+' VND)</span></div>';
+  return mLine+wLine;
+}
 let mode='goal';
 const MIN_LIVING=600000;
 const REGIONS={"seoul": ["서울", "seoul"], "incheon": ["인천", "metro"], "suwon": ["수원", "metro"], "seongnam": ["성남", "metro"], "bucheon": ["부천", "metro"], "yongin": ["용인", "metro"], "ansan": ["안산", "ind"], "siheung": ["시흥", "ind"], "hwaseong": ["화성", "ind"], "pyeongtaek": ["평택", "ind"], "gimpo": ["김포", "ind"], "uijeongbu": ["의정부", "metro"], "paju": ["파주", "ind"], "cheonan": ["천안", "ind"], "asan": ["아산", "ind"], "daejeon": ["대전", "reg"], "daegu": ["대구", "reg"], "busan": ["부산", "metro"], "gwangju": ["광주", "reg"], "ulsan": ["울산", "metro"], "changwon": ["창원", "reg"], "gumi": ["구미", "ind"], "jeonju": ["전주", "reg"], "cheongju": ["청주", "reg"]};const RFACTOR={"seoul": 1.25, "metro": 1.0, "ind": 0.85, "reg": 0.8};const RT={"rl": "Nơi bạn sống — gõ tên TIẾNG ANH (Ansan, Suwon, Seoul...)", "rk": "거주 지역 (영문)", "ph": "Ví dụ: Ansan", "tier": {"seoul": "Seoul — giá nhà CAO nhất, cùng tiền được phòng nhỏ hơn", "metro": "đô thị lớn — giá trung bình", "ind": "khu công nghiệp — giá mềm, nhiều phòng cho công nhân", "reg": "tỉnh — giá dễ chịu nhất"}, "h0": "⚠️ Ngân sách này ở mức khó thuê riêng → <b>goshiwon (3–5평, ~10–16m², có sẵn đồ) hoặc ký túc công ty</b> là thực tế nhất.", "h1": "→ tầm này thuê được <b>one-room xa ga / cũ (5–8평, ~16–26m²)</b>, nhớ hỏi 관리비 gồm gì.", "h2": "→ đủ cho <b>one-room gần ga hoặc rộng (7–10평)</b> — vị trí tốt giúp tiết kiệm tiền đi lại.", "h3": "→ dư dả: <b>two-room / officetel (10평+, 2 phòng)</b> — hoặc thuê rẻ hơn và TĂNG tiền tiết kiệm 😉.", "hlink": "Xem phòng thực tế ở {KR} trên các app bất động sản Hàn Quốc:", "hnone": "Gõ nơi bạn sống (ô phía trên) để xem với ngân sách này thuê được kiểu phòng gì.", "food": "≈ tự nấu <b>{home} bữa</b> + ăn ngoài <b>{out} bữa</b>/tháng (tính 3 bữa/ngày; cơm nhà ~3.500₩, quán ~9.000₩/bữa)", "food0": "⚠️ Mức này phải tự nấu ~100% và đi chợ khéo — xem mẹo Daiso/chợ trong bài Mới đến.", "trans": "🚕 Taxi = KHÔNG BAO GIỜ (1 cuốc = 3–5 ngày tiền đi lại). Chỉ tàu/buýt + xe đạp công cộng 따릉이.", "tel": "📱 Dùng nhà mạng giá rẻ <b>알뜰폰 (MVNO — \"nhà mạng tiết kiệm\")</b>: cùng sóng SKT/KT/LG, gói 20.000–30.000₩ là dư — TUYỆT ĐỐI đừng trả quá 50.000₩/tháng.", "note_caveat": "Giá thuê thay đổi theo thời điểm & từng con phố — số liệu chỉ để định hướng."};RT.zigbang="Zigbang 직방";RT.dabang="Dabang 다방";RT.peterpan="Peterpan 피터팬 (trực tiếp, khỏi phí môi giới)";RT.naver="Naver Map";RT.searchhint="👉 Mở app rồi gõ <b>\"{KR} 원룸\"</b> (one-room) hoặc <b>\"{KR} 투룸\"</b> vào ô tìm kiếm:";
@@ -262,11 +271,11 @@ function calc(){
     if(ok){
       var houseP=freeDorm()?0:0.40, foodP=freeDorm()?0.45:0.30, etcP=freeDorm()?0.41:0.18;
       var hrow=$('bHouse').closest('.r-row');
-      if(freeDorm()){ if(hrow)hrow.style.display='none'; } else { if(hrow)hrow.style.display=''; $('bHouse').textContent=''+RT.upto+' '+fmt(spend*houseP)+' KRW'; }
-      $('bFood').textContent=''+RT.approx+' '+fmt(spend*foodP)+' KRW '+RT.permonth;
-      $('bTrans').textContent=''+RT.upto+' '+fmt(spend*0.08)+' KRW';
-      $('bTel').textContent=''+RT.upto+' '+fmt(spend*0.04)+' KRW';
-      $('bEtc').textContent=''+RT.upto+' '+fmt(spend*etcP)+' KRW';
+      if(freeDorm()){ if(hrow)hrow.style.display='none'; } else { if(hrow)hrow.style.display=''; $('bHouse').innerHTML=budgetLine(spend*houseP, RT.upto); }
+      $('bFood').innerHTML=budgetLine(spend*foodP, RT.approx);
+      $('bTrans').innerHTML=budgetLine(spend*0.08, RT.upto);
+      $('bTel').innerHTML=budgetLine(spend*0.04, RT.upto);
+      $('bEtc').innerHTML=budgetLine(spend*etcP, RT.upto);
       houseNote(spend*houseP);foodNote(spend*foodP);$('nTrans').innerHTML=RT.trans;$('nTel').innerHTML=RT.tel;
       $('gBad').classList.remove('show');$('gTips').classList.add('show');
       $('gTotal').classList.remove('off');
