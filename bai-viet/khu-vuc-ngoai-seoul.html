@@ -40,7 +40,7 @@
   <article class="prose">
     <span class="tag" style="color:var(--xanh);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em">Du học · Chọn nơi ở</span>
     <h1 style="margin-top:6px">Khu nào ngoài Seoul nhiều việc làm thêm &amp; rẻ?</h1>
-    <div class="meta-bar"><span>📅 Đăng 2026-07-20</span><span id="viewCount">👁 … lượt xem</span></div>
+    <div class="meta-bar"><span>📅 Đăng 2026-07-20</span><span id="viewCount" style="display:none"></span></div>
 <script>
 (function(){
   var el=document.getElementById('viewCount');
@@ -49,7 +49,7 @@
   var url='https://plynirvana.goatcounter.com/counter'+encodeURIComponent(path)+'.json';
   var r=new XMLHttpRequest();
   r.addEventListener('load',function(){
-    try{ var d=JSON.parse(this.responseText); el.textContent='👁 '+d.count+' lượt xem'; }
+    try{ var d=JSON.parse(this.responseText); if(d&&d.count){ el.textContent='👁 '+d.count+' lượt xem'; el.style.display='inline-flex'; } }
     catch(e){ el.style.display='none'; }
   });
   r.addEventListener('error',function(){ el.style.display='none'; });

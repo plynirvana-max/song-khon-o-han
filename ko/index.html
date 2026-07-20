@@ -30,6 +30,17 @@
 </script>
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#14532D">
+<style>
+.searchwrap{position:relative}
+#siteSearch{width:100%;box-sizing:border-box;padding:14px 16px;font-family:inherit;font-size:15px;border:2px solid var(--xanh);border-radius:12px;background:#fff}
+#siteSearch:focus{outline:none;border-color:var(--do)}
+.searchres{position:absolute;left:0;right:0;top:100%;margin-top:6px;background:#fff;border-radius:12px;box-shadow:0 6px 24px rgba(30,42,34,.18);overflow:hidden;z-index:50;display:none}
+.searchres.on{display:block}
+.searchres a{display:block;padding:12px 15px;text-decoration:none;color:var(--muc,#1E2A22);font-size:14px;font-weight:600;border-bottom:1px solid var(--line)}
+.searchres a:last-child{border-bottom:none}
+.searchres a:hover{background:#FFFDF7}
+.searchres .none{padding:14px 15px;color:var(--xam);font-size:14px}
+</style>
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -59,6 +70,12 @@
       <a href="bai-viet/visa-han-quoc-co-ban.html"><span class="ic">🛂</span><span class="lb">비자</span></a>
       <a href="bai-viet/thue-phong-o-han.html"><span class="ic">🏠</span><span class="lb">주거</span></a>
       <a href="bai-viet/kham-benh-o-han.html"><span class="ic">🏥</span><span class="lb">의료</span></a>
+    </div>
+  </section>
+  <section class="section" style="padding-top:16px;padding-bottom:4px">
+    <div class="searchwrap">
+      <input id="siteSearch" type="search" placeholder="글 검색... (예: 은행, 비자, 신발)" autocomplete="off">
+      <div id="searchResults" class="searchres"></div>
     </div>
   </section>
   <div class="ticker">📌 가을학기 유학 비자 연장 시즌 시작 · 2026 최저임금 확인하세요 · 퇴직금은 근로자의 권리입니다</div>
@@ -206,5 +223,26 @@
 </div>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/related.js"></script>
+<script>
+(function(){
+  var DATA=[{"vt": "Thẻ giao thông T-money: mua & nạp", "kt": "T-money 교통카드: 구매·충전", "p": "bai-viet/the-giao-thong-tmoney.html"}, {"vt": "Tàu điện & xe buýt A–Z (có hình)", "kt": "지하철·버스 A–Z (그림 설명)", "p": "bai-viet/di-tau-dien-ngam.html"}, {"vt": "Bản đồ tuyến + tàu đến realtime", "kt": "노선 도식도 + 실시간 도착", "p": "ban-do-tau-dien.html"}, {"vt": "Daiso: checklist tuần đầu", "kt": "다이소: 첫 주 체크리스트", "p": "bai-viet/mua-sam-daiso.html"}, {"vt": "Cắt tóc: tìm kiểu qua ảnh sao", "kt": "미용실: 연예인 사진으로 스타일 찾기", "p": "bai-viet/cat-toc-o-han.html"}, {"vt": "Mua kính: giải mã \"nén\" & giá", "kt": "안경: \"압축\" 정체와 가격", "p": "bai-viet/mua-kinh-o-han.html"}, {"vt": "Thuê phòng: giữ tiền cọc an toàn", "kt": "방 구하기: 보증금 지키기", "p": "bai-viet/thue-phong-o-han.html"}, {"vt": "Ốm thì đi đâu? Nhà thuốc→119", "kt": "아프면 어디로? 약국→119", "p": "bai-viet/kham-benh-o-han.html"}, {"vt": "Chỗ đi chơi Seoul: miễn phí/rẻ", "kt": "서울 가볼 만한 곳: 무료·저가", "p": "di-choi.html"}, {"vt": "Công ty nợ lương: 5 bước đòi", "kt": "임금체불: 되찾는 5단계", "p": "bai-viet/cong-ty-no-luong.html"}, {"vt": "Đổi chỗ làm E-9: 2 con số quyết định", "kt": "E-9 사업장 변경: 두 숫자", "p": "bai-viet/doi-cho-lam-e9.html"}, {"vt": "Bảo hiểm xuất cảnh: đòi phần chênh", "kt": "출국만기보험: 차액 청구", "p": "bai-viet/bao-hiem-xuat-canh.html"}, {"vt": "Gửi tiền về VN: kênh nào lợi nhất", "kt": "베트남 송금: 유리한 채널", "p": "bai-viet/gui-tien-ve-viet-nam.html"}, {"vt": "Ngân hàng: bảo hiểm tiền gửi & hóa đơn", "kt": "은행: 예금자보호 & 고지서", "p": "bai-viet/ngan-hang-o-han.html"}, {"vt": "Làm thêm du học sinh: giờ & tìm việc", "kt": "유학생 알바: 시간·자리 찾기", "p": "bai-viet/lam-them-du-hoc-sinh.html"}, {"vt": "Visa cơ bản: 3 quy tắc vàng", "kt": "비자 기본: 황금률 3가지", "p": "bai-viet/visa-han-quoc-co-ban.html"}, {"vt": "Khi hôn nhân khó khăn: nơi gọi trước", "kt": "결혼이 어려울 때: 먼저 연락할 곳", "p": "bai-viet/khi-hon-nhan-kho-khan.html"}, {"vt": "Máy tính mục tiêu tiết kiệm", "kt": "저축 목표 계산기", "p": "cong-cu/tinh-tiet-kiem.html"}, {"vt": "Máy tính trợ cấp thôi việc (퇴직금)", "kt": "퇴직금 계산기", "p": "cong-cu/tinh-toejikgeum.html"}, {"vt": "Test trình độ sống ở Hàn", "kt": "한국살이 레벨테스트", "p": "level-test.html"}, {"vt": "Chợ trao đổi & tặng đồ cũ", "kt": "나눔·물물교환 게시판", "p": "cho-trao-doi.html"}, {"vt": "Cập nhật visa: thay đổi & tin đồn", "kt": "비자 업데이트: 변경·소문 팩트체크", "p": "visa-cap-nhat.html"}, {"vt": "Xe máy & xe đạp: bằng, bảo hiểm, biển số", "kt": "오토바이·자전거: 면허·보험·번호판", "p": "bai-viet/xe-may-xe-dap-o-han.html"}, {"vt": "Giày đi bộ tầm 70.000₩ êm chân", "kt": "걷기·등산 신발 7만원대", "p": "bai-viet/giay-di-bo-o-han.html"}, {"vt": "Khu ngoài Seoul: nhiều việc & rẻ", "kt": "서울 밖: 알바 많고 싼 지역", "p": "bai-viet/khu-vuc-ngoai-seoul.html"}, {"vt": "Chọn trường & ngành: TOPIK học bổng", "kt": "학교·전공 고르기: TOPIK 장학", "p": "bai-viet/chon-truong-nganh-du-hoc.html"}];
+  var KO=true;
+  var inp=document.getElementById('siteSearch'), box=document.getElementById('searchResults');
+  function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d');}
+  function render(q){
+    q=norm(q).trim();
+    if(!q){box.className='searchres';box.innerHTML='';return;}
+    var hits=DATA.filter(function(d){return norm(d.vt).indexOf(q)>=0||norm(d.kt).indexOf(q)>=0;}).slice(0,8);
+    if(!hits.length){box.className='searchres on';box.innerHTML='<div class="none">결과 없음</div>';return;}
+    box.className='searchres on';
+    box.innerHTML=hits.map(function(d){
+      var title=KO?d.kt:d.vt;
+      return '<a href="'+d.p+'">'+title+' →</a>';
+    }).join('');
+  }
+  inp.addEventListener('input',function(){render(this.value);});
+  document.addEventListener('click',function(e){if(!e.target.closest('.searchwrap'))box.className='searchres';});
+})();
+</script>
 </body>
 </html>

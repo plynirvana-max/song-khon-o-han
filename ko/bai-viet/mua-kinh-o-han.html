@@ -51,7 +51,7 @@
     <h1 style="margin-top:6px">한국에서 안경 맞추기: "압축"의 정체 — 그리고 3배 바가지 피하는 법</h1>
     <div class="meta-bar">
   <span>📅 게시일 2026-07-19</span>
-  <span id="viewCount">👁 … 조회</span>
+  <span id="viewCount" style="display:none"></span>
 </div>
 <script>
 (function(){
@@ -60,7 +60,7 @@
   var url='https://plynirvana.goatcounter.com/counter'+encodeURIComponent(location.pathname)+'.json';
   var r=new XMLHttpRequest();
   r.addEventListener('load',function(){
-    try{ var d=JSON.parse(this.responseText); el.textContent='👁 '+d.count+' 조회'; }
+    try{ var d=JSON.parse(this.responseText); if(d&&d.count){ el.textContent='👁 '+d.count+' 조회'; el.style.display='inline-flex'; } }
     catch(e){ el.style.display='none'; }
   });
   r.addEventListener('error',function(){ el.style.display='none'; });

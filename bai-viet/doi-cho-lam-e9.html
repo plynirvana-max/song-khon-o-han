@@ -56,7 +56,7 @@
     <h1 style="margin-top:6px">Đổi chỗ làm E-9 (사업장 변경 · đọc: "sa-ơp-chang byơn-gyơng"): làm đúng cách để không mất visa</h1>
     <div class="meta-bar">
   <span>📅 Đăng 2026-07-18</span>
-  <span id="viewCount">👁 … lượt xem</span>
+  <span id="viewCount" style="display:none"></span>
 </div>
 <script>
 (function(){
@@ -65,7 +65,7 @@
   var url='https://plynirvana.goatcounter.com/counter'+encodeURIComponent(location.pathname)+'.json';
   var r=new XMLHttpRequest();
   r.addEventListener('load',function(){
-    try{ var d=JSON.parse(this.responseText); el.textContent='👁 '+d.count+' lượt xem'; }
+    try{ var d=JSON.parse(this.responseText); if(d&&d.count){ el.textContent='👁 '+d.count+' lượt xem'; el.style.display='inline-flex'; } }
     catch(e){ el.style.display='none'; }
   });
   r.addEventListener('error',function(){ el.style.display='none'; });

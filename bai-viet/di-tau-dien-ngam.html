@@ -57,7 +57,7 @@
     <h1 style="margin-top:6px">Tàu điện ngầm Hàn Quốc từ A–Z: qua cổng đúng nhịp, đọc bản đồ không hoa mắt</h1>
     <div class="meta-bar">
   <span>📅 Đăng 2026-07-17</span>
-  <span id="viewCount">👁 … lượt xem</span>
+  <span id="viewCount" style="display:none"></span>
 </div>
 <script>
 (function(){
@@ -66,7 +66,7 @@
   var url='https://plynirvana.goatcounter.com/counter'+encodeURIComponent(location.pathname)+'.json';
   var r=new XMLHttpRequest();
   r.addEventListener('load',function(){
-    try{ var d=JSON.parse(this.responseText); el.textContent='👁 '+d.count+' lượt xem'; }
+    try{ var d=JSON.parse(this.responseText); if(d&&d.count){ el.textContent='👁 '+d.count+' lượt xem'; el.style.display='inline-flex'; } }
     catch(e){ el.style.display='none'; }
   });
   r.addEventListener('error',function(){ el.style.display='none'; });
