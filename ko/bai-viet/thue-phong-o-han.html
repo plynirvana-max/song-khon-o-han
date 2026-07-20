@@ -56,19 +56,20 @@
   <span id="viewCount">👁 … 조회</span>
 </div>
 <script>
-(async function(){
+(function(){
   var el=document.getElementById('viewCount');
-  try{
-    if(window.storage){
-      var cur=0;
-      try{var r=await window.storage.get('views:thue-phong-o-han',true); cur=r&&r.value?parseInt(r.value)||0:0;}catch(e){cur=0;}
-      cur+=1;
-      try{await window.storage.set('views:thue-phong-o-han',String(cur),true);}catch(e){}
-      el.textContent='👁 '+cur.toLocaleString()+' 조회';
-    } else { el.style.display='none'; }
-  }catch(e){ el.style.display='none'; }
+  if(!el) return;
+  var url='https://plynirvana.goatcounter.com/counter'+encodeURIComponent(location.pathname)+'.json';
+  var r=new XMLHttpRequest();
+  r.addEventListener('load',function(){
+    try{ var d=JSON.parse(this.responseText); el.textContent='👁 '+d.count+' 조회'; }
+    catch(e){ el.style.display='none'; }
+  });
+  r.addEventListener('error',function(){ el.style.display='none'; });
+  try{ r.open('GET',url); r.send(); }catch(e){ el.style.display='none'; }
 })();
 </script>
+<script data-goatcounter="https://plynirvana.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <div class="gov">
       <b>📋 최종 확인일:</b> 2026-07-19<br>
       <b>유의:</b> 임대료는 지역·시기마다 다릅니다. 이 글은 변하지 않는 <b>구조와 자기 보호 방법</b>을 다룹니다. 큰 계약은 한국어 가능한 신뢰할 사람과 함께 검토하세요.

@@ -41,7 +41,22 @@
     <span class="tag" style="color:var(--xanh);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em">Mới đến · Tiết kiệm</span>
     <h1 style="margin-top:6px">Giày đi bộ &amp; leo dốc ở Hàn tầm 70.000₩ — mua sao cho êm chân</h1>
     <div class="meta-bar"><span>📅 Đăng 2026-07-20</span><span id="viewCount">👁 … lượt xem</span></div>
-<script>(async function(){var el=document.getElementById('viewCount');try{if(window.storage){var cur=0;try{var r=await window.storage.get('views:giay-di-bo-o-han',true);cur=r&&r.value?parseInt(r.value)||0:0;}catch(e){cur=0;}cur+=1;try{await window.storage.set('views:giay-di-bo-o-han',String(cur),true);}catch(e){}el.textContent='👁 '+cur.toLocaleString()+' lượt xem';}else{el.style.display='none';}}catch(e){el.style.display='none';}})();</script>
+<script>
+(function(){
+  var el=document.getElementById('viewCount');
+  if(!el) return;
+  var path=location.pathname;
+  var url='https://plynirvana.goatcounter.com/counter'+encodeURIComponent(path)+'.json';
+  var r=new XMLHttpRequest();
+  r.addEventListener('load',function(){
+    try{ var d=JSON.parse(this.responseText); el.textContent='👁 '+d.count+' lượt xem'; }
+    catch(e){ el.style.display='none'; }
+  });
+  r.addEventListener('error',function(){ el.style.display='none'; });
+  try{ r.open('GET',url); r.send(); }catch(e){ el.style.display='none'; }
+})();
+</script>
+<script data-goatcounter="https://plynirvana.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <div class="gov">
       <b>📋 Cập nhật lần cuối / 최종 확인일:</b> 2026-07-20<br><b>Lưu ý:</b> Giá &amp; mẫu thay đổi theo mùa và cửa hàng — con số là khoảng tham khảo, nguyên tắc chọn giày mới là thứ dùng mãi.
     </div>

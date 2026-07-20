@@ -54,19 +54,20 @@
   <span id="viewCount">👁 … 조회</span>
 </div>
 <script>
-(async function(){
+(function(){
   var el=document.getElementById('viewCount');
-  try{
-    if(window.storage){
-      var cur=0;
-      try{var r=await window.storage.get('views:ngan-hang-o-han',true); cur=r&&r.value?parseInt(r.value)||0:0;}catch(e){cur=0;}
-      cur+=1;
-      try{await window.storage.set('views:ngan-hang-o-han',String(cur),true);}catch(e){}
-      el.textContent='👁 '+cur.toLocaleString()+' 조회';
-    } else { el.style.display='none'; }
-  }catch(e){ el.style.display='none'; }
+  if(!el) return;
+  var url='https://plynirvana.goatcounter.com/counter'+encodeURIComponent(location.pathname)+'.json';
+  var r=new XMLHttpRequest();
+  r.addEventListener('load',function(){
+    try{ var d=JSON.parse(this.responseText); el.textContent='👁 '+d.count+' 조회'; }
+    catch(e){ el.style.display='none'; }
+  });
+  r.addEventListener('error',function(){ el.style.display='none'; });
+  try{ r.open('GET',url); r.send(); }catch(e){ el.style.display='none'; }
 })();
 </script>
+<script data-goatcounter="https://plynirvana.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <div class="gov">
       <b>📋 최종 확인일:</b> 2026-07-19<br><b>유의:</b> 일반 지식이며 금융 자문이 아닙니다. 구체 상품은 은행에 문의하세요 (베트남인 밀집 지역 지점엔 베트남어 가능 직원이 있는 곳도 많습니다).
     </div>

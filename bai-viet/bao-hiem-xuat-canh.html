@@ -59,19 +59,20 @@
   <span id="viewCount">👁 … lượt xem</span>
 </div>
 <script>
-(async function(){
+(function(){
   var el=document.getElementById('viewCount');
-  try{
-    if(window.storage){
-      var cur=0;
-      try{var r=await window.storage.get('views:bao-hiem-xuat-canh',true); cur=r&&r.value?parseInt(r.value)||0:0;}catch(e){cur=0;}
-      cur+=1;
-      try{await window.storage.set('views:bao-hiem-xuat-canh',String(cur),true);}catch(e){}
-      el.textContent='👁 '+cur.toLocaleString()+' lượt xem';
-    } else { el.style.display='none'; }
-  }catch(e){ el.style.display='none'; }
+  if(!el) return;
+  var url='https://plynirvana.goatcounter.com/counter'+encodeURIComponent(location.pathname)+'.json';
+  var r=new XMLHttpRequest();
+  r.addEventListener('load',function(){
+    try{ var d=JSON.parse(this.responseText); el.textContent='👁 '+d.count+' lượt xem'; }
+    catch(e){ el.style.display='none'; }
+  });
+  r.addEventListener('error',function(){ el.style.display='none'; });
+  try{ r.open('GET',url); r.send(); }catch(e){ el.style.display='none'; }
 })();
 </script>
+<script data-goatcounter="https://plynirvana.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
     <div class="gov">
       <b>📋 Cập nhật lần cuối / 최종 확인일:</b> 2026-07-19<br>

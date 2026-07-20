@@ -41,7 +41,22 @@
     <span class="tag" style="color:var(--xanh);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em">유학 · 지역 선택</span>
     <h1 style="margin-top:6px">서울 밖에 알바 많고 싼 지역은?</h1>
     <div class="meta-bar"><span>📅 게시일 2026-07-20</span><span id="viewCount">👁 … 조회</span></div>
-<script>(async function(){var el=document.getElementById('viewCount');try{if(window.storage){var cur=0;try{var r=await window.storage.get('views:khu-vuc-ngoai-seoul',true);cur=r&&r.value?parseInt(r.value)||0:0;}catch(e){cur=0;}cur+=1;try{await window.storage.set('views:khu-vuc-ngoai-seoul',String(cur),true);}catch(e){}el.textContent='👁 '+cur.toLocaleString()+' 조회';}else{el.style.display='none';}}catch(e){el.style.display='none';}})();</script>
+<script>
+(function(){
+  var el=document.getElementById('viewCount');
+  if(!el) return;
+  var path=location.pathname;
+  var url='https://plynirvana.goatcounter.com/counter'+encodeURIComponent(path)+'.json';
+  var r=new XMLHttpRequest();
+  r.addEventListener('load',function(){
+    try{ var d=JSON.parse(this.responseText); el.textContent='👁 '+d.count+' 조회'; }
+    catch(e){ el.style.display='none'; }
+  });
+  r.addEventListener('error',function(){ el.style.display='none'; });
+  try{ r.open('GET',url); r.send(); }catch(e){ el.style.display='none'; }
+})();
+</script>
+<script data-goatcounter="https://plynirvana.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <div class="gov">
       <b>📋 최종 확인일:</b> 2026-07-20<br><b>유의:</b> 참고용 개요입니다 — 일자리·물가는 변합니다. 본인 학교·전공에 맞춰 확인하고, 알바 시 비자 규칙을 지키세요.
     </div>
