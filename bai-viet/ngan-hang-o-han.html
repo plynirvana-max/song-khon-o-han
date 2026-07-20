@@ -28,6 +28,7 @@
 </style>
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#14532D">
+<style>.meta-bar{display:flex;gap:14px;font-size:12.5px;color:var(--xam);margin:2px 0 14px;font-weight:600}.meta-bar span{display:inline-flex;align-items:center}</style>
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -48,6 +49,24 @@
   <article class="prose">
     <span class="tag" style="color:var(--xanh);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em">Tiền bạc · Cơ bản</span>
     <h1 style="margin-top:6px">Ngân hàng ở Hàn: tiền của bạn an toàn đến đâu, và cách trả mọi loại hóa đơn</h1>
+    <div class="meta-bar">
+  <span>📅 Đăng 2026-07-19</span>
+  <span id="viewCount">👁 … lượt xem</span>
+</div>
+<script>
+(async function(){
+  var el=document.getElementById('viewCount');
+  try{
+    if(window.storage){
+      var cur=0;
+      try{var r=await window.storage.get('views:ngan-hang-o-han',true); cur=r&&r.value?parseInt(r.value)||0:0;}catch(e){cur=0;}
+      cur+=1;
+      try{await window.storage.set('views:ngan-hang-o-han',String(cur),true);}catch(e){}
+      el.textContent='👁 '+cur.toLocaleString()+' lượt xem';
+    } else { el.style.display='none'; }
+  }catch(e){ el.style.display='none'; }
+})();
+</script>
     <div class="gov">
       <b>📋 Cập nhật lần cuối / 최종 확인일:</b> 2026-07-19<br>
       <b>Lưu ý:</b> Đây là kiến thức chung, không phải tư vấn tài chính. Sản phẩm cụ thể hỏi trực tiếp ngân hàng (nhiều chi nhánh khu đông người Việt có nhân viên nói tiếng Việt).
@@ -66,6 +85,15 @@
     </ul>
     <div class="callout"><strong>⚠️ 3 điều KHÔNG BAO GIỜ làm:</strong> ① không đọc mã OTP/mật khẩu cho bất kỳ ai gọi điện tự xưng "ngân hàng/cảnh sát/xuất nhập cảnh" — đó là lừa đảo giọng nói (보이스피싱); ② <strong>không cho thuê/bán tài khoản</strong> dù được trả tiền — đó là tội hình sự (통장 대여) và visa của bạn tiêu tùng; ③ không chuyển tiền cho "việc nhẹ lương cao" nhờ nhận hộ – chuyển hộ.</div>
 
+    <h2>2b. Mở tài khoản mất phí không? Woori, Hana, Shinhan...</h2>
+    <p>Câu hỏi rất hay gặp: "mở tài khoản ngân hàng Woori / Hana ở Hàn tốn bao nhiêu?". Câu trả lời: <strong>mở tài khoản cơ bản gần như MIỄN PHÍ</strong> ở hầu hết ngân hàng lớn (Woori 우리, Hana 하나, Shinhan 신한, KB국민, NH농협). Cái có thể mất phí nhỏ là:</p>
+    <ul>
+      <li><strong>Thẻ (체크/신용):</strong> phí phát hành thẻ thường vài nghìn won, có loại miễn phí.</li>
+      <li><strong>Chuyển tiền quốc tế / rút ngoại tệ:</strong> đây mới là chỗ tốn — mỗi ngân hàng một biểu phí, hỏi kỹ trước khi gửi tiền về VN (xem bài <a href="gui-tien-ve-viet-nam.html" style="font-weight:700;text-decoration:underline">gửi tiền về nhà</a>).</li>
+      <li><strong>Phí duy trì:</strong> tài khoản thường KHÔNG có phí duy trì hàng tháng.</li>
+    </ul>
+    <p>Mẹo: nhiều chi nhánh ở khu đông người Việt (Ansan, Bupyeong...) có nhân viên nói tiếng Việt hoặc quen xử lý hồ sơ người nước ngoài — chọn chi nhánh đó cho đỡ vất vả. Ngân hàng nào cũng được; quan trọng là gần nhà/chỗ làm để tiện ra quầy khi cần nâng hạn mức.</p>
+
     <h2>3. Trả tiền nhà, điện, nước, phí quản lý — ai trong phòng cũng phải biết</h2>
     <p>Rất hay gặp: 3–4 người thuê chung, chỉ một người "biết đóng tiền", còn lại đưa tiền mặt và... tin nhau. Đến khi người đó về nước hoặc có hiểu lầm thì rối tung. Nguyên tắc: <strong>mọi người trong phòng đều phải biết hóa đơn nào, bao nhiêu, hạn ngày mấy</strong> — chụp hóa đơn bỏ nhóm chat chung mỗi tháng.</p>
     <ul>
@@ -81,6 +109,14 @@
       <li><strong>Tài khoản "đỗ xe" (파킹통장):</strong> như tài khoản thường nhưng trả lãi theo ngày — chỗ để lương chờ gửi về nhà. Sản phẩm của <em>ngân hàng</em> thì được bảo hiểm tiền gửi.</li>
       <li><strong>Chú ý CMA:</strong> tài khoản CMA của công ty chứng khoán trông giống 파킹통장 nhưng đa số loại <strong>KHÔNG thuộc bảo hiểm tiền gửi</strong> — người mới cứ chọn sản phẩm ngân hàng cho lành.</li>
     </ul>
+
+    <h2>4b. Muốn xem lãi suất tiết kiệm hôm nay của các ngân hàng?</h2>
+    <p>Lãi suất 적금/예금 thay đổi liên tục và khác nhau giữa các ngân hàng, nên thay vì ghi số ở đây (sẽ lỗi thời ngay), hãy xem <strong>trang so sánh chính thức</strong> — cập nhật hàng ngày, do nhà nước/hiệp hội ngân hàng vận hành:</p>
+    <ul>
+      <li><strong>Hiệp hội Ngân hàng (은행연합회):</strong> so sánh lãi suất tiền gửi mọi ngân hàng — <a href="https://portal.kfb.or.kr/compare/receiving_deposit.php" target="_blank" rel="noopener" style="font-weight:700;text-decoration:underline">portal.kfb.or.kr</a></li>
+      <li><strong>"Tài chính trong tầm mắt" (금융상품한눈에) của Cơ quan Giám sát Tài chính:</strong> so sánh cả tiết kiệm, tiền gửi, khoản vay — <a href="https://finlife.fss.or.kr" target="_blank" rel="noopener" style="font-weight:700;text-decoration:underline">finlife.fss.or.kr</a></li>
+    </ul>
+    <p>Hai trang này bằng tiếng Hàn — dùng nút dịch của trình duyệt (Chrome/Samsung Internet) là đọc được. Nhìn cột <strong>"최고 금리"</strong> (lãi suất cao nhất) nhưng chú ý điều kiện ưu đãi (우대조건) đi kèm.</p>
 
     <h2>5. Còn đầu tư chứng khoán, coin? — Ý kiến thẳng của chúng mình</h2>
     <p><strong>Nếu bạn là lao động E-9 ở tối đa 4 năm 10 tháng: đừng.</strong> Lý do không phải vì bạn "không đủ giỏi", mà vì cấu trúc bất lợi: ① thời gian ngắn — thị trường xuống đúng năm bạn về nước là phải bán lỗ, không có thời gian chờ hồi; ② rủi ro kép tỷ giá KRW–VND đè lên rủi ro giá cổ phiếu; ③ về nước phải thanh lý tài khoản, thêm thủ tục thuế — rắc rối chồng rắc rối. Con đường chắc chắn hơn nhiều: <strong>적금 + 파킹통장 (được bảo hiểm) + gửi về qua kênh hợp pháp</strong> — lãi không gây "phê" nhưng ngày về nước, tiền của bạn còn nguyên là tiền của bạn. Và nếu có ai nhắn tin rủ "đầu tư lãi 30%/tháng, có thầy dẫn kèo" — <strong>100% lừa đảo</strong>, chặn ngay.</p>

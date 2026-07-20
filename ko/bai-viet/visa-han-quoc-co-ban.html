@@ -30,6 +30,7 @@
 </style>
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#14532D">
+<style>.meta-bar{display:flex;gap:14px;font-size:12.5px;color:var(--xam);margin:2px 0 14px;font-weight:600}.meta-bar span{display:inline-flex;align-items:center}</style>
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -50,6 +51,24 @@
   <article class="prose">
     <span class="tag" style="color:var(--do);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em">비자 · 기본</span>
     <h1 style="margin-top:6px">한국 비자 기본: 내 체류자격 이해하기 + 황금률 3가지</h1>
+    <div class="meta-bar">
+  <span>📅 게시일 2026-07-17</span>
+  <span id="viewCount">👁 … 조회</span>
+</div>
+<script>
+(async function(){
+  var el=document.getElementById('viewCount');
+  try{
+    if(window.storage){
+      var cur=0;
+      try{var r=await window.storage.get('views:visa-han-quoc-co-ban',true); cur=r&&r.value?parseInt(r.value)||0:0;}catch(e){cur=0;}
+      cur+=1;
+      try{await window.storage.set('views:visa-han-quoc-co-ban',String(cur),true);}catch(e){}
+      el.textContent='👁 '+cur.toLocaleString()+' 조회';
+    } else { el.style.display='none'; }
+  }catch(e){ el.style.display='none'; }
+})();
+</script>
     <div class="gov">
       <b>📋 최종 확인일:</b> 2026-07-19<br>
       <b>공식 출처:</b> HiKorea (hikorea.go.kr) · ☎ 1345 (베트남어, 무료)<br>

@@ -185,12 +185,13 @@ const fmt=n=>isFinite(n)?Math.round(n).toLocaleString('ko-KR'):'0';
 const fmtV=n=>isFinite(n)?Math.round(n).toLocaleString('vi-VN'):'0';
 const rate=()=>(+$('rate').value||17.5);
 // 월/주 + VND 병기 렌더러
-function budgetLine(monthly, prefix){
+function budgetLine(monthly, prefix, showWeek){
+  if(showWeek===undefined)showWeek=true;
   var r=rate();
   var wk=monthly/4.345; // 주간 환산
   var mLine=prefix+' '+fmt(monthly)+' KRW <span class="vnd">(≈ '+fmtV(monthly*r)+' VND)</span> / tháng';
   var wLine='<div class="wkline">→ tuần: '+prefix+' '+fmt(Math.round(wk))+' KRW <span class="vnd">(≈ '+fmtV(wk*r)+' VND)</span></div>';
-  return mLine+wLine;
+  return showWeek?(mLine+wLine):mLine;
 }
 let mode='goal';
 const MIN_LIVING=600000;
@@ -271,7 +272,7 @@ function calc(){
     if(ok){
       var houseP=freeDorm()?0:0.40, foodP=freeDorm()?0.45:0.30, etcP=freeDorm()?0.41:0.18;
       var hrow=$('bHouse').closest('.r-row');
-      if(freeDorm()){ if(hrow)hrow.style.display='none'; } else { if(hrow)hrow.style.display=''; $('bHouse').innerHTML=budgetLine(spend*houseP, RT.upto); }
+      if(freeDorm()){ if(hrow)hrow.style.display='none'; } else { if(hrow)hrow.style.display=''; $('bHouse').innerHTML=budgetLine(spend*houseP, RT.upto, false); }
       $('bFood').innerHTML=budgetLine(spend*foodP, RT.approx);
       $('bTrans').innerHTML=budgetLine(spend*0.08, RT.upto);
       $('bTel').innerHTML=budgetLine(spend*0.04, RT.upto);

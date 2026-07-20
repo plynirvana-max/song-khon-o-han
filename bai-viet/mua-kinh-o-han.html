@@ -28,6 +28,7 @@
 </style>
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#14532D">
+<style>.meta-bar{display:flex;gap:14px;font-size:12.5px;color:var(--xam);margin:2px 0 14px;font-weight:600}.meta-bar span{display:inline-flex;align-items:center}</style>
 </head>
 <body>
 <div class="topbar"><div class="inner">
@@ -48,6 +49,24 @@
   <article class="prose">
     <span class="tag" style="color:var(--xanh);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em">Mới đến · Tiết kiệm</span>
     <h1 style="margin-top:6px">Mua kính cận ở Hàn: giải mã "nén 2 lần, 3 lần" — và đừng trả gấp 3 giá</h1>
+    <div class="meta-bar">
+  <span>📅 Đăng 2026-07-19</span>
+  <span id="viewCount">👁 … lượt xem</span>
+</div>
+<script>
+(async function(){
+  var el=document.getElementById('viewCount');
+  try{
+    if(window.storage){
+      var cur=0;
+      try{var r=await window.storage.get('views:mua-kinh-o-han',true); cur=r&&r.value?parseInt(r.value)||0:0;}catch(e){cur=0;}
+      cur+=1;
+      try{await window.storage.set('views:mua-kinh-o-han',String(cur),true);}catch(e){}
+      el.textContent='👁 '+cur.toLocaleString()+' lượt xem';
+    } else { el.style.display='none'; }
+  }catch(e){ el.style.display='none'; }
+})();
+</script>
     <div class="gov">
       <b>📋 Cập nhật lần cuối / 최종 확인일:</b> 2026-07-19<br><b>Lưu ý:</b> Giá kính thay đổi theo tiệm và thời điểm — con số trong bài chỉ là khoảng tham khảo.
     </div>
