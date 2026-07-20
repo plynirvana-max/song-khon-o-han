@@ -206,14 +206,23 @@ function showResult(){
         <div class="cats">${bars}</div>
         <div class="url">songkhonohan.com</div>
       </div>
-      <button class="bigbtn" id="saveBtn">${L.share}</button>
-      <button class="bigbtn ghost" id="copyBtn">${L.copy}</button>
+      <button class="bigbtn" id="fbBtn" style="background:#0866FF;box-shadow:4px 4px 0 rgba(0,0,0,.18)">${L.fbpost}</button>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button class="bigbtn ghost" id="saveBtn" style="flex:1;margin-top:0">${L.share}</button>
+        <button class="bigbtn ghost" id="copyBtn" style="flex:1;margin-top:0">${L.copy}</button>
+      </div>
       <div class="recwrap">
         <div style="font-weight:800;font-size:14px;color:var(--xanh);margin:14px 0 4px">${L.weak}</div>
         ${weak.length?weak.map(k=>`<a class="article-card" href="${REC[k][0]}"><span class="tag">${CATS[k]}</span><h4>${REC[k][1]} →</h4></a>`).join(''):`<div class="small">${L.perfect}</div>`}
       </div>
       <button class="bigbtn ghost" onclick="location.reload()" style="margin-top:14px">↺ ${L.retry}</button>
     </div>`;
+  document.getElementById('fbBtn').onclick=()=>{
+    const quote=`나 한국살이 레벨테스트 ${lv} 달성! (${correct}/${tot}) 🇰🇷 너는 몇 레벨?`;
+    const u='https://songkhonohan.com/ko/level-test.html';
+    const share='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(u)+'&quote='+encodeURIComponent(quote);
+    window.open(share,'_blank','noopener,width=640,height=640');
+  };
   document.getElementById('saveBtn').onclick=()=>{
     const node=document.getElementById('shot');
     html2canvas(node,{scale:2,backgroundColor:null}).then(cv=>{
@@ -232,5 +241,6 @@ function showResult(){
 document.getElementById('startBtn').onclick=begin;
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/related.js"></script>
 </body>
 </html>

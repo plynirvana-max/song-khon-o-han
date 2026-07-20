@@ -122,3 +122,10 @@ footer a{text-decoration:underline}
 .msgbtn{display:flex;align-items:center;justify-content:center;gap:10px;background:#0084FF;color:#fff;font-weight:800;font-size:15px;padding:14px 18px;border-radius:12px;margin:14px 0 10px;box-shadow:3px 3px 0 rgba(0,0,0,.15)}
 .msgbtn:active{transform:translateY(1px)}
 .fb-foot{color:var(--xanh);font-weight:700}
+
+/* related articles */
+.related-box{margin:26px 0 8px}
+.related-box h3{font-size:15px;font-weight:800;color:var(--xanh-d);margin:0 0 10px}
+.related-grid{display:grid;gap:8px}
+.related-grid a{display:block;background:#fff;border:1.5px solid var(--line);border-left:4px solid var(--xanh);border-radius:10px;padding:12px 14px;font-size:13.5px;font-weight:700;color:var(--muc,#1E2A22);text-decoration:none;line-height:1.4}
+.related-grid a:hover{border-left-color:var(--do);background:#FFFDF7}

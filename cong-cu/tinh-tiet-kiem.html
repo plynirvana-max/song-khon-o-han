@@ -280,5 +280,6 @@ function calc(){
 document.querySelectorAll('.meal').forEach(el=>el.addEventListener('change',calc));
 fetch('https://open.er-api.com/v6/latest/KRW').then(r=>r.json()).then(d=>{const v=d&&d.rates&&d.rates.VND;if(v){$('rate').value=Math.round(v*100)/100;$('rateAuto').textContent='✓ tỷ giá hôm nay (tự động)';calc();}}).catch(()=>{$('rateAuto').textContent='(không lấy được tỷ giá — sửa tay)';});
 </script>
+<script src="/related.js"></script>
 </body>
 </html>
