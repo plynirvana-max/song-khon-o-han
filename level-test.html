@@ -110,7 +110,7 @@ const BANK=[{"c": "song", "t": 1, "q": "Xuống xe buýt, việc ĐÚNG là gì?
 const CATS={"song": "🧳 Cuộc sống & đi lại", "tien": "💰 Lương & tiền", "visa": "🛂 Visa & thủ tục", "quyen": "🛡 An toàn & quyền"};
 const REC={"song": ["chu-de/moi-den.html", "Trọn bộ Mới đến"], "tien": ["chu-de/di-lam.html", "Trọn bộ Đi làm + 2 máy tính"], "visa": ["chu-de/du-hoc.html", "Visa & làm thêm hợp pháp"], "quyen": ["chu-de/ket-hon.html", "Các số & quyền luôn bên bạn"]};
 const LV=[[0, 39, "🐣 Tân binh", "Không sao, ai cũng bắt đầu từ đây!"], [40, 64, "🌱 Đang thích nghi", "Nền tảng đã vững."], [65, 84, "💪 Sống ổn áp", "Khá lắm, gần đỉnh rồi!"], [85, 99, "🔥 Gần cao thủ", "Biết nhiều hơn đa số!"], [100, 100, "👑 Thần Sống Khôn", "Hoàn hảo — báu vật của cộng đồng!"]];
-const L={"start": "Bắt đầu 🚀", "next": "Tiếp →", "result_btn": "Xem kết quả 🎉", "correct": "Đúng rồi!", "wrong": "Chưa đúng", "q_of": "Câu", "bonus": "🔥 Vòng BONUS! Thử thách cảnh giới thần", "score": "Điểm", "weak": "Nên bổ sung", "perfect": "Hoàn hảo — không điểm yếu 👑", "share": "📸 Lưu ảnh khoe kết quả", "copy": "📋 Sao chép text", "copied": "Đã chép!", "saved": "Đã lưu ảnh! Đăng lên Facebook nhé", "retry": "Chơi lại", "explore": "Xem tài liệu"};
+const L={"start": "Bắt đầu 🚀", "next": "Tiếp →", "result_btn": "Xem kết quả 🎉", "correct": "Đúng rồi!", "wrong": "Chưa đúng", "q_of": "Câu", "bonus": "🔥 Vòng BONUS! Thử thách cảnh giới thần", "score": "Điểm", "weak": "Nên bổ sung", "perfect": "Hoàn hảo — không điểm yếu 👑", "fbpost": "ⓕ Khoe điểm lên Facebook", "share": "📸 Lưu ảnh kết quả", "copy": "📋 Chép text", "copied": "✓ Đã chép!", "saved": "✓ Đã lưu ảnh!", "retry": "Chơi lại", "explore": "Xem tài liệu", "fbhelp": "Đã lưu ảnh điểm của bạn 📸 — giờ cửa sổ Facebook mở ra, bạn chỉ cần bấm ảnh (📷) để đính kèm và đăng khoe điểm nhé!", "fbopen": "Mở Facebook"};
 const BASE=10;          // 기본 문제 수
 const stage=document.getElementById('stage');
 let pool,order,idx,correct,catScore,answered,bonusOn;
@@ -218,10 +218,21 @@ function showResult(){
       <button class="bigbtn ghost" onclick="location.reload()" style="margin-top:14px">↺ ${L.retry}</button>
     </div>`;
   document.getElementById('fbBtn').onclick=()=>{
-    const quote=`Mình đạt ${lv} trong Test Sống Khôn ở Hàn! (${correct}/${tot}) 🇰🇷 Bạn thì sao?`;
-    const u='https://songkhonohan.com/level-test.html';
-    const share='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(u)+'&quote='+encodeURIComponent(quote);
-    window.open(share,'_blank','noopener,width=640,height=640');
+    const btn=document.getElementById('fbBtn');
+    btn.textContent='...';
+    const node=document.getElementById('shot');
+    html2canvas(node,{scale:2,backgroundColor:null}).then(cv=>{
+      cv.toBlob(b=>{
+        // 1) auto-download the score image
+        const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='ket-qua-song-khon.png';a.click();
+        // 2) tell user, then open Facebook composer so they attach the just-saved image
+        setTimeout(()=>{
+          alert(L.fbhelp);
+          window.open('https://www.facebook.com/','_blank','noopener');
+          btn.textContent=L.fbpost;
+        },400);
+      });
+    }).catch(()=>{ btn.textContent=L.fbpost; alert('Error / 오류'); });
   };
   document.getElementById('saveBtn').onclick=()=>{
     const node=document.getElementById('shot');

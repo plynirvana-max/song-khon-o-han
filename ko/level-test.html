@@ -110,7 +110,7 @@ const BANK=[{"c": "song", "t": 1, "q": "버스에서 내릴 때 올바른 행동
 const CATS={"song": "🧳 생활·교통", "tien": "💰 임금·돈", "visa": "🛂 비자·행정", "quyen": "🛡 안전·권리"};
 const REC={"song": ["chu-de/moi-den.html", "첫 도착 전체"], "tien": ["chu-de/di-lam.html", "일하기 전체 + 계산기"], "visa": ["chu-de/du-hoc.html", "비자·합법 알바"], "quyen": ["chu-de/ket-hon.html", "권리와 지원처"]};
 const LV=[[0, 39, "🐣 새내기", "괜찮아요, 누구나 여기서 시작!"], [40, 64, "🌱 적응 중", "기본기 완성 단계예요."], [65, 84, "💪 안정권", "훌륭해요! 거의 다 왔어요."], [85, 99, "🔥 준고수", "대부분보다 많이 압니다!"], [100, 100, "👑 알뜰살이 神", "완벽 — 커뮤니티의 보물!"]];
-const L={"start": "시작하기 🚀", "next": "다음 →", "result_btn": "결과 보기 🎉", "correct": "정답!", "wrong": "아쉬워요", "q_of": "문제", "bonus": "🔥 보너스 라운드! 신의 경지에 도전", "score": "점수", "weak": "지금 채우면 좋은 약점", "perfect": "완벽 — 약점이 없어요 👑", "share": "📸 결과 이미지 저장해서 자랑하기", "copy": "📋 텍스트 복사", "copied": "복사됨!", "saved": "이미지 저장됨! 페북에 올려보세요", "retry": "다시 도전", "explore": "자료 보러 가기"};
+const L={"start": "시작하기 🚀", "next": "다음 →", "result_btn": "결과 보기 🎉", "correct": "정답!", "wrong": "아쉬워요", "q_of": "문제", "bonus": "🔥 보너스 라운드! 신의 경지에 도전", "score": "점수", "weak": "지금 채우면 좋은 약점", "perfect": "완벽 — 약점이 없어요 👑", "share": "📸 결과 이미지 저장", "copy": "📋 텍스트 복사", "copied": "✓ 복사됨!", "saved": "✓ 저장됨!", "retry": "다시 도전", "explore": "자료 보기", "fbpost": "ⓕ 페이스북에 점수 자랑", "fbhelp": "점수 이미지를 저장했어요 📸 — 이제 페이스북 창이 열리면 사진(📷) 버튼으로 이미지를 첨부해 자랑해보세요!", "fbopen": "페이스북 열기"};
 const BASE=10;          // 기본 문제 수
 const stage=document.getElementById('stage');
 let pool,order,idx,correct,catScore,answered,bonusOn;
@@ -218,10 +218,19 @@ function showResult(){
       <button class="bigbtn ghost" onclick="location.reload()" style="margin-top:14px">↺ ${L.retry}</button>
     </div>`;
   document.getElementById('fbBtn').onclick=()=>{
-    const quote=`나 한국살이 레벨테스트 ${lv} 달성! (${correct}/${tot}) 🇰🇷 너는 몇 레벨?`;
-    const u='https://songkhonohan.com/ko/level-test.html';
-    const share='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(u)+'&quote='+encodeURIComponent(quote);
-    window.open(share,'_blank','noopener,width=640,height=640');
+    const btn=document.getElementById('fbBtn');
+    btn.textContent='...';
+    const node=document.getElementById('shot');
+    html2canvas(node,{scale:2,backgroundColor:null}).then(cv=>{
+      cv.toBlob(b=>{
+        const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='ket-qua-song-khon.png';a.click();
+        setTimeout(()=>{
+          alert(L.fbhelp);
+          window.open('https://www.facebook.com/','_blank','noopener');
+          btn.textContent=L.fbpost;
+        },400);
+      });
+    }).catch(()=>{ btn.textContent=L.fbpost; alert('Error / 오류'); });
   };
   document.getElementById('saveBtn').onclick=()=>{
     const node=document.getElementById('shot');
