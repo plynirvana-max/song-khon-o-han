@@ -52,14 +52,7 @@
 
   <section class="section">
     <h2>Tất cả bài viết</h2>
-    <a class="article-card" href="../bai-viet/khi-hon-nhan-kho-khan.html">
-      <h4>Khi hôn nhân gặp khó khăn — nơi cần gọi trước tiên (miễn phí, tiếng Việt, 24h)</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
-    <a class="article-card alt" href="../bai-viet/visa-han-quoc-co-ban.html">
-      <h4>Visa Hàn Quốc cơ bản: 3 quy tắc vàng giữ tư cách cư trú</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
+    <div id="hubList" data-cat="ket-hon"></div>
   </section>
 
   <footer>
@@ -74,5 +67,23 @@
 </div>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/related.js"></script>
+<script>
+(function(){
+  var KO=false;
+  var el=document.getElementById('hubList'); if(!el||!window.SKREG) return;
+  var cat=el.dataset.cat;
+  var items=window.SKREG.filter(function(r){return r.cat===cat&&(r.vc||r.vt);});
+  items.sort(function(a,b){return (b.d||'0000').localeCompare(a.d||'0000');});
+  var alt=false;
+  el.innerHTML=items.map(function(r){
+    alt=!alt;
+    var title=KO?(r.kc||r.kt):(r.vc||r.vt);
+    var tag=KO?(r.ktag||''):(r.vtag||'');
+    var vd=r.d?(KO?('✔ 검증일 '+r.d):('✔ Kiểm chứng '+r.d.split('-').reverse().join('/'))):'';
+    return '<a class="article-card'+(alt?'':' alt')+'" href="../'+r.p+'">'+
+      (tag?'<span class="tag">'+tag+'</span>':'')+'<h4>'+title+' →</h4>'+(vd?'<div class="verify">'+vd+'</div>':'')+'</a>';
+  }).join('');
+})();
+</script>
 </body>
 </html>

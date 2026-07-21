@@ -52,42 +52,7 @@
 
   <section class="section">
     <h2>Tất cả bài viết</h2>
-    <a class="article-card" href="../bai-viet/giay-di-bo-o-han.html">
-      <h4>👟 Mới đến · Tiết kiệm · Giày đi bộ &amp; leo dốc tầm 70.000₩ — mua sao cho êm chân</h4>
-      <div class="verify">✔ Kiểm chứng 2026/07/20</div>
-    </a>
-    <a class="article-card" href="../bai-viet/mua-kinh-o-han.html" style="border-left-color:var(--vang)">
-      <h4>👓 MỚI · Mua kính cận: giải mã "nén 2 lần, 3 lần" — đừng trả gấp 3 giá</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
-    <a class="article-card" href="../ban-do-tau-dien.html" style="border-left-color:var(--vang)">
-      <h4>🚇 MỚI · Bản đồ 12 tuyến tàu + tra tàu đến theo thời gian thực</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026 · công cụ trực tiếp</div>
-    </a>
-    <a class="article-card" href="../bai-viet/the-giao-thong-tmoney.html">
-      <h4>Thẻ T-money: mua, nạp, và vì sao phải quẹt khi xuống xe buýt</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
-    <a class="article-card alt" href="../bai-viet/di-tau-dien-ngam.html">
-      <h4>Tàu điện ngầm A–Z: qua cổng đúng nhịp, đọc bản đồ không hoa mắt (có hình)</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
-    <a class="article-card" href="../bai-viet/mua-sam-daiso.html">
-      <h4>Đừng vác cả Việt Nam sang — checklist tuần đầu ở Daiso dưới 70.000 won</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
-    <a class="article-card alt" href="../bai-viet/cat-toc-o-han.html">
-      <h4>Đi cắt tóc hết sợ: tìm kiểu qua ảnh người nổi tiếng + chiêu cắt rẻ (có hình)</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
-    <a class="article-card" href="../bai-viet/thue-phong-o-han.html">
-      <h4>Thuê phòng: hiểu tiền cọc và 5 quy tắc để không mất trắng</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
-    <a class="article-card alt" href="../bai-viet/kham-benh-o-han.html">
-      <h4>Ốm thì đi đâu? Nhà thuốc → phòng khám → 119 + nhà thuốc mở đêm gần bạn</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
+    <div id="hubList" data-cat="moi-den"></div>
   </section>
 
   <footer>
@@ -102,5 +67,23 @@
 </div>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/related.js"></script>
+<script>
+(function(){
+  var KO=false;
+  var el=document.getElementById('hubList'); if(!el||!window.SKREG) return;
+  var cat=el.dataset.cat;
+  var items=window.SKREG.filter(function(r){return r.cat===cat&&(r.vc||r.vt);});
+  items.sort(function(a,b){return (b.d||'0000').localeCompare(a.d||'0000');});
+  var alt=false;
+  el.innerHTML=items.map(function(r){
+    alt=!alt;
+    var title=KO?(r.kc||r.kt):(r.vc||r.vt);
+    var tag=KO?(r.ktag||''):(r.vtag||'');
+    var vd=r.d?(KO?('✔ 검증일 '+r.d):('✔ Kiểm chứng '+r.d.split('-').reverse().join('/'))):'';
+    return '<a class="article-card'+(alt?'':' alt')+'" href="../'+r.p+'">'+
+      (tag?'<span class="tag">'+tag+'</span>':'')+'<h4>'+title+' →</h4>'+(vd?'<div class="verify">'+vd+'</div>':'')+'</a>';
+  }).join('');
+})();
+</script>
 </body>
 </html>

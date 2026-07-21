@@ -52,25 +52,7 @@
 
   <section class="section">
     <h2>Tất cả bài viết</h2>
-    <a class="article-card" href="../bai-viet/chon-truong-nganh-du-hoc.html">
-      <h4>🎓 Du học · Chọn trường · Chọn trường &amp; ngành: học phí, TOPIK học bổng, lưu ý ngành y tế</h4>
-      <div class="verify">✔ Kiểm chứng 2026/07/20</div>
-    </a>
-    <a class="article-card" href="../bai-viet/khu-vuc-ngoai-seoul.html">
-      <h4>📍 Du học · Chọn nơi ở · Khu nào ngoài Seoul nhiều việc làm thêm &amp; rẻ? (Ansan, Bupyeong, Cheonan...)</h4>
-      <div class="verify">✔ Kiểm chứng 2026/07/20</div>
-    </a>
-    <a class="article-card" href="../visa-cap-nhat.html" style="border-left-color:var(--do)">
-      <h4>🛂 Cập nhật visa — thay đổi gần đây · kiểm chứng tin đồn · link chính thức →</h4>
-    </a>
-    <a class="article-card" href="../bai-viet/lam-them-du-hoc-sinh.html">
-      <h4>Làm thêm khi du học: quy tắc giờ theo TOPIK và 3 cái bẫy làm mất visa</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
-    <a class="article-card alt" href="../bai-viet/visa-han-quoc-co-ban.html">
-      <h4>Visa Hàn Quốc cơ bản: 3 quy tắc vàng giữ tư cách cư trú</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
+    <div id="hubList" data-cat="du-hoc"></div>
   </section>
 
   <footer>
@@ -85,5 +67,23 @@
 </div>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/related.js"></script>
+<script>
+(function(){
+  var KO=false;
+  var el=document.getElementById('hubList'); if(!el||!window.SKREG) return;
+  var cat=el.dataset.cat;
+  var items=window.SKREG.filter(function(r){return r.cat===cat&&(r.vc||r.vt);});
+  items.sort(function(a,b){return (b.d||'0000').localeCompare(a.d||'0000');});
+  var alt=false;
+  el.innerHTML=items.map(function(r){
+    alt=!alt;
+    var title=KO?(r.kc||r.kt):(r.vc||r.vt);
+    var tag=KO?(r.ktag||''):(r.vtag||'');
+    var vd=r.d?(KO?('✔ 검증일 '+r.d):('✔ Kiểm chứng '+r.d.split('-').reverse().join('/'))):'';
+    return '<a class="article-card'+(alt?'':' alt')+'" href="../'+r.p+'">'+
+      (tag?'<span class="tag">'+tag+'</span>':'')+'<h4>'+title+' →</h4>'+(vd?'<div class="verify">'+vd+'</div>':'')+'</a>';
+  }).join('');
+})();
+</script>
 </body>
 </html>

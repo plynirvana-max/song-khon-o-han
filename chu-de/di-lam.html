@@ -52,30 +52,7 @@
 
   <section class="section">
     <h2>Tất cả bài viết</h2>
-    <a class="article-card" href="../bai-viet/xe-may-xe-dap-o-han.html">
-      <h4>🏍 Đi làm · Xe cộ · Xe máy &amp; xe đạp: bằng lái, bảo hiểm bắt buộc, biển số (bẫy bảo hiểm giao hàng)</h4>
-      <div class="verify">✔ Kiểm chứng 2026/07/20</div>
-    </a>
-    <a class="article-card" href="../bai-viet/ngan-hang-o-han.html" style="border-left-color:var(--vang)">
-      <h4>🏦 MỚI · Ngân hàng ở Hàn: tiền an toàn đến đâu + cách trả mọi hóa đơn</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
-    <a class="article-card" href="../bai-viet/cong-ty-no-luong.html">
-      <h4>Công ty nợ lương: 5 bước đòi lại tiền — không có hợp đồng vẫn đòi được</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
-    <a class="article-card alt" href="../bai-viet/doi-cho-lam-e9.html">
-      <h4>Đổi chỗ làm E-9: 2 con số quyết định (1 tháng · 3 tháng) và 3 sai lầm chết người</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
-    <a class="article-card" href="../bai-viet/bao-hiem-xuat-canh.html">
-      <h4>Bảo hiểm xuất cảnh: khoản chênh lệch với 퇴직금 mà chủ phải trả thêm</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
-    <a class="article-card alt" href="../bai-viet/gui-tien-ve-viet-nam.html">
-      <h4>Gửi tiền về Việt Nam: kênh nào để người nhà nhận nhiều VND nhất</h4>
-      <div class="verify">✔ Kiểm chứng 19/07/2026</div>
-    </a>
+    <div id="hubList" data-cat="di-lam"></div>
   </section>
   <section class="section">
     <h2>Công cụ <span>계산기</span></h2>
@@ -95,5 +72,23 @@
 </div>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/related.js"></script>
+<script>
+(function(){
+  var KO=false;
+  var el=document.getElementById('hubList'); if(!el||!window.SKREG) return;
+  var cat=el.dataset.cat;
+  var items=window.SKREG.filter(function(r){return r.cat===cat&&(r.vc||r.vt);});
+  items.sort(function(a,b){return (b.d||'0000').localeCompare(a.d||'0000');});
+  var alt=false;
+  el.innerHTML=items.map(function(r){
+    alt=!alt;
+    var title=KO?(r.kc||r.kt):(r.vc||r.vt);
+    var tag=KO?(r.ktag||''):(r.vtag||'');
+    var vd=r.d?(KO?('✔ 검증일 '+r.d):('✔ Kiểm chứng '+r.d.split('-').reverse().join('/'))):'';
+    return '<a class="article-card'+(alt?'':' alt')+'" href="../'+r.p+'">'+
+      (tag?'<span class="tag">'+tag+'</span>':'')+'<h4>'+title+' →</h4>'+(vd?'<div class="verify">'+vd+'</div>':'')+'</a>';
+  }).join('');
+})();
+</script>
 </body>
 </html>
