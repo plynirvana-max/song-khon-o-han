@@ -52,42 +52,7 @@
 
   <section class="section">
     <h2>전체 글</h2>
-    <a class="article-card" href="../bai-viet/giay-di-bo-o-han.html">
-      <h4>👟 첫 도착 · 절약 · 걷기·등산용 신발 7만원대 — 발 편하게 고르는 법</h4>
-      <div class="verify">✔ 검증일 2026-07-20</div>
-    </a>
-    <a class="article-card" href="../bai-viet/mua-kinh-o-han.html" style="border-left-color:var(--vang)">
-      <h4>👓 NEW · 안경 맞추기: "압축"의 정체 — 3배 바가지 피하는 법</h4>
-      <div class="verify">✔ 검증일 2026-07-19</div>
-    </a>
-    <a class="article-card" href="../ban-do-tau-dien.html" style="border-left-color:var(--vang)">
-      <h4>🚇 NEW · 12개 노선 색깔표 + 실시간 도착 조회</h4>
-      <div class="verify">✔ 검증일 2026-07-19 · 라이브 도구</div>
-    </a>
-    <a class="article-card" href="../bai-viet/the-giao-thong-tmoney.html">
-      <h4>T-money 카드: 사고, 충전하고, 버스 내릴 때 꼭 찍어야 하는 이유</h4>
-      <div class="verify">✔ 검증일 2026-07-19</div>
-    </a>
-    <a class="article-card alt" href="../bai-viet/di-tau-dien-ngam.html">
-      <h4>지하철 A–Z: 개찰구는 리듬이다 — 노선도는 3가지만 (그림 설명)</h4>
-      <div class="verify">✔ 검증일 2026-07-19</div>
-    </a>
-    <a class="article-card" href="../bai-viet/mua-sam-daiso.html">
-      <h4>바리바리 싸 오지 마세요 — 다이소 첫 주 체크리스트 7만 원 컷</h4>
-      <div class="verify">✔ 검증일 2026-07-19</div>
-    </a>
-    <a class="article-card alt" href="../bai-viet/cat-toc-o-han.html">
-      <h4>미용실 공포 끝: 스타일 찾기(연예인 사진으로) + 저렴하게 자르는 법</h4>
-      <div class="verify">✔ 검증일 2026-07-19</div>
-    </a>
-    <a class="article-card" href="../bai-viet/thue-phong-o-han.html">
-      <h4>방 구하기: 보증금 구조와 돈 잃지 않는 5가지 규칙</h4>
-      <div class="verify">✔ 검증일 2026-07-19</div>
-    </a>
-    <a class="article-card alt" href="../bai-viet/kham-benh-o-han.html">
-      <h4>아프면 어디로? 약국 → 의원 → 119 + 심야 약국 찾기</h4>
-      <div class="verify">✔ 검증일 2026-07-19</div>
-    </a>
+    <div id="hubList" data-cat="moi-den"></div>
   </section>
 
   <footer>
@@ -102,5 +67,23 @@
 </div>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "03114286461f413094bf56a5f984de80"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/related.js"></script>
+<script>
+(function(){
+  var KO=true;
+  var el=document.getElementById('hubList'); if(!el||!window.SKREG) return;
+  var cat=el.dataset.cat;
+  var items=window.SKREG.filter(function(r){return r.cat===cat&&(r.vc||r.vt);});
+  items.sort(function(a,b){return (b.d||'0000').localeCompare(a.d||'0000');});
+  var alt=false;
+  el.innerHTML=items.map(function(r){
+    alt=!alt;
+    var title=KO?(r.kc||r.kt):(r.vc||r.vt);
+    var tag=KO?(r.ktag||''):(r.vtag||'');
+    var vd=r.d?(KO?('✔ 검증일 '+r.d):('✔ Kiểm chứng '+r.d.split('-').reverse().join('/'))):'';
+    return '<a class="article-card'+(alt?'':' alt')+'" href="../'+r.p+'">'+
+      (tag?'<span class="tag">'+tag+'</span>':'')+'<h4>'+title+' →</h4>'+(vd?'<div class="verify">'+vd+'</div>':'')+'</a>';
+  }).join('');
+})();
+</script>
 </body>
 </html>
