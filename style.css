@@ -123,45 +123,6 @@ footer a{text-decoration:underline}
 .msgbtn:active{transform:translateY(1px)}
 .fb-foot{color:var(--xanh);font-weight:700}
 
-/* ============================================================
-   DESKTOP + MOTION ENHANCEMENT  (additive — mobile view unchanged)
-   Redesign-Preserve: brand tokens, IA, copy all kept.
-   ============================================================ */
-@media (min-width:760px){
-  .wrap{max-width:980px;padding-bottom:130px}
-  .topbar .inner,.nav .inner{max-width:980px}
-
-  /* hero → asymmetric split: headline left, quick actions right */
-  .hero{display:grid;grid-template-columns:1.35fr 1fr;gap:34px;align-items:center;padding:48px 44px}
-  .hero h1{font-size:46px}
-  .hero .quick{margin-top:0;gap:12px}
-  .hero .quick a{padding:18px 6px}
-  .hero .quick .ic{font-size:26px}
-  .hero .quick .lb{font-size:12px}
-
-  /* two-column card rhythm on tagged sections; single-card promos stay full width */
-  .section.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;align-items:start}
-  .section.grid2 > h2{grid-column:1/-1;margin-bottom:2px}
-  .section.grid2 > .article-card,
-  .section.grid2 > .tool{margin-top:0}
-
-  .section h2{font-size:22px}
-  .emgbar{max-width:980px}
-}
-@media (min-width:1040px){
-  .wrap,.topbar .inner,.nav .inner,.emgbar{max-width:1040px}
-}
-
-/* subtle scroll-reveal. progressive enhancement + reduced-motion safe:
-   hidden start state applied ONLY where view() timeline exists, so
-   unsupported browsers (Firefox/Safari) always show content. */
-@media (prefers-reduced-motion:no-preference){
-  @supports (animation-timeline:view()){
-    .section,.hero{animation:sk-rise linear both;animation-timeline:view();animation-range:entry 0% entry 34%}
-    @keyframes sk-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-  }
-}
-
 /* related articles */
 .related-box{margin:26px 0 8px}
 .related-box h3{font-size:15px;font-weight:800;color:var(--xanh-d);margin:0 0 10px}

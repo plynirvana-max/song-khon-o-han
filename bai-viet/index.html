@@ -55,7 +55,9 @@
     <div class="chips" id="chips"><button class="chip on" data-cat="all">Tất cả</button><button class="chip" data-cat="moi-den">🧳 Mới đến</button><button class="chip" data-cat="di-lam">🔧 Đi làm</button><button class="chip" data-cat="du-hoc">🎓 Du học</button><button class="chip" data-cat="ket-hon">💍 Kết hôn</button></div>
   </section>
 
-  <section class="section" id="list"><div id="regList"></div></section>
+  <section class="section" id="list">
+    <div id="autoCards"></div>
+  </section>
 
   <footer>
     Thông tin tham khảo.<br>
@@ -125,6 +127,38 @@ document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{
   var si=document.getElementById('q')||document.querySelector('input[type=search]');
   if(si) si.addEventListener('input',function(){curQ=this.value;render();});
   render();
+})();
+</script>
+<script>
+(function(){
+  function go(){
+    var REG=window.SKREG||[]; var box=document.getElementById('autoCards');
+    if(!box) return;
+    var KO=false;
+    var arts=REG.filter(function(r){return r.vc;});
+    // newest first by date
+    arts.sort(function(a,b){return (b.d||'').localeCompare(a.d||'');});
+    box.innerHTML=arts.map(function(r,i){
+      var tag=KO?r.ktag:r.vtag, title=KO?r.kc:r.vc;
+      var date=r.d?(KO?('✔ 검증일 '+r.d):('✔ Kiểm chứng '+r.d)):'';
+      var alt=i%2?' alt':'';
+      return '<a class="article-card art'+alt+'" data-cat="'+r.cat+'" href="'+r.p.replace('bai-viet/','')+'">'+
+        '<span class="tag">'+tag+'</span><h4>'+title+'</h4>'+
+        (date?'<div class="verify">'+date+'</div>':'')+'</a>';
+    }).join('');
+    // re-bind category filter if present
+    document.querySelectorAll('.cat-tab').forEach(function(t){
+      t.addEventListener('click',function(){
+        var c=t.dataset.cat;
+        document.querySelectorAll('.cat-tab').forEach(function(x){x.classList.remove('on');});
+        t.classList.add('on');
+        document.querySelectorAll('#autoCards .art').forEach(function(a){
+          a.style.display=(c==='all'||a.dataset.cat===c)?'':'none';
+        });
+      });
+    });
+  }
+  if(window.SKREG) go(); else window.addEventListener('load',go);
 })();
 </script>
 </body>

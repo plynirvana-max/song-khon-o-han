@@ -1,59 +1,49 @@
 #!/usr/bin/env python3
-"""주간 외부 링크 생존 검사 — 죽은 링크(404/410/DNS실패/타임아웃)만 GitHub 이슈로 보고.
-403/401/429 등은 '봇 차단'으로 간주해 정상 취급 (실제 브라우저에선 열림)."""
-import glob, re, os, json, urllib.request, urllib.error, socket, ssl, sys
+# -*- coding: utf-8 -*-
+"""외부 링크 생존 검사 — 죽은 링크(404/DNS실패/타임아웃)를 찾아 보고.
+정부·공식 사이트가 주 대상. 403은 봇차단이므로 '생존'으로 간주."""
+import glob, re, sys, urllib.request, urllib.error, socket, json
 
-SKIP_DOMAINS = ("facebook.com","m.me","zalo.me","goatcounter.com","cloudflareinsights.com",
-                "gc.zgo.at","instagram.com","tiktok.com")
-ALIVE_CODES = set(range(200,400)) | {401,403,405,406,409,429,999}
+socket.setdefaulttimeout(15)
+UA={"User-Agent":"Mozilla/5.0 (compatible; SongKhonLinkCheck/1.0)"}
 
-def collect():
-    urls=set()
-    for f in glob.glob("**/*.html",recursive=True):
-        s=open(f,encoding="utf-8",errors="ignore").read()
-        for u in re.findall(r'href="(https?://[^"]+)"',s):
-            u=u.split("#")[0]
-            if any(d in u for d in SKIP_DOMAINS): continue
-            urls.add(u)
-    return sorted(urls)
+# collect external links
+links={}
+for f in glob.glob("**/*.html",recursive=True):
+    for u in re.findall(r'href="(https?://[^"]+)"', open(f,encoding="utf-8").read()):
+        u=u.split("#")[0]
+        links.setdefault(u,set()).add(f)
 
-def check(url, tries=2):
-    ctx=ssl.create_default_context(); ctx.check_hostname=False; ctx.verify_mode=ssl.CERT_NONE
-    req=urllib.request.Request(url, headers={"User-Agent":"Mozilla/5.0 (LinkCheck; songkhonohan.com)"})
-    last="?"
-    for _ in range(tries):
+# skip noisy/side domains that block bots aggressively or are per-user
+SKIP=("facebook.com","m.me","goatcounter.com","cloudflareinsights.com","zalo.me","google.com/maps")
+
+dead=[]
+for u,files in sorted(links.items()):
+    if any(s in u for s in SKIP): continue
+    try:
+        import urllib.parse as _up
+        _p=_up.urlsplit(u)
+        safe=_up.urlunsplit((_p.scheme,_p.netloc,_up.quote(_p.path,safe="/%"),_up.quote(_p.query,safe="=&%"),_p.fragment))
+        req=urllib.request.Request(safe,headers=UA,method="HEAD")
         try:
-            with urllib.request.urlopen(req, timeout=15, context=ctx) as r:
-                return ("ok", r.status)
+            r=urllib.request.urlopen(req)
+            code=r.getcode()
         except urllib.error.HTTPError as e:
-            last=e.code
-            if e.code in ALIVE_CODES: return ("ok", e.code)
-            if e.code in (404,410): return ("dead", e.code)
-        except (urllib.error.URLError, socket.timeout, ssl.SSLError, ConnectionError) as e:
-            last=str(getattr(e,"reason",e))[:60]
-    return ("dead", last)
+            code=e.code
+            if code in (405,403,400):  # HEAD blocked → try GET
+                req=urllib.request.Request(u,headers=UA)
+                try: code=urllib.request.urlopen(req).getcode()
+                except urllib.error.HTTPError as e2: code=e2.code
+        if code in (404,410):
+            dead.append((u,code,sorted(files)))
+    except Exception as e:
+        dead.append((u,str(type(e).__name__),sorted(files)))
 
-def main():
-    urls=collect()
-    print(f"checking {len(urls)} external urls")
-    dead=[]
-    for u in urls:
-        st,info=check(u)
-        print(("DEAD  " if st=="dead" else "ok    "), info, u)
-        if st=="dead": dead.append((u,info))
-    if not dead:
-        print("all alive ✓"); return
-    body="자동 링크 검사에서 죽은 링크 발견:\n\n"+"\n".join(f"- `{u}` → {i}" for u,i in dead)+ \
-         "\n\n각 링크가 쓰인 페이지를 수정하거나 대체 출처로 바꿔주세요."
-    tok=os.environ.get("GITHUB_TOKEN"); repo=os.environ.get("GITHUB_REPOSITORY")
-    if tok and repo:
-        req=urllib.request.Request(f"https://api.github.com/repos/{repo}/issues",
-            data=json.dumps({"title":f"🔗 죽은 링크 {len(dead)}개 발견 (자동 검사)","body":body}).encode(),
-            headers={"Authorization":f"Bearer {tok}","Accept":"application/vnd.github+json"})
-        urllib.request.urlopen(req)
-        print("issue created")
-    else:
-        print(body)
-    sys.exit(0)
-
-if __name__=="__main__": main()
+print(json.dumps({"checked":len(links),"dead":len(dead)},ensure_ascii=False))
+if dead:
+    print("\n## 죽었거나 접근 불가한 링크\n")
+    for u,code,files in dead:
+        print(f"- `{u}` → **{code}**")
+        for f in files[:3]: print(f"  - {f}")
+    sys.exit(1)
+print("모든 외부 링크 정상 ✓")
