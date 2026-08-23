@@ -1,23 +1,6 @@
 /* 자동 생성 파일 — 직접 수정 금지 (scripts/update_events.py가 갱신) */
 window.SKEVENTS_AUTO = [
  {
-  "s": "2026-03-07",
-  "e": "2026-12-05",
-  "region": "seoul",
-  "vi": {
-   "t": "[Trải nghiệm & lớp học] [평화문화진지] 2026년 평화문화진지 정기 예술교육 프로그램 [예술 피움]",
-   "place": "평화문화진지 (서울특별시 도봉구 마들로 932) · 도봉구",
-   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 전 연링 (프로그램 별 상이) · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[평화문화진지] 2026년 평화문화진지 정기 예술교육 프로그램 [예술 피움]",
-   "place": "평화문화진지 (서울특별시 도봉구 마들로 932) · 도봉구",
-   "d": "🤖 무료 · 교육/체험 · 대상: 전 연링 (프로그램 별 상이) · 상세는 공식 링크 확인."
-  },
-  "url": "https://culturebunker.or.kr/archives/program/%ea%b5%90%ec%9c%a1-2026%eb%85%84-%ed%8f%89%ed%99%94%eb%ac%b8%ed%99%94%ec%a7%84%ec%a7%80-%ec%a0%95%ea%b8%b0%ec%98%88%ec%88%a0%ea%b5%90%ec%9c%a1%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%e3%80%8e%ec%98%88",
-  "verified": "2026-08-16"
- },
- {
   "s": "2026-03-24",
   "e": "2026-12-11",
   "region": "seoul",
@@ -32,7 +15,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 중, 고등학교 1-3학년 단체(학급, 동아리 등) · 상세는 공식 링크 확인."
   },
   "url": "https://museum.seoul.go.kr/www/board/NR_boardView.do?q_applyState=- 전 체 -&actionMethod=&sortName=&searchVal=&actionUri=&bbsCd=1005&endDt=&categoryVal=&searchKey=&sso=ok&regPwd=N&pageType=&sortOrder=&startDt=&rssYn=&currentPage=2&seq=20260309101139424&ctgCd=&showSummaryYn=N",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-03-27",
@@ -49,7 +32,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.sfac.or.kr/artspace/artspace/sindang_notice.do?bcIdx=137937",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-03-28",
@@ -66,7 +49,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 과학에 관심있는 누구나 *초등생의 경우 보호자 동반신청을 권유드립니다. · 상세는 공식 링크 확인."
   },
   "url": "https://science.seoul.go.kr/program/lecture/info?menuId=15&progMstId=1758",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-01",
@@ -83,7 +66,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 중ㆍ고등학교 특수학급 단체 · 상세는 공식 링크 확인."
   },
   "url": "https://museum.seoul.go.kr/www/board/NR_boardView.do?q_applyState=- 전 체 -&actionMethod=&sortName=&searchVal=&actionUri=&bbsCd=1005&endDt=&categoryVal=&searchKey=&sso=ok&regPwd=N&pageType=&sortOrder=&startDt=&rssYn=&currentPage=2&seq=20260203111350005&ctgCd=&showSummaryYn=N",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-01",
@@ -100,7 +83,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 초등학교 3~4학년 학급단체 · 상세는 공식 링크 확인."
   },
   "url": "https://museum.seoul.go.kr/sulm/board/NR_boardList.do?bbsCd=1005",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-02",
@@ -117,7 +100,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1512457",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-02",
@@ -134,7 +117,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 초등5~6학년 학급단체 · 상세는 공식 링크 확인."
   },
   "url": "https://museum.seoul.go.kr/sulm/board/NR_boardList.do?bbsCd=1005",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-02",
@@ -151,7 +134,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 기타 · 대상: 전체관람 · 상세는 공식 링크 확인."
   },
   "url": "https://www.naruart.or.kr/exhibition/program_view.php?page=1&sch_tab=date&sch_year=2026&sch_month=05&sch_notice=N&idx=10331",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-04",
@@ -168,7 +151,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 콘서트 · 대상: 전체 관람가능 · 상세는 공식 링크 확인."
   },
   "url": "https://www.naruart.or.kr/exhibition/program_view.php?page=1&sch_tab=date&sch_year=2026&sch_month=05&sch_notice=N&idx=10325",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-06",
@@ -185,7 +168,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 초등학생 4~6학년 학급 단체 · 상세는 공식 링크 확인."
   },
   "url": "https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?rsv_svc_id=S260210154346463209",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-07",
@@ -202,7 +185,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 콘서트 · 대상: 만 7세 이상 · 상세는 공식 링크 확인."
   },
   "url": "https://www.sfac.or.kr/asa/edu/view.do?eduMstSeq=36695",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-07",
@@ -219,7 +202,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 (초등학생 이상 권장) · 상세는 공식 링크 확인."
   },
   "url": "https://sssmuseum.org/main/?mc_code=111212",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-11",
@@ -236,7 +219,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 축제-전통/역사 · 대상: 일반인(현장 관람) · 상세는 공식 링크 확인."
   },
   "url": "https://cafe.naver.com/ujbj2025?iframe_url_utf8=%2FArticleRead.nhn%253Fclubid%3D31457131%2526articleid%3D25%2526referrerAllArticles%3Dtrue",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-16",
@@ -253,24 +236,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1509709",
-  "verified": "2026-08-16"
- },
- {
-  "s": "2026-04-17",
-  "e": "2026-11-27",
-  "region": "seoul",
-  "vi": {
-   "t": "[Trải nghiệm & lớp học] [서울백제어린이박물관] 2026 문화로 야금야금 연계 [백제왕성 달빛 캠프]",
-   "place": "서울백제어린이박물관 주변 잔디밭 · 송파구",
-   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 유아·어린이 동반 30가족 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[서울백제어린이박물관] 2026 문화로 야금야금 연계 [백제왕성 달빛 캠프]",
-   "place": "서울백제어린이박물관 주변 잔디밭 · 송파구",
-   "d": "🤖 무료 · 교육/체험 · 대상: 유아·어린이 동반 30가족 · 상세는 공식 링크 확인."
-  },
-  "url": "https://baekjemuseum.seoul.go.kr/dreamvillage/board/notice/index.jsp?boardid=SDM0303000000&mmode=content&mpid=SDM0303000000&skin=notice&pid=23266&cpage=1",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-17",
@@ -287,7 +253,24 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 가족, 어린이 · 상세는 공식 링크 확인."
   },
   "url": "https://baekjemuseum.seoul.go.kr/dreamvillage/board/notice/index.jsp?boardid=SDM0303000000&mmode=content&mpid=SDM0303000000&skin=notice&pid=23264&cpage=1",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
+ },
+ {
+  "s": "2026-04-17",
+  "e": "2026-11-27",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [서울백제어린이박물관] 2026 문화로 야금야금 연계 [백제왕성 달빛 캠프]",
+   "place": "서울백제어린이박물관 주변 잔디밭 · 송파구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 유아·어린이 동반 30가족 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[서울백제어린이박물관] 2026 문화로 야금야금 연계 [백제왕성 달빛 캠프]",
+   "place": "서울백제어린이박물관 주변 잔디밭 · 송파구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 유아·어린이 동반 30가족 · 상세는 공식 링크 확인."
+  },
+  "url": "https://baekjemuseum.seoul.go.kr/dreamvillage/board/notice/index.jsp?boardid=SDM0303000000&mmode=content&mpid=SDM0303000000&skin=notice&pid=23266&cpage=1",
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-20",
@@ -304,7 +287,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 전문 해설사와 함께 걷기 원하는 시민 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://hangang.seoul.go.kr/www/eventMng/detail.do?srchType=list&evntSn=391&mid=538&pageNo=1&keyword=&opt4=&opt11=&opt12=&opt13=&opt14=#pstnList",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-23",
@@ -321,7 +304,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 금천구 거주 청년(만 19~39세) · 상세는 공식 링크 확인."
   },
   "url": "https://m.site.naver.com/21Wwq",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-23",
@@ -338,7 +321,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 축제-문화/예술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://seouloutdoorlibrary.kr/",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-24",
@@ -355,7 +338,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 기록학, 문헌정보학, 역사학 등 관련 전공생 또는 관련 업무 예비 종사자 또는 종사자 · 상세는 공식 링크 확인."
   },
   "url": "https://archives.seoul.go.kr/exhibitions-programs/programs/5480",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-26",
@@ -372,7 +355,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 축제-기타 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.instagram.com/seoul.local.market/",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-27",
@@ -389,7 +372,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 전체관람가 · 상세는 공식 링크 확인."
   },
   "url": "https://www.seochocf.or.kr/site/main/seocho/show/view?show_idx=970",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-28",
@@ -406,7 +389,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://craftmuseum.seoul.go.kr/exhibit/plan/view/184",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-28",
@@ -423,7 +406,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.seoulchildrensmuseum.org/display/displayExhibition27.do",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-28",
@@ -440,7 +423,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 어린이 · 상세는 공식 링크 확인."
   },
   "url": "https://www.seoul.go.kr/museumg/27ojn6shil.do",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-04-30",
@@ -457,7 +440,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1523485",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-01",
@@ -474,7 +457,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 콘서트 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://seoulbusking.com/",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-01",
@@ -491,7 +474,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 유아, 아동·청소년, 성인 누구나 *프로그램 별 상이 · 상세는 공식 링크 확인."
   },
   "url": "https://www.sfac.or.kr/opensquare/notice/notice_list.do?cbIdx=955&bcIdx=138206&type=",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-01",
@@ -508,7 +491,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 축제-자연/경관 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.seoul.go.kr/festa/garden/",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-01",
@@ -525,7 +508,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://news.seoul.go.kr/culture/archives/532942",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-06",
@@ -542,7 +525,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 콘서트 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://cultureseoul.co.kr/2026/",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-07",
@@ -559,7 +542,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.instagram.com/p/DXvsd-xDyH1/",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-09",
@@ -576,7 +559,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 축제-문화/예술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.instagram.com/p/DXJHEnTii_j/",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-11",
@@ -593,7 +576,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 관련 전공 대학·대학원생 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/event/detail?evtNo=1538786",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-13",
@@ -610,7 +593,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://blog.naver.com/epmuseum/224270548213",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-15",
@@ -627,7 +610,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.sfac.or.kr/opensquare/notice/notice_list.do?cbIdx=955&bcIdx=138037&type=",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-15",
@@ -644,7 +627,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://museum.seoul.go.kr/sulm/board/NR_boardView.do?bbsCd=1002&seq=20260422163604668",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-18",
@@ -661,7 +644,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.sb.go.kr/literature/culture/bbs/bbsMsgDetail.do?msg_seq=24&bcd=special",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-19",
@@ -678,24 +661,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1529410",
-  "verified": "2026-08-16"
- },
- {
-  "s": "2026-05-21",
-  "e": "2026-08-21",
-  "region": "seoul",
-  "vi": {
-   "t": "[Triển lãm] 2026 국가무형유산전수교육관 12공방 연합특별전 [공들임(工-DREAM)]",
-   "place": "국가무형유산전수교육관 2층 전시장 「결」 · 강남구",
-   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "2026 국가무형유산전수교육관 12공방 연합특별전 [공들임(工-DREAM)]",
-   "place": "국가무형유산전수교육관 2층 전시장 「결」 · 강남구",
-   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "https://www.kh.or.kr/short/bWEn",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-24",
@@ -712,7 +678,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 기타 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.jfac.or.kr/site/main/program/perf_all_list_view?pgIdx=2716",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-26",
@@ -729,7 +695,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://artbookbogo.kr/seoul/menu/10045/program/30009/cultureDetail.do?currentPageNo=1&cultureIdx=24623&cultureTypeCdArr=EXHB&searchCultureTypeCd=&searchOperStatusCd=VALID",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-28",
@@ -746,7 +712,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 기록에 관심 있는 성인 · 상세는 공식 링크 확인."
   },
   "url": "https://archives.seoul.go.kr/exhibitions-programs/programs/5680",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-05-28",
@@ -763,7 +729,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 관련 분야 취업을 희망하는 구직 여성 · 상세는 공식 링크 확인."
   },
   "url": "https://buly.kr/AarVym3",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-02",
@@ -780,7 +746,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://baekjemuseum.seoul.go.kr/module/index.jsp?boardid=a&code=DP&mmode=content&mpid=SBM0203000000&pid=23315&strsearch=&d_s_que=&cpage=1",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-04",
@@ -797,7 +763,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 내외국인 남녀노소 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://cwdsarangchae.kr/ko/board/specialexhibition/current/detail.kto?searchNo=3598",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-06",
@@ -814,7 +780,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.seosomun.org/exhibit/view.do?pNo=174",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-08",
@@ -831,7 +797,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "http://www.leememorial.or.kr/?tpf=memorial/plan_view&board_code=18&code=7178",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-09",
@@ -848,7 +814,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 문화예술 분야에서 3년 이상 활동 경력과 5회 이상의 창작·발표 경험이 있는 장애예술인 · 상세는 공식 링크 확인."
   },
   "url": "https://ac.ieum.or.kr/program/program.php?ptype=view&idx=650&category=3",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-10",
@@ -865,7 +831,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 영유아(0세~미취학아동)를 양육하는 보호자 · 상세는 공식 링크 확인."
   },
   "url": "https://gcfac.or.kr/board/noticeDetail?gcfac_menu_cd=U0139&board_gb=notice&board_seq=9154&currRow=1",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-10",
@@ -882,7 +848,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 양천센터 방문 시민 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.sfac.or.kr/artspace/artspace/arteducation_notice.do?cbIdx=983&bcIdx=138322&type=",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-11",
@@ -899,24 +865,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1538201",
-  "verified": "2026-08-16"
- },
- {
-  "s": "2026-06-11",
-  "e": "2026-08-16",
-  "region": "seoul",
-  "vi": {
-   "t": "[Triển lãm] 2026 문화역서울284 [내부 공간투어]",
-   "place": "문화역서울284 · 중구",
-   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "2026 문화역서울284 [내부 공간투어]",
-   "place": "문화역서울284 · 중구",
-   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "https://www.seoul284.org/program/view/category/322/state/5/menu/340?thisPage=1&idx=374&searchField=all&searchText=",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-13",
@@ -933,7 +882,24 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://museum.seoul.go.kr/cgcm/board/NR_boardView.do?bbsCd=1002&seq=20260529170246055",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
+ },
+ {
+  "s": "2026-06-13",
+  "e": "2026-09-27",
+  "region": "seoul",
+  "vi": {
+   "t": "[Triển lãm] [B the B] 신규 기획전 오픈 : Beauty Tranlated",
+   "place": "비더비 UP-TOWN (울시 중구 을지로 281, DDP마켓 지하2층) · 중구",
+   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[B the B] 신규 기획전 오픈 : Beauty Tranlated",
+   "place": "비더비 UP-TOWN (울시 중구 을지로 281, DDP마켓 지하2층) · 중구",
+   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
+  },
+  "url": "https://btheb.sba.kr/notice/?mod=document&uid=275",
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-15",
@@ -950,7 +916,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/education/detail?acadmyEeNo=1550659",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-16",
@@ -967,7 +933,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://science.seoul.go.kr/board/normal/read?menuId=21&bbsId=1&searchBbsCd=normal&searchSeq=3071&curPage=1&searchType=title&searchWord=",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-18",
@@ -984,7 +950,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://museum.seoul.go.kr/sekm/front/display/specialView.do?currentPage=1&search_query=&e_id=131&e_cd=3&locale=KO",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
   "s": "2026-06-19",
@@ -1001,23 +967,57 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://artbookbogo.kr/seoul/menu/10024/program/30009/cultureDetail.do?currentPageNo=1&cultureIdx=24631&searchCultureTypeCd=ALL&searchOperStatusCd=ALL",
-  "verified": "2026-08-16"
+  "verified": "2026-08-23"
  },
  {
-  "s": "2026-06-19",
-  "e": "2026-08-16",
+  "s": "2026-06-20",
+  "e": "2026-09-19",
   "region": "seoul",
   "vi": {
-   "t": "[Triển lãm] [갤러리자유] 그룹전 [Recast: 오래된 형상의 미래]",
-   "place": "갤러리자유 1층 전시실 · 용산구",
+   "t": "[Trải nghiệm & lớp học] [답십리영화미디어아트센터] 답십리 필름을 타고~!",
+   "place": "답십리영화미디어아트센터 2층 OT실 · 동대문구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[답십리영화미디어아트센터] 답십리 필름을 타고~!",
+   "place": "답십리영화미디어아트센터 2층 OT실 · 동대문구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 누구나 · 상세는 공식 링크 확인."
+  },
+  "url": "https://ddmac.or.kr/sub09/sub03.php?type=view&uid=9242",
+  "verified": "2026-08-23"
+ },
+ {
+  "s": "2026-06-23",
+  "e": "2026-08-23",
+  "region": "seoul",
+  "vi": {
+   "t": "[Triển lãm] 2026 삼각산금암미술관 은평 공예 공모 선정자 展 [경외의 구조]",
+   "place": "삼각산금암미술관 · 은평구",
    "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
   },
   "ko": {
-   "t": "[갤러리자유] 그룹전 [Recast: 오래된 형상의 미래]",
-   "place": "갤러리자유 1층 전시실 · 용산구",
+   "t": "2026 삼각산금암미술관 은평 공예 공모 선정자 展 [경외의 구조]",
+   "place": "삼각산금암미술관 · 은평구",
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
-  "url": "https://blog.naver.com/galleryjayu/224319770492",
-  "verified": "2026-08-16"
+  "url": "https://museum.ep.go.kr/exhibit/special.asp?page=v&seq=32",
+  "verified": "2026-08-23"
+ },
+ {
+  "s": "2026-06-24",
+  "e": "2026-11-15",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [마포구립서강도서관] 6-11월/길 위의 인문학 [독서 페어링：All that library to do]",
+   "place": "마포구립서강도서관 3층 세미나실 / 독서관 / 예술의 전당 / 온라인(패들렛, zoom) · 마포구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 일반 30명 / 20명 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[마포구립서강도서관] 6-11월/길 위의 인문학 [독서 페어링：All that library to do]",
+   "place": "마포구립서강도서관 3층 세미나실 / 독서관 / 예술의 전당 / 온라인(패들렛, zoom) · 마포구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 일반 30명 / 20명 · 상세는 공식 링크 확인."
+  },
+  "url": "https://mplib.mapo.go.kr/sglib/PGM3028/eventDetail.do?eventSn=12687&fbclid=IwY2xjawSR5hZleHRuA2FlbQIxMABicmlkETFadFpFQ0dDbGtid0thWndFc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHkFCSD8q8jCXeZKh1nlknQ2uDJF2MoLj0vjKMhglpZs3lLQlezG2fWzv5yT8_aem_vxD6MN9DtOjPb5266w-vXA",
+  "verified": "2026-08-23"
  }
 ];
