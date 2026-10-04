@@ -1,210 +1,6 @@
 /* 자동 생성 파일 — 직접 수정 금지 (scripts/update_events.py가 갱신) */
 window.SKEVENTS_AUTO = [
  {
-  "s": "2026-04-16",
-  "e": "2026-11-22",
-  "region": "seoul",
-  "vi": {
-   "t": "[Triển lãm] [서울시립미술관 서소문본관] 가나아트컬렉션 《기술의 저변: 경계에 선 장면들》",
-   "place": "서울시립미술관 서소문본관 2층 가나아트컬렉션 전시실/상설 전시실 · 중구",
-   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[서울시립미술관 서소문본관] 가나아트컬렉션 《기술의 저변: 경계에 선 장면들》",
-   "place": "서울시립미술관 서소문본관 2층 가나아트컬렉션 전시실/상설 전시실 · 중구",
-   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1509709",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-04-17",
-  "e": "2026-11-27",
-  "region": "seoul",
-  "vi": {
-   "t": "[Trải nghiệm & lớp học] [서울백제어린이박물관] 2026 문화로 야금야금 연계 [백제왕성 달빛 캠프]",
-   "place": "서울백제어린이박물관 주변 잔디밭 · 송파구",
-   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 유아·어린이 동반 30가족 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[서울백제어린이박물관] 2026 문화로 야금야금 연계 [백제왕성 달빛 캠프]",
-   "place": "서울백제어린이박물관 주변 잔디밭 · 송파구",
-   "d": "🤖 무료 · 교육/체험 · 대상: 유아·어린이 동반 30가족 · 상세는 공식 링크 확인."
-  },
-  "url": "https://baekjemuseum.seoul.go.kr/dreamvillage/board/notice/index.jsp?boardid=SDM0303000000&mmode=content&mpid=SDM0303000000&skin=notice&pid=23266&cpage=1",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-04-17",
-  "e": "2026-11-27",
-  "region": "seoul",
-  "vi": {
-   "t": "[Trải nghiệm & lớp học] [서울백제어린이박물관] 2026 서울 문화의 밤 [문화로 야금야금] 연계 『백제왕도 달빛기행』",
-   "place": "서울백제어린이박물관 앞마당, 전시실 / 몽촌토성 · 송파구",
-   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 가족, 어린이 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[서울백제어린이박물관] 2026 서울 문화의 밤 [문화로 야금야금] 연계 『백제왕도 달빛기행』",
-   "place": "서울백제어린이박물관 앞마당, 전시실 / 몽촌토성 · 송파구",
-   "d": "🤖 무료 · 교육/체험 · 대상: 가족, 어린이 · 상세는 공식 링크 확인."
-  },
-  "url": "https://baekjemuseum.seoul.go.kr/dreamvillage/board/notice/index.jsp?boardid=SDM0303000000&mmode=content&mpid=SDM0303000000&skin=notice&pid=23264&cpage=1",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-04-20",
-  "e": "2026-11-15",
-  "region": "seoul",
-  "vi": {
-   "t": "[Trải nghiệm & lớp học] 2026 한강이야기여행 [한강역사탐방]",
-   "place": "광나루, 잠실, 뚝섬, 잠원, 반포, 이촌, 여의도, 양화, 난지, 망원, 강서 · 용산구",
-   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 전문 해설사와 함께 걷기 원하는 시민 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "2026 한강이야기여행 [한강역사탐방]",
-   "place": "광나루, 잠실, 뚝섬, 잠원, 반포, 이촌, 여의도, 양화, 난지, 망원, 강서 · 용산구",
-   "d": "🤖 무료 · 교육/체험 · 대상: 전문 해설사와 함께 걷기 원하는 시민 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "https://hangang.seoul.go.kr/www/eventMng/detail.do?srchType=list&evntSn=391&mid=538&pageNo=1&keyword=&opt4=&opt11=&opt12=&opt13=&opt14=#pstnList",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-04-23",
-  "e": "2026-11-26",
-  "region": "seoul",
-  "vi": {
-   "t": "[Trải nghiệm & lớp học] [청담종합사회복지관] 청년 요리·사회참여 커뮤니티 [ON(溫)마을 행복한 밥상]",
-   "place": "청담종합사회복지관 구관 1층 청담수랏간 및 소규모 회의실 등 · 금천구",
-   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 금천구 거주 청년(만 19~39세) · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[청담종합사회복지관] 청년 요리·사회참여 커뮤니티 [ON(溫)마을 행복한 밥상]",
-   "place": "청담종합사회복지관 구관 1층 청담수랏간 및 소규모 회의실 등 · 금천구",
-   "d": "🤖 무료 · 교육/체험 · 대상: 금천구 거주 청년(만 19~39세) · 상세는 공식 링크 확인."
-  },
-  "url": "https://m.site.naver.com/21Wwq",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-04-23",
-  "e": "2026-11-01",
-  "region": "seoul",
-  "vi": {
-   "t": "[Lễ hội văn hóa] [서울도서관] 2026년 서울야외도서관 (책읽는 서울광장, 광화문 책마당, 책읽는 맑은 냇가)",
-   "place": "서울광장, 광화문 광장, 청계천 일대 · 중구",
-   "d": "🤖 Miễn phí · Lễ hội văn hóa · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[서울도서관] 2026년 서울야외도서관 (책읽는 서울광장, 광화문 책마당, 책읽는 맑은 냇가)",
-   "place": "서울광장, 광화문 광장, 청계천 일대 · 중구",
-   "d": "🤖 무료 · 축제-문화/예술 · 대상: 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "https://seouloutdoorlibrary.kr/",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-04-24",
-  "e": "2026-10-30",
-  "region": "seoul",
-  "vi": {
-   "t": "[Trải nghiệm & lớp học] [서울기록원] 2026년 예비 기록 전문가의 날",
-   "place": "서울기록원 5층 컨퍼런스룸 · 은평구",
-   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 기록학, 문헌정보학, 역사학 등 관련 전공생 또는 관련 업무 예비 종사자 또는 종사자 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[서울기록원] 2026년 예비 기록 전문가의 날",
-   "place": "서울기록원 5층 컨퍼런스룸 · 은평구",
-   "d": "🤖 무료 · 교육/체험 · 대상: 기록학, 문헌정보학, 역사학 등 관련 전공생 또는 관련 업무 예비 종사자 또는 종사자 · 상세는 공식 링크 확인."
-  },
-  "url": "https://archives.seoul.go.kr/exhibitions-programs/programs/5480",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-04-26",
-  "e": "2026-11-01",
-  "region": "seoul",
-  "vi": {
-   "t": "[Lễ hội] 2026 서로장터",
-   "place": "서울광장, 서울숲, 양재시민의 숲, 잠수교 · 성동구",
-   "d": "🤖 Miễn phí · Lễ hội · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "2026 서로장터",
-   "place": "서울광장, 서울숲, 양재시민의 숲, 잠수교 · 성동구",
-   "d": "🤖 무료 · 축제-기타 · 대상: 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "https://www.instagram.com/seoul.local.market/",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-04-27",
-  "e": "2026-11-15",
-  "region": "seoul",
-  "vi": {
-   "t": "[Triển lãm] [서초문화재단] 2026 공공미술 전시 [Wonder Street]",
-   "place": "서초구 전역 원베일리 공공보행로 피카소벽화거리 · 서초구",
-   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 전체관람가 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[서초문화재단] 2026 공공미술 전시 [Wonder Street]",
-   "place": "서초구 전역 원베일리 공공보행로 피카소벽화거리 · 서초구",
-   "d": "🤖 무료 · 전시/미술 · 대상: 전체관람가 · 상세는 공식 링크 확인."
-  },
-  "url": "https://www.seochocf.or.kr/site/main/seocho/show/view?show_idx=970",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-04-28",
-  "e": "2027-08-29",
-  "region": "seoul",
-  "vi": {
-   "t": "[Triển lãm] [서울공예박물관] 공예협력전시 [안동별궁, 시간의 겹]",
-   "place": "서울공예박물관 전시1동 3층 기획전시실 · 종로구",
-   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[서울공예박물관] 공예협력전시 [안동별궁, 시간의 겹]",
-   "place": "서울공예박물관 전시1동 3층 기획전시실 · 종로구",
-   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "https://craftmuseum.seoul.go.kr/exhibit/plan/view/184",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-04-28",
-  "e": "2026-10-31",
-  "region": "seoul",
-  "vi": {
-   "t": "[Triển lãm] [서울상상나라] 놀이의 가능성: 보다",
-   "place": "서울상상나라 1층 로비 · 광진구",
-   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[서울상상나라] 놀이의 가능성: 보다",
-   "place": "서울상상나라 1층 로비 · 광진구",
-   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "https://www.seoulchildrensmuseum.org/display/displayExhibition27.do",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-04-28",
-  "e": "2026-09-26",
-  "region": "seoul",
-  "vi": {
-   "t": "[Triển lãm] [G밸리산업박물관] 기획전 [수학을 깨우는 산업 놀이터]",
-   "place": "G밸리산업박물관 기획전시실 · 구로구",
-   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 어린이 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[G밸리산업박물관] 기획전 [수학을 깨우는 산업 놀이터]",
-   "place": "G밸리산업박물관 기획전시실 · 구로구",
-   "d": "🤖 무료 · 전시/미술 · 대상: 어린이 · 상세는 공식 링크 확인."
-  },
-  "url": "https://www.seoul.go.kr/museumg/27ojn6shil.do",
-  "verified": "2026-09-20"
- },
- {
   "s": "2026-05-01",
   "e": "2026-12-31",
   "region": "seoul",
@@ -219,7 +15,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 콘서트 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://seoulbusking.com/",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-05-01",
@@ -236,7 +32,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 유아, 아동·청소년, 성인 누구나 *프로그램 별 상이 · 상세는 공식 링크 확인."
   },
   "url": "https://www.sfac.or.kr/opensquare/notice/notice_list.do?cbIdx=955&bcIdx=138206&type=",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-05-01",
@@ -253,7 +49,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 축제-자연/경관 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.seoul.go.kr/festa/garden/",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-05-04",
@@ -270,7 +66,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://home.sookmyung.ac.kr/chungyoungyang/6797/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGY2h1bmd5b3VuZ3lhbmclMkY4NjQlMkYyMTYxOTAlMkZhcnRjbFZpZXcuZG8lM0ZwYWdlJTNEMSUyNnNyY2hDb2x1bW4lM0QlMjZzcmNoV3JkJTNEJTI2YmJzQ2xTZXElM0QlMjZiYnNPcGVuV3JkU2VxJTNEJTI2cmdzQmduZGVTdHIlM0QlMjZyZ3NFbmRkZVN0ciUzRCUyNmlzVmlld01pbmUlM0RmYWxzZSUyNnBhc3N3b3JkJTNEJTI2",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-05-06",
@@ -287,7 +83,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 콘서트 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://cultureseoul.co.kr/2026/",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-05-07",
@@ -304,7 +100,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.instagram.com/p/DXvsd-xDyH1/",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-05-09",
@@ -321,7 +117,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 축제-문화/예술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.instagram.com/p/DXJHEnTii_j/",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-05-11",
@@ -338,7 +134,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 관련 전공 대학·대학원생 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/event/detail?evtNo=1538786",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-05-15",
@@ -355,24 +151,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.sfac.or.kr/opensquare/notice/notice_list.do?cbIdx=955&bcIdx=138037&type=",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-05-15",
-  "e": "2026-09-27",
-  "region": "seoul",
-  "vi": {
-   "t": "[Triển lãm] [서울생활사박물관] 대학에서 우리는",
-   "place": "서울생활사박물관 기획전시실 · 노원구",
-   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[서울생활사박물관] 대학에서 우리는",
-   "place": "서울생활사박물관 기획전시실 · 노원구",
-   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "https://museum.seoul.go.kr/sulm/board/NR_boardView.do?bbsCd=1002&seq=20260422163604668",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-05-18",
@@ -389,7 +168,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.sb.go.kr/literature/culture/bbs/bbsMsgDetail.do?msg_seq=24&bcd=special",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-05-19",
@@ -406,24 +185,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1529410",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-05-24",
-  "e": "2026-10-03",
-  "region": "seoul",
-  "vi": {
-   "t": "[Sự kiện] [종로문화재단] 종로구 야외도서관 [종로 열린 책마루]",
-   "place": "청운문학도서관, 청운공원, 마로니에공원 · 종로구",
-   "d": "🤖 Miễn phí · Sự kiện · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[종로문화재단] 종로구 야외도서관 [종로 열린 책마루]",
-   "place": "청운문학도서관, 청운공원, 마로니에공원 · 종로구",
-   "d": "🤖 무료 · 기타 · 대상: 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "https://www.jfac.or.kr/site/main/program/perf_all_list_view?pgIdx=2716",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-05-28",
@@ -440,7 +202,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 기록에 관심 있는 성인 · 상세는 공식 링크 확인."
   },
   "url": "https://archives.seoul.go.kr/exhibitions-programs/programs/5680",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-04",
@@ -457,7 +219,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 내외국인 남녀노소 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://cwdsarangchae.kr/ko/board/specialexhibition/current/detail.kto?searchNo=3598",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-08",
@@ -474,7 +236,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "http://www.leememorial.or.kr/?tpf=memorial/plan_view&board_code=18&code=7178",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-09",
@@ -491,7 +253,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 문화예술 분야에서 3년 이상 활동 경력과 5회 이상의 창작·발표 경험이 있는 장애예술인 · 상세는 공식 링크 확인."
   },
   "url": "https://ac.ieum.or.kr/program/program.php?ptype=view&idx=650&category=3",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-10",
@@ -508,7 +270,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 영유아(0세~미취학아동)를 양육하는 보호자 · 상세는 공식 링크 확인."
   },
   "url": "https://gcfac.or.kr/board/noticeDetail?gcfac_menu_cd=U0139&board_gb=notice&board_seq=9154&currRow=1",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-10",
@@ -525,7 +287,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 양천센터 방문 시민 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.sfac.or.kr/artspace/artspace/arteducation_notice.do?cbIdx=983&bcIdx=138322&type=",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-11",
@@ -542,7 +304,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1538201",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-13",
@@ -559,24 +321,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://museum.seoul.go.kr/cgcm/board/NR_boardView.do?bbsCd=1002&seq=20260529170246055",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-06-13",
-  "e": "2026-09-27",
-  "region": "seoul",
-  "vi": {
-   "t": "[Triển lãm] [B the B] 신규 기획전 오픈 : Beauty Tranlated",
-   "place": "비더비 UP-TOWN (울시 중구 을지로 281, DDP마켓 지하2층) · 중구",
-   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[B the B] 신규 기획전 오픈 : Beauty Tranlated",
-   "place": "비더비 UP-TOWN (울시 중구 을지로 281, DDP마켓 지하2층) · 중구",
-   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "https://btheb.sba.kr/notice/?mod=document&uid=275",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-15",
@@ -593,7 +338,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/education/detail?acadmyEeNo=1550659",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-18",
@@ -610,7 +355,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://museum.seoul.go.kr/sekm/front/display/specialView.do?currentPage=1&search_query=&e_id=131&e_cd=3&locale=KO",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-24",
@@ -627,7 +372,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 일반 30명 / 20명 · 상세는 공식 링크 확인."
   },
   "url": "https://mplib.mapo.go.kr/sglib/PGM3028/eventDetail.do?eventSn=12687&fbclid=IwY2xjawSR5hZleHRuA2FlbQIxMABicmlkETFadFpFQ0dDbGtid0thWndFc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHkFCSD8q8jCXeZKh1nlknQ2uDJF2MoLj0vjKMhglpZs3lLQlezG2fWzv5yT8_aem_vxD6MN9DtOjPb5266w-vXA",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-25",
@@ -644,7 +389,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1549929",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-26",
@@ -661,7 +406,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://museum.seoul.go.kr/www/board/NR_boardView.do?sortName=&q_listType=THUMBNAIL&searchVal=&bbsCd=1002&endDt=&searchKey=TITLE___1002&sso=ok&regPwd=N&museumCd=&pageType=&sortOrder=&q_exhSttus=next&startDt=&currentPage=&seq=20260623170800431&ctgCd=&showSummaryYn=N",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-06-29",
@@ -678,7 +423,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 내 인생의 음식과 이야기를 연극으로 나누고 싶은 65세 이상 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.dramanewworld.com/",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-01",
@@ -695,41 +440,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.facebook.com/photo?fbid=1435935265234347&set=pcb.1435935325234341",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-07-01",
-  "e": "2026-09-30",
-  "region": "seoul",
-  "vi": {
-   "t": "[Triển lãm] [마포구립서강도서관] 3분기/어린이갤러리 [내일은 맑겠습니다]",
-   "place": "마포구립서강도서관 4층 어린이자료실 · 마포구",
-   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 어린이 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[마포구립서강도서관] 3분기/어린이갤러리 [내일은 맑겠습니다]",
-   "place": "마포구립서강도서관 4층 어린이자료실 · 마포구",
-   "d": "🤖 무료 · 전시/미술 · 대상: 어린이 · 상세는 공식 링크 확인."
-  },
-  "url": "https://mplib.mapo.go.kr/sglib/PGM3028/eventDetail.do?eventSn=12767",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-07-01",
-  "e": "2026-09-30",
-  "region": "seoul",
-  "vi": {
-   "t": "[Triển lãm] [문학의집·서울] 제5회 시의 정원",
-   "place": "문학의집·서울 산림문학관 야외 정원 · 중구",
-   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "[문학의집·서울] 제5회 시의 정원",
-   "place": "문학의집·서울 산림문학관 야외 정원 · 중구",
-   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "http://www.imhs.co.kr/index.html",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-04",
@@ -746,7 +457,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.seoulchildrensmuseum.org/display/displayExhibition28.do",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-04",
@@ -763,7 +474,24 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: A반: 초등학교 3학년~6학년 / B반: 중·장년(만40세 이상) · 상세는 공식 링크 확인."
   },
   "url": "https://www.gangnam.go.kr/office/gfac/board/gfac_notice/623/view.do?mid=gfac_notice01",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-07-07",
+  "e": "2026-10-25",
+  "region": "seoul",
+  "vi": {
+   "t": "[Triển lãm] [서울역사박물관] 2026년 작은전시 [박물관 보물찾기: 휴대용 앙부일구]",
+   "place": "서울역사박물관 상설전시 1존 '작은 전시실' · 종로구",
+   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[서울역사박물관] 2026년 작은전시 [박물관 보물찾기: 휴대용 앙부일구]",
+   "place": "서울역사박물관 상설전시 1존 '작은 전시실' · 종로구",
+   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
+  },
+  "url": "https://museum.seoul.go.kr/www/board/NR_boardView.do?bbsCd=1014&seq=20260708150831818&sso=ok",
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-08",
@@ -780,7 +508,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 성인 · 상세는 공식 링크 확인."
   },
   "url": "https://www.jsplib.or.kr/culture/event.asp?mode=view&lecture_seq=2355&listname=normal",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-14",
@@ -797,7 +525,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://museum.seoul.go.kr/www/board/NR_boardView.do?sortName=&q_listType=THUMBNAIL&searchVal=&bbsCd=1002&endDt=&searchKey=TITLE___1002&sso=ok&regPwd=N&museumCd=&pageType=&sortOrder=&q_exhSttus=next&startDt=&currentPage=&seq=20260615104640628&ctgCd=&showSummaryYn=N",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-14",
@@ -814,7 +542,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 시민 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://artbookbogo.kr/seoul/menu/10045/program/30009/cultureDetail.do?currentPageNo=1&cultureIdx=25342&cultureTypeCdArr=EXHB&searchCultureTypeCd=&searchOperStatusCd=VALID",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-15",
@@ -831,7 +559,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 콘서트 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.idfac.or.kr/bbs/board.php?bo_table=notice&wr_id=445",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-16",
@@ -848,7 +576,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 일반 20명 · 상세는 공식 링크 확인."
   },
   "url": "https://mplib.mapo.go.kr/sglib/PGM3028/eventDetail.do?eventSn=12787",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-16",
@@ -865,7 +593,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1553791",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-18",
@@ -882,7 +610,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 콘서트 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.idfac.or.kr/bbs/board.php?bo_table=notice&wr_id=443",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-18",
@@ -899,7 +627,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 시민 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?rsv_svc_id=S260723152817878964",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-22",
@@ -916,7 +644,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 40~59세 성인 · 상세는 공식 링크 확인."
   },
   "url": "https://www.instagram.com/p/DahmXIPk8gT/?igsh=YXJ1YTlrZnNscmNw",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-24",
@@ -933,24 +661,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 40세 이상 중장년 및 노년층, 인문학과 예술에 관심 있는 시민, 경험이 없는 초보자 참여 가능 · 상세는 공식 링크 확인."
   },
   "url": "https://ktaia.or.kr/child/sub/news/participate.php?ptype=view&_idx=6a3d33ff6820563&page=&code=participate",
-  "verified": "2026-09-20"
- },
- {
-  "s": "2026-07-24",
-  "e": "2026-10-02",
-  "region": "seoul",
-  "vi": {
-   "t": "[Triển lãm] 섬유기획전 [안식의 결 Texture of Rest]",
-   "place": "우란문화재단 우란1경, 우란2경 · 성동구",
-   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
-  },
-  "ko": {
-   "t": "섬유기획전 [안식의 결 Texture of Rest]",
-   "place": "우란문화재단 우란1경, 우란2경 · 성동구",
-   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
-  },
-  "url": "https://wooranfdn.org/program/exhibition_view.jsp?idx=206",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-29",
@@ -967,7 +678,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 콘서트 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.idfac.or.kr/bbs/board.php?bo_table=notice&wr_id=444",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-07-29",
@@ -984,7 +695,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1556711",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-08-01",
@@ -1001,7 +712,7 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 축제-문화/예술 · 대상: 프로그램 별 상이 · 상세는 공식 링크 확인."
   },
   "url": "https://www.sfac.or.kr/participation/sfac_program.do?pageIndex=&eduMstSeq=37392&eduScheSeq=&mode=VIEW&mstStatus=&eduGubunSel=",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
  },
  {
   "s": "2026-08-01",
@@ -1018,6 +729,295 @@ window.SKEVENTS_AUTO = [
    "d": "🤖 무료 · 교육/체험 · 대상: 광진구민 누구나 · 상세는 공식 링크 확인."
   },
   "url": "https://www.naruart.or.kr/academy/art_view.php?idx=10077",
-  "verified": "2026-09-20"
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-03",
+  "e": "2026-11-26",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [구립증산도서관] 비밀책방 [취향을 발견하는 청소년 독서 구독]",
+   "place": "구립증산도서관 2층 사서실 · 은평구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 청소년 15명 (예비 중1부터 고등 3학년까지) · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[구립증산도서관] 비밀책방 [취향을 발견하는 청소년 독서 구독]",
+   "place": "구립증산도서관 2층 사서실 · 은평구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 청소년 15명 (예비 중1부터 고등 3학년까지) · 상세는 공식 링크 확인."
+  },
+  "url": "https://www.jsplib.or.kr/culture/event.asp?mode=view&lecture_seq=2363&listname=normal",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-04",
+  "e": "2026-10-31",
+  "region": "seoul",
+  "vi": {
+   "t": "[Lễ hội văn hóa] [노들섬] 오픈노들",
+   "place": "노들섬 · 용산구",
+   "d": "🤖 Miễn phí · Lễ hội văn hóa · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[노들섬] 오픈노들",
+   "place": "노들섬 · 용산구",
+   "d": "🤖 무료 · 축제-문화/예술 · 대상: 누구나 · 상세는 공식 링크 확인."
+  },
+  "url": "https://nodeul.org/program/%ec%98%a4%ed%94%88%eb%85%b8%eb%93%a4/",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-05",
+  "e": "2026-10-25",
+  "region": "seoul",
+  "vi": {
+   "t": "[Triển lãm] [더 갤러리 호수] 호수동물아트전",
+   "place": "더 갤러리 호수 · 송파구",
+   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[더 갤러리 호수] 호수동물아트전",
+   "place": "더 갤러리 호수 · 송파구",
+   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
+  },
+  "url": "https://archivist.kr/exi?m=gov&i=1786525248",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-05",
+  "e": "2026-10-21",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [청운문확도서관] 2026 지혜학교 [세계문학으로 읽는 12가지 지혜]",
+   "place": "청운문학도서관 · 종로구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 관심있는 성인 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[청운문확도서관] 2026 지혜학교 [세계문학으로 읽는 12가지 지혜]",
+   "place": "청운문학도서관 · 종로구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 관심있는 성인 누구나 · 상세는 공식 링크 확인."
+  },
+  "url": "https://blog.naver.com/jn_jfac/224347751879",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-06",
+  "e": "2026-10-29",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [구산동도서관마을] 2026년 구산동도서관마을 지혜학교 [몸으로 인문학하기]",
+   "place": "구산동도서관마을 3층 힐링캠프 · 은평구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 성인 35명 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[구산동도서관마을] 2026년 구산동도서관마을 지혜학교 [몸으로 인문학하기]",
+   "place": "구산동도서관마을 3층 힐링캠프 · 은평구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 성인 35명 · 상세는 공식 링크 확인."
+  },
+  "url": "https://www.gsvlib.or.kr/culture/event.asp?mode=view&lecture_seq=847",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-07",
+  "e": "2026-12-18",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [우리역사문화도서관] 생활의 지혜, 기초 한문 강독 [사자소학 四字小學]",
+   "place": "우리역사문화도서관 강의실 · 강동구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 성인 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[우리역사문화도서관] 생활의 지혜, 기초 한문 강독 [사자소학 四字小學]",
+   "place": "우리역사문화도서관 강의실 · 강동구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 성인 · 상세는 공식 링크 확인."
+  },
+  "url": "https://blog.naver.com/woori-library/224359597417",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-07",
+  "e": "2026-11-27",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [서울문화재단] 《PLAY-UP 아카데미》 장막극 창작 트레이닝",
+   "place": "서울연극창작센터 · 성북구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 경력 5년 이하의 극작가 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[서울문화재단] 《PLAY-UP 아카데미》 장막극 창작 트레이닝",
+   "place": "서울연극창작센터 · 성북구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 경력 5년 이하의 극작가 · 상세는 공식 링크 확인."
+  },
+  "url": "https://www.sfac.or.kr/participation/sfac_program.do?pageIndex=&eduMstSeq=37288&eduScheSeq=&mode=VIEW&mstStatus=&eduGubunSel=",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-07",
+  "e": "2026-10-27",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [금천문화재단] 2026 마음을 말하는 연극 2기",
+   "place": "금천구립시흥도서관 4층 강의실 · 금천구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 성인 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[금천문화재단] 2026 마음을 말하는 연극 2기",
+   "place": "금천구립시흥도서관 4층 강의실 · 금천구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 성인 · 상세는 공식 링크 확인."
+  },
+  "url": "https://geumcheonlib.seoul.kr/geumcheonlib/uce/programDetail.do?headerId=&selfId=1090&INST_CD=INST0004&INST_GB=1&idxNo=3698",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-11",
+  "e": "2026-12-31",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [서울문화재단] 2026 서울문화예술교육 프로그램 [모아, 담아] 2차",
+   "place": "서울시내 전역 · 종로구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 유아, 아동·청소년, 성인 누구나 *프로그램 별 상이 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[서울문화재단] 2026 서울문화예술교육 프로그램 [모아, 담아] 2차",
+   "place": "서울시내 전역 · 종로구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 유아, 아동·청소년, 성인 누구나 *프로그램 별 상이 · 상세는 공식 링크 확인."
+  },
+  "url": "https://www.sfac.or.kr/opensquare/notice/notice_list.do?cbIdx=955&bcIdx=138515&type=",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-11",
+  "e": "2026-10-27",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [구산동도서관마을] 2026년 구산동도서관마을 길 위의 인문학 [미술사 X 그림책 : 삶을 읽는 시선]",
+   "place": "구산동도서관마을 3층 힐링캠프 · 은평구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 성인 30명 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[구산동도서관마을] 2026년 구산동도서관마을 길 위의 인문학 [미술사 X 그림책 : 삶을 읽는 시선]",
+   "place": "구산동도서관마을 3층 힐링캠프 · 은평구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 성인 30명 · 상세는 공식 링크 확인."
+  },
+  "url": "https://www.gsvlib.or.kr/culture/event.asp?mode=view&lecture_seq=846",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-11",
+  "e": "2026-10-20",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [동대문문화재단] 2026년 생생 국가유산 사업 [지구를 지키는 선농단] - 도시농부학교(심화반)",
+   "place": "선농단역사문화관 및 선농단역사공원 · 동대문구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 도시농부학교 입문반 수료자(반당 10명) · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[동대문문화재단] 2026년 생생 국가유산 사업 [지구를 지키는 선농단] - 도시농부학교(심화반)",
+   "place": "선농단역사문화관 및 선농단역사공원 · 동대문구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 도시농부학교 입문반 수료자(반당 10명) · 상세는 공식 링크 확인."
+  },
+  "url": "https://form.naver.com/response/yzSgYdPVvrLg1v-r3pTMDw",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-13",
+  "e": "2026-11-05",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] 2026 지혜학교 [현실 속에서의 사유와  초탈, 장자를 만나다]",
+   "place": "탄허기념불교박물관 도서실 · 강남구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 성인 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "2026 지혜학교 [현실 속에서의 사유와  초탈, 장자를 만나다]",
+   "place": "탄허기념불교박물관 도서실 · 강남구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 성인 누구나 · 상세는 공식 링크 확인."
+  },
+  "url": "https://blog.naver.com/thmuseum/224342586987",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-13",
+  "e": "2026-10-25",
+  "region": "seoul",
+  "vi": {
+   "t": "[Triển lãm] [서울시립 북서울미술관] 2026 타이틀 매치 《오인환 vs. 장서영: 휴먼 에러》",
+   "place": "서울시립 북서울미술관 1층 전시실 1,2 서울시립 북서울미술관 2층 전시실 3,4 · 노원구",
+   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[서울시립 북서울미술관] 2026 타이틀 매치 《오인환 vs. 장서영: 휴먼 에러》",
+   "place": "서울시립 북서울미술관 1층 전시실 1,2 서울시립 북서울미술관 2층 전시실 3,4 · 노원구",
+   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
+  },
+  "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1563285",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-14",
+  "e": "2026-11-08",
+  "region": "seoul",
+  "vi": {
+   "t": "[Triển lãm] [서울역사박물관] 서울도시계획 대관람",
+   "place": "서울역사박물관 기획전시실A · 종로구",
+   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[서울역사박물관] 서울도시계획 대관람",
+   "place": "서울역사박물관 기획전시실A · 종로구",
+   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
+  },
+  "url": "https://museum.seoul.go.kr/www/board/NR_boardView.do?bbsCd=1002&q_exhSttus=next&seq=20260723145427523&sso=ok",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-20",
+  "e": "2026-11-08",
+  "region": "seoul",
+  "vi": {
+   "t": "[Triển lãm] [서울시립 서서울미술관] 미디어 작가전 《김희천: 두더지들》",
+   "place": "서울시립 서서울미술관 B1 제1,2전시실, 다목적홀 · 금천구",
+   "d": "🤖 Miễn phí · Triển lãm · Đối tượng: 누구나 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[서울시립 서서울미술관] 미디어 작가전 《김희천: 두더지들》",
+   "place": "서울시립 서서울미술관 B1 제1,2전시실, 다목적홀 · 금천구",
+   "d": "🤖 무료 · 전시/미술 · 대상: 누구나 · 상세는 공식 링크 확인."
+  },
+  "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1565012",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-22",
+  "e": "2026-10-10",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [서울시립 사진미술관] 어린이 감상교육 [미술관 탐험]",
+   "place": "서울시립 사진미술관 전시실 및 1교육실 · 도봉구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 초등학교 3학년~6학년 어린이 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[서울시립 사진미술관] 어린이 감상교육 [미술관 탐험]",
+   "place": "서울시립 사진미술관 전시실 및 1교육실 · 도봉구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 초등학교 3학년~6학년 어린이 · 상세는 공식 링크 확인."
+  },
+  "url": "https://sema.seoul.go.kr/kr/whatson/education/detail?acadmyEeNo=1572801",
+  "verified": "2026-10-04"
+ },
+ {
+  "s": "2026-08-24",
+  "e": "2026-11-09",
+  "region": "seoul",
+  "vi": {
+   "t": "[Trải nghiệm & lớp học] [서울문화재단] 《PLAY-UP 아카데미》 드라마투르기적 사고와 실전: 창작 현장에서의 드라마투르그 역할과 실전 이해",
+   "place": "서울연극창작센터 · 성북구",
+   "d": "🤖 Miễn phí · Trải nghiệm & lớp học · Đối tượng: 5편 이상, 10편 이하의 공연 참여경험이 있는 연극 예술인 · Bấm link chính thức để xem chi tiết (trang tiếng Hàn — dùng nút dịch của trình duyệt nếu cần)."
+  },
+  "ko": {
+   "t": "[서울문화재단] 《PLAY-UP 아카데미》 드라마투르기적 사고와 실전: 창작 현장에서의 드라마투르그 역할과 실전 이해",
+   "place": "서울연극창작센터 · 성북구",
+   "d": "🤖 무료 · 교육/체험 · 대상: 5편 이상, 10편 이하의 공연 참여경험이 있는 연극 예술인 · 상세는 공식 링크 확인."
+  },
+  "url": "https://www.sfac.or.kr/participation/sfac_program.do?pageIndex=1&eduMstSeq=37371&eduScheSeq=&mode=VIEW&mstStatus=&eduGubunSel=",
+  "verified": "2026-10-04"
  }
 ];
